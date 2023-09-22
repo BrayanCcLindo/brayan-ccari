@@ -203,7 +203,7 @@ function Contact() {
               <p className="text-red-500 text-sm">{error.message}</p>
             )}
 
-            <ButtonComponent onClick={() => {}} content="Send Message" />
+            <ButtonComponent onClick={() => {}}>Send Message</ButtonComponent>
             {succesForm && (
               <div className="flex gap-4 items-center text-purple font-bold">
                 <Check />

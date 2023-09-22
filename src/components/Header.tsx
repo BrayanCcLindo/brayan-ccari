@@ -100,7 +100,7 @@ function Header() {
           </ul>
         </div>
         <div className="hidden md:flex">
-          <ButtonComponent content="Let's Talk" />
+          <ButtonComponent>Let's Talk</ButtonComponent>
         </div>
       </div>
     </div>
