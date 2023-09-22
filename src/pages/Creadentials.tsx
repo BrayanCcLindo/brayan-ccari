@@ -144,7 +144,7 @@ function Creadentials() {
             </a>
           </div>
           <Link className="w-full" to={"/contact"}>
-            <ButtonComponent content="Contact Me" />
+            <ButtonComponent>Get in touch</ButtonComponent>
           </Link>
         </div>
         <div>
