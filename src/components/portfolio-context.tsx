@@ -132,13 +132,13 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       web: "https://brayancclindo.github.io/weather-app/",
     },
     {
-      title: "ibookshelf",
-      slug: "ibookshelf-app",
+      title: "iBookShelf",
+      slug: "iBookShelf-app",
       slogan:
-        "Apple Books es el lugar ideal para acceder a tus libros favoritos y los que estás por descubrir",
+        "iBookShelf is the ideal place to access your favorite books and those you are about to discover.",
       description: [
-        "ibookshelf is the ideal place to access your favorite and undiscovered books. Explore the Store tab and find the perfect book for you. Keep track of your favorite books and what you want to read, and set your own Reading Goals, all in one app",
-        "This application has multiple robust and versatile filtering features that allow you to browse our extensive collection of books in an efficient and personalized way. With our filter options, you will easily find your next favorite read.",
+        "iBookShelf is the ideal place to access your favorite and undiscovered books. Explore the Store tab and find the perfect book for you. Keep track of your favorite books and what you want to read, and set your own Reading Goals, all in one app",
+        "iBookShelf has multiple robust and versatile filtering features that allow you to browse our extensive collection of books in an efficient and personalized way. With our filter options, you will easily find your next favorite read.",
       ],
       languages: ["HMTL", "Tailwind CSS", "ReactJs", "TypeScript", "Radix UI"],
       cover: "../../images/test.jpg",
