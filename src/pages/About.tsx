@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 // import { aboutMe } from "../types/about";
 import Layout from "../ui/layout";
 import { CardComponent } from "./Home";
-import { useProtfolioContext } from "../components/portfolio-context";
+import { useProtfolioContext } from "../appContext/portfolio-context";
 import { Link } from "react-router-dom";
 
 function ExperienceCard({ title }: { title: string }) {

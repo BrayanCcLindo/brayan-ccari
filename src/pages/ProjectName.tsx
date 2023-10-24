@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import Layout from "../ui/layout";
-import { useProtfolioContext } from "../components/portfolio-context";
+import { useProtfolioContext } from "../appContext/portfolio-context";
 
 function Project() {
   const { projectName } = useParams();

@@ -7,7 +7,7 @@ import {
   Experience,
   SkillsType,
   useProtfolioContext,
-} from "../components/portfolio-context";
+} from "../appContext/portfolio-context";
 import { twMerge } from "tailwind-merge";
 import { Link } from "react-router-dom";
 

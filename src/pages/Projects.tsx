@@ -2,7 +2,7 @@ import { Github, Globe } from "lucide-react";
 import Layout from "../ui/layout";
 import { twMerge } from "tailwind-merge";
 // import { Link } from "react-router-dom";
-import { Project, useProtfolioContext } from "../components/portfolio-context";
+import { Project, useProtfolioContext } from "../appContext/portfolio-context";
 import { Link } from "react-router-dom";
 
 function WorkCard({ project }: { project: Project }) {
@@ -51,13 +51,19 @@ function WorkCard({ project }: { project: Project }) {
         <div className="flex flex-col gap-2">
           <span className=" ">{project?.slogan}</span>
           <h4 className="text-2xl text-black font-semibold">
-            <Link to={`/my-work/${project?.slug}`}>{project?.title}</Link>
+            <Link
+              className="hover:text-purple"
+              to={`/my-work/${project?.slug}`}
+            >
+              {project?.title}
+            </Link>
           </h4>
         </div>
       </div>
       <div className="flex gap-8 w-full">
         <a
           href={project?.github}
+          target="_blank"
           className={twMerge(
             "bg-gray-400 whitespace-nowrap	 flex items-center gap-1 justify-center text-white rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full",
             "hover:scale-105 duration-100 text-center "
@@ -68,6 +74,7 @@ function WorkCard({ project }: { project: Project }) {
         </a>
         <a
           href={project?.web}
+          target="_blank"
           className={twMerge(
             "bg-gray-400 whitespace-nowrap	 flex items-center gap-1 justify-center text-white rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full",
             "hover:scale-105 duration-100 text-center "
@@ -84,10 +91,10 @@ function WorkCard({ project }: { project: Project }) {
 function Proyects() {
   const { projectNames } = useProtfolioContext();
   const newArrayOfProjects = [...projectNames];
-  const firstProyects = newArrayOfProjects.splice(0, 1);
+  const firstProyects = newArrayOfProjects.splice(0, 2);
   const secondArrayOfProjects = [...projectNames];
 
-  const secondProjects = secondArrayOfProjects.splice(1);
+  const secondProjects = secondArrayOfProjects.splice(2);
 
   return (
     <Layout>

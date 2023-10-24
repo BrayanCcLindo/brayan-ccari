@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import ButtonComponent from "./button-component";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { twMerge } from "tailwind-merge";
@@ -28,7 +27,12 @@ function Header() {
         )}
       >
         <Link to={"/"}>
-          <img width={120} src="../../images/logoPorfolio.png" alt="" />
+          <img
+            className="relative z-10"
+            width={120}
+            src="../../images/logoPorfolio.png"
+            alt=""
+          />
         </Link>
 
         <div className="">
@@ -100,7 +104,12 @@ function Header() {
           </ul>
         </div>
         <div className="hidden md:flex">
-          <ButtonComponent>Let's Talk</ButtonComponent>
+          <a
+            className="bg-gray-400 text-white rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full hover:scale-105 duration-100 text-center"
+            href="mailto:brayancclindo@gmail.com"
+          >
+            Let's Talk
+          </a>
         </div>
       </div>
     </div>

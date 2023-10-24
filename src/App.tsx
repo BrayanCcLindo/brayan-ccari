@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import About from "./pages/About";
-import { PortfolioProvider } from "./components/portfolio-context";
+import { PortfolioProvider } from "./appContext/portfolio-context";
 import Proyects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Creadentials from "./pages/Creadentials";

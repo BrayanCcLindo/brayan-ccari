@@ -22,9 +22,12 @@ const CardContact = ({
 }) => {
   return (
     <div className=" flex gap-8 p-4 items-center">
-      <div className="p-6 rounded-xl bg-white flex items-center justify-center text-purple">
+      <a
+        href="mailto:brayancclindo@gmail.com"
+        className="p-6 rounded-xl bg-white flex items-center justify-center text-purple"
+      >
         {icon}
-      </div>
+      </a>
       <div>
         <h3 className="text-xl text-gray-200">{title}</h3>
         {children}
