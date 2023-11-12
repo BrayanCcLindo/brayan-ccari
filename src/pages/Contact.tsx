@@ -58,6 +58,7 @@ function Contact() {
       }, 5000);
     }
   }, [succesForm]);
+
   return (
     <Layout>
       <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[1fr,2fr]")}>
