@@ -7,46 +7,24 @@ import { Link } from "react-router-dom";
 
 function WorkCard({ project }: { project: Project }) {
   return (
-    <div
+    <Link
+      onClick={() => {
+        window.scrollTo(0, 0);
+      }}
+      to={`/my-work/${project?.slug}`}
       className={twMerge(
-        "flex flex-col gap-2 bg-white p-8 justify-center items-center rounded-2xl  relative group hover:duration-500 "
+        "flex flex-col gap-2 bg-white p-8 justify-center items-center rounded-2xl duration-500",
+        "hover:scale-[1.02] duration-500 "
       )}
     >
       <div className="flex items-center justify-center">
-        <Link to={`/my-work/${project?.slug}`}>
-          <img
-            className="rounded-2xl mb-4 object-cover "
-            src={project?.cover}
-            alt=""
-          />
-        </Link>
+        <img
+          className="rounded-2xl mb-4 object-cover "
+          src={project?.cover}
+          alt=""
+        />
       </div>
-      {/* <div
-        className={twMerge(
-          "hidden absolute w-full h-full  items-start p-8 justify-start rounded-2xl opacity-0",
-          "group-hover:bg-black/80 hover:transition-all hover:duration-300 hover:opacity-100",
-          "lg:flex"
-        )}
-      >
-        <div className="flex flex-col gap-8">
-          <a
-            href={project?.github}
-            target="_blank"
-            className="text-white hover:scale-110 hover:duration-100 hover:text-purple"
-          >
-            <Github size={50} />
-          </a>
 
-          <a
-            href={project?.web}
-            target="_blank"
-            className="text-white hover:scale-110 hover:duration-100 hover:text-purple "
-          >
-            <Globe size={50} />
-          </a>
-         
-        </div>
-      </div> */}
       <div className="flex justify-between items-center text-gray-200">
         <div className="flex flex-col gap-2">
           <span className=" ">{project?.slogan}</span>
@@ -84,7 +62,7 @@ function WorkCard({ project }: { project: Project }) {
           Sitio Web
         </a>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -114,11 +92,9 @@ function Proyects() {
           >
             ALL PROJECTS
           </h2>
-          {/* <Link to={"/my-work/aca"} className="relative"> */}
           {firstProyects?.map((project, id) => (
             <WorkCard key={id} project={project} />
           ))}
-          {/* </Link> */}
         </div>
         <div className="">
           <h2

@@ -25,7 +25,6 @@ export type Education = {
   detail: string;
 };
 export type SkillsType = {
-  percentage: string;
   skill: string;
   date: string;
 };
@@ -77,34 +76,48 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
   ];
   const skills = [
     {
-      percentage: "85%",
       skill: "HTML",
       date: "2021 - Present",
     },
     {
-      percentage: "85%",
       skill: "CSS",
       date: "2021 - Present",
     },
     {
-      percentage: "85%",
       skill: "Styled-Components",
-      date: "2021 - Present",
+      date: "2022 - Present",
     },
     {
-      percentage: "85%",
       skill: "Tailwind CSS",
-      date: "2021 - Present",
+      date: "2022 - Present",
     },
     {
-      percentage: "85%",
       skill: "JavaScript",
       date: "2021 - Present",
     },
     {
-      percentage: "85%",
       skill: "TypeScript",
+      date: "2022 - Present",
+    },
+    {
+      skill: "UI - UX",
       date: "2021 - Present",
+    },
+    {
+      skill: "React Js",
+      date: "2022 - Present",
+    },
+    {
+      skill: "Git / GitHub",
+      date: "2022 - Present",
+    },
+    {
+      skill: "Responsive Design",
+      date: "2022 - Present",
+    },
+    {
+      skill: "Performance Optimization",
+      date: "2022 - Present",
     },
   ];
   const projectNames = [
@@ -285,14 +298,14 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       certificaded: "LeonidasEsteban.com",
     },
     {
-      title: "FlexBox Layout &Components",
+      title: "React Fundamentals",
       link: "https://leonidasesteban.com/certificados/7bf90d3c-d777-4758-a848-df5d4f486a45",
       year: "2023",
 
       certificaded: "LeonidasEsteban.com",
     },
     {
-      title: "FlexBox Layout &Components",
+      title: "React Frontend Developer",
       link: "https://platzi.com/p/brayanclindo/curso/1758-html-practico/diploma/detalle/",
       year: "2023",
 

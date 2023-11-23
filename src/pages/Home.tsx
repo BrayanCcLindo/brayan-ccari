@@ -1,4 +1,4 @@
-import { Linkedin, Mail } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Linkedin, Mail } from "lucide-react";
 import Layout from "../ui/layout";
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
@@ -8,13 +8,20 @@ export const CardComponent = ({
   children,
   subtitle,
   title,
+  isClickable,
 }: {
   children?: ReactNode;
   subtitle?: string;
   title: string;
+  isClickable: boolean;
 }) => {
   return (
-    <div className="flex flex-col gap-2 bg-white p-4 justify-center rounded-2xl">
+    <div
+      className={twMerge(
+        "flex flex-col gap-2 bg-white p-4 justify-center rounded-2xl relative duration-300 group",
+        isClickable && "hover:scale-105 duration-300"
+      )}
+    >
       <div className="flex items-center justify-center">{children}</div>
       <div className="flex justify-between items-center text-gray-100">
         <div className="flex flex-col gap-2">
@@ -22,6 +29,11 @@ export const CardComponent = ({
           <h4 className="text-2xl text-black font-medium">{title}</h4>
         </div>
       </div>
+      {isClickable && (
+        <div className="text-gray-200 absolute right-0 bottom-0 p-2 rounded-full hidden  group-hover:flex ">
+          <ArrowRight size={25} strokeWidth={1} />
+        </div>
+      )}
     </div>
   );
 };
@@ -46,10 +58,12 @@ function Home() {
     <Layout>
       <div className="flex flex-col gap-8 p-4  ">
         <div className=" flex flex-col justify-between gap-8  md:flex-row">
-          <div
+          <Link
+            to={"/credentials"}
             className={twMerge(
-              "flex flex-col gap-8 p-8 rounded-xl bg-white flex-1  items-center",
-              "lg:flex-row "
+              "flex flex-col gap-8 p-8 rounded-xl bg-white flex-1  items-center group relative duration-500",
+              "lg:flex-row gap-14",
+              "hover:scale-105 duration-500"
             )}
           >
             <img
@@ -57,20 +71,27 @@ function Home() {
               src="../../images/profilePhoto.jpg"
               alt=""
             />
-            <div className="flex flex-col gap-4 justify-between ">
+            <div className="flex flex-col gap-4 justify-between  ">
               <span className="text-gray-200 text-lg text-center">
                 Hi! I'm Brayan
               </span>
               <h1 className=" text-2xl text-purple font-semibold text-center">
                 Frontend Developer
               </h1>
-              <p className="text-gray-200 text-center">
+              <p className="text-black text-center">
                 Passionate about creating captivating digital experiences,
                 transforming concepts into attractive and highly usable
                 interfaces.
               </p>
+
+              <Link
+                to={"/credentials"}
+                className="text-gray-100 absolute right-[10px] top-[10px] p-4 rounded-full hidden group-hover:flex hover:bg-gray-300"
+              >
+                <ArrowUpRight />
+              </Link>
             </div>
-          </div>
+          </Link>
           <div className="flex flex-col gap-4 justify-evenly flex-1">
             <div className="marquee-container  rounded-full bg-white p-2">
               <p className="marquee-text font-basic text-gray-200">
@@ -82,7 +103,11 @@ function Home() {
             </div>
             <div className={twMerge("grid  gap-8", "lg:grid-cols-[1fr_1fr]")}>
               <Link to={"/credentials"}>
-                <CardComponent title="Credentials" subtitle="more about me">
+                <CardComponent
+                  isClickable={true}
+                  title="Credentials"
+                  subtitle="more about me"
+                >
                   <img
                     className="object-cover"
                     src="../../images/credentialsPhoto.jpg"
@@ -91,7 +116,11 @@ function Home() {
                 </CardComponent>
               </Link>
               <Link to={"/my-work"}>
-                <CardComponent title="Projects" subtitle="showcase">
+                <CardComponent
+                  isClickable={true}
+                  title="Projects"
+                  subtitle="showcase"
+                >
                   <img
                     className="object-cover"
                     src="../../images/projectsPhoto.jpg"
@@ -108,7 +137,11 @@ function Home() {
             "md:grid-cols-[1fr_2fr]"
           )}
         >
-          <CardComponent title="Get in touch" subtitle="STAY WITH ME">
+          <CardComponent
+            isClickable={false}
+            title="Get in touch"
+            subtitle="STAY WITH ME"
+          >
             <div className="flex gap-8 items-center bg-[#FBFBFC] p-2 w-full justify-evenly rounded-3xl">
               <a
                 href="mailto:brayancclindo@gmail.com"
@@ -125,7 +158,11 @@ function Home() {
               </a>
             </div>
           </CardComponent>
-          <CardComponent title="Tech Skills" subtitle="blog">
+          <CardComponent
+            isClickable={false}
+            title="Tech Skills"
+            subtitle="blog"
+          >
             <div
               className={twMerge(
                 "flex gap-4 text-purple flex-wrap ",

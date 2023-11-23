@@ -24,7 +24,6 @@ const SkillsCard = ({
       <div className={twMerge("grid  gap-8", "md:grid-cols-[repeat(2,1fr)]")}>
         {skills?.map((skill, id) => (
           <div key={id} className="flex flex-col gap-3">
-            <span className="text-gray-200">{skill.percentage}</span>
             <h3 className="text-xl text-purple font-semibold">{skill.skill}</h3>
             <p className="text-gray-200">{skill.date}</p>
           </div>

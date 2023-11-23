@@ -70,7 +70,11 @@ function About() {
         <ExperienceCard title="EDUCATION" />
       </div>
       <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[1fr,2fr,1fr]")}>
-        <CardComponent title="Get in touch" subtitle="STAY WITH ME">
+        <CardComponent
+          isClickable={false}
+          title="Get in touch"
+          subtitle="CHAT WITH ME"
+        >
           <div className="flex gap-8 items-center bg-[#FBFBFC] p-2 w-full justify-evenly rounded-3xl">
             <a
               href="https://github.com/BrayanCcLindo"
@@ -99,7 +103,11 @@ function About() {
           </div>
         </Link>
         <Link to={"/credentials"}>
-          <CardComponent title="Credentials" subtitle="MORE ABOUT ME">
+          <CardComponent
+            isClickable={true}
+            title="Credentials"
+            subtitle="MORE ABOUT ME"
+          >
             <img
               className="object-cover"
               src="../../public/images/credentialsPhoto.jpg"
