@@ -1,7 +1,6 @@
 import { Github, Globe } from "lucide-react";
 import Layout from "../ui/layout";
 import { twMerge } from "tailwind-merge";
-// import { Link } from "react-router-dom";
 import { Project, useProtfolioContext } from "../appContext/portfolio-context";
 import { Link } from "react-router-dom";
 
