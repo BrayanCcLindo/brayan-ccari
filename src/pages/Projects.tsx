@@ -6,16 +6,20 @@ import { Link } from "react-router-dom";
 
 function WorkCard({ project }: { project: Project }) {
   return (
-    <Link
-      onClick={() => {
-        window.scrollTo(0, 0);
-      }}
-      to={`/my-work/${project?.slug}`}
+    <div
+      // to={`/my-work/${project?.slug}`}
       className={twMerge(
-        "flex flex-col gap-2 bg-white p-8 justify-center items-center rounded-2xl duration-500",
+        "flex flex-col gap-2 bg-white p-8 justify-center items-center rounded-2xl duration-500 relative",
         "hover:scale-[1.02] duration-500 "
       )}
     >
+      <Link
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
+        to={`/my-work/${project?.slug}`}
+        className="w-full h-4/5 absolute top-0 bg-transparent"
+      ></Link>
       <div className="flex items-center justify-center">
         <img
           className="rounded-2xl mb-4 object-cover "
@@ -61,7 +65,7 @@ function WorkCard({ project }: { project: Project }) {
           Sitio Web
         </a>
       </div>
-    </Link>
+    </div>
   );
 }
 
