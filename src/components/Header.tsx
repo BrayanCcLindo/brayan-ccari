@@ -39,7 +39,7 @@ function Header() {
           {isMenuOpen && (
             <div
               className={twMerge(
-                "bg-gray-300 flex flex-col gap-4 absolute left-0 right-0 top-[70px]   text-center pb-8",
+                "bg-gray-300 flex flex-col gap-4 absolute left-0 right-0 top-[70px]  text-center pb-8",
                 "md:hidden"
               )}
             >
@@ -62,9 +62,9 @@ function Header() {
               <Link
                 onClick={handleScroll}
                 className="w-full text-lg hover:text-purple"
-                to="/my-work"
+                to="/my-projects"
               >
-                Works
+                Projects
               </Link>
               <Link
                 onClick={handleScroll}
@@ -80,7 +80,7 @@ function Header() {
           {isMenuOpen ? <X /> : <Menu />}
         </button>
         <div className={twMerge("hidden md:flex")}>
-          <ul className="flex gap-8 items-center text-gray-500 font-medium ">
+          <ul className="flex gap-8 items-center text-gray-500 font-medium text-lg">
             <li className=" hover:text-purple">
               <Link onClick={handleScroll} to="/">
                 Home
@@ -92,8 +92,8 @@ function Header() {
               </Link>
             </li>
             <li className=" hover:text-purple">
-              <Link onClick={handleScroll} to="/my-work">
-                Works
+              <Link onClick={handleScroll} to="/my-projects">
+                Projects
               </Link>
             </li>
             <li className=" hover:text-purple">

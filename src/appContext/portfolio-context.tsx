@@ -9,7 +9,10 @@ export type Project = {
   cover: string;
   github: string;
   web: string;
-  image: string;
+  category: string;
+  date: string;
+  name: string;
+  website: string;
   photos: string[];
 };
 
@@ -17,7 +20,11 @@ export type Experience = {
   year: string;
   job: string;
   detail: string;
-  description: string;
+  description: string[];
+};
+export type TechStackType = {
+  logo: string;
+  title: string;
 };
 export type Education = {
   year: string;
@@ -35,6 +42,7 @@ type AppContextType = {
   skills: SkillsType[];
   projectNames: Project[];
   certifications: CertificationType[];
+  techStackImg: TechStackType[];
 };
 export type CertificationType = {
   title: string;
@@ -48,18 +56,26 @@ const PortfolioContext = createContext<AppContextType>({} as AppContextType);
 export function PortfolioProvider({ children }: { children: ReactNode }) {
   const experience = [
     {
-      year: "2021 - 2023",
-      job: "WordPress & Frontend Developer",
-      detail: "REMOTE",
-      description:
-        "I built landing pages and web applications for tourism agencies from design to production, applying UI and UX design principles, executing sales growth strategies  and product development using  React JS.",
+      year: "12/2021 - 04/2023",
+      job: "Frontend Developer - WordPress",
+      detail: "Remote",
+      description: [
+        "Built landing pages and websites fortourism agencies from design toproduction.",
+        "Implemented sales growth and productdevelopment strategies using React.",
+        "Performed SEO optimization by improvingthe keyword research & performance ofmany websites.",
+        "Contributed to the integration of Firebase,significantly improving both the quality andspeed of web page development.",
+      ],
     },
     {
-      year: "2023 - Present",
+      year: "04/2023 - Present",
       job: "Front End Developer, Freelancer",
-      detail: "REMOTE",
-      description:
-        "My focus is on implementing attractive and responsive designs, using cutting-edge technologies such as HTML, CSS3 , JavaScript, TypeScript, ReactJs, TailwindCss, Styled-components to ensure that the user interfaces I develop are intuitive and attractive.",
+      detail: "Remote",
+      description: [
+        "Built an accessible and functional site for an electronic book store.",
+        "Work on frontend with React, TypeScript,Tailwind & React-i18next.",
+        "Documented usage of performance APIs inReact, which increase code quality.",
+        "Integrated multiple filtering functionalitiesto enhance the user experience.",
+      ],
     },
   ];
   const education = [
@@ -69,9 +85,19 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       detail: "Continental University",
     },
     {
-      year: "2023",
+      year: "2022",
       job: "React Frontend Developer",
       detail: "Epic React Workshop",
+    },
+    {
+      year: "2023",
+      job: "Programming and Software Development",
+      detail: "Platzi",
+    },
+    {
+      year: "2023",
+      job: "React Developer",
+      detail: "LeonidasEsteban.com",
     },
   ];
   const skills = [
@@ -127,12 +153,26 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       slogan:
         "iBookShelf is the ideal place to access your favorite books and those you are about to discover.",
       description: [
-        "iBookShelf is the ideal place to access your favorite and undiscovered books. Explore the Store tab and find the perfect book for you. Keep track of your favorite books and what you want to read, and set your own Reading Goals, all in one app",
         "iBookShelf has multiple robust and versatile filtering features that allow you to browse our extensive collection of books in an efficient and personalized way. With our filter options, you will easily find your next favorite read.",
+        "One of the challenges lies in the management of different statuses for each book and the categories where they are located, followed by the creation of a user experience that ensures smooth and responsive navigation. In addition, the aim is to offer personalization and flexibility that allows you to build your own library according to your preferences, and thus manage your reading activities in an efficient way.",
       ],
-      languages: ["HMTL", "Tailwind CSS", "ReactJs", "TypeScript", "Radix UI"],
+      category: "Web Development",
+      date: "10/2023",
+      name: "iBookShelf",
+      website: "ibookshelf-app.netlify.app",
+
+      languages: [
+        "ReactJs",
+        "TypeScript",
+        "Redux",
+        "React Query",
+        "Tailwind CSS",
+        "Radix UI",
+        "APIs RESTful",
+        "Vite",
+        "Netlify",
+      ],
       cover: "../../images/test.jpg",
-      image: "../../images/iBookShelf-photo.jpg",
 
       photos: [
         "../../images/iBook/iBookPhoto2.jpg",
@@ -152,11 +192,15 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       description: [
         "Weather App is an intuitive and comprehensive weather app that keeps you always one step ahead when it comes to weather conditions. From the convenience of your smartphone or tablet,",
         " Weather App gives you instant access to a wide range of weather information, providing an exceptional user experience.",
+        " Managing varied status by location and weather information elements presents a challenge. I seek to create a smooth user experience, allowing easy access to weather details. I also prioritize flexibility and customization to adjust the app to individual preferences, adapting it to the specific needs of each user.",
       ],
+      category: "Mobile App",
+      date: "11/2022",
+      name: "Weather App",
+      website: "brayancclindo.github.io/weather-app/",
 
-      languages: ["Vanilla Javascript", "HTML", "CSS"],
+      languages: ["Vanilla Javascript", "HTML", "CSS", "APIs RESTful"],
       cover: "../../images/weather-app.jpg",
-      image: "../../images/weather-Photo.jpg",
 
       photos: [
         "../../images/weather-app/weatherApp-Photo1.jpg",
@@ -182,10 +226,13 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
         "TypeScript",
         "Radix UI",
         "Responsive Design",
+        "Vercel",
       ],
       cover: "../../images/memory-game/memory-game.jpg",
-      image: "../../images/memory-game/memory-game.jpg",
-
+      category: "Web Development",
+      date: "06/2023",
+      name: "Memory Game",
+      website: "memory-game-gules-two.vercel.app/",
       photos: [
         "../../images/memory-game/memoryGamePhoto1.jpg",
         "../../images/memory-game/memoryGamePhoto2.jpg",
@@ -202,7 +249,8 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
         "Imagine a platform designed to simplify and organize your daily life in an efficient way",
       description: [
         "Task Board is a highly intuitive and flexible tool that allows you to manage your to-do, in-progress and completed activities in an organized and effective way.",
-        "Task Board web application brings a series of technical and design challenges that help you improve your skills as a frontend developer, one of the challenges is the management of complex states for each card and the columns where these cards are hosted, then the good user experience that provides smooth and responsive drag and drop and finally the customization and flexibility to build your cards to your liking and manage your activities.",
+        "Task Board web application brings a series of technical and design challenges that help you improve your skills as a frontend developer. ",
+        "One of the challenges is the management of complex states for each card and the columns where these cards are hosted, followed by a good user experience that provides smooth and responsive drag and drop, and finally the customization and flexibility to build your cards to your liking and manage your activities.",
       ],
       languages: [
         "NextJs",
@@ -210,9 +258,14 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
         "TypeScript",
         "Radix UI",
         "Responsive Design",
+        "Vercel",
       ],
       cover: "../../images/task-board/task-board.jpg",
-      image: "../../public/images/task-board/taskBoard-photo.jpg",
+
+      category: "Web App",
+      date: "05/2023",
+      name: "Task Board",
+      website: "task-board-three.vercel.app/",
 
       photos: [
         "../../images/task-board/taksBoardPhoto1.jpg",
@@ -232,9 +285,12 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
         "Every Pokémon Trainer has their special companion, their favorite Pokémon that has accompanied them on countless adventures. That's why we've created an exceptional tool that allows you to find your favorite Pokémon and explore all its characteristics and evolutions in detail.",
         "That's why we've incorporated a special feature that lets you find your favorite Pokémon and listen to all of its characteristics in detail. Whether you prefer Pikachu, Charizard, Eevee, or any other Pokémon, you'll be able to find your favorite Pokémon.",
       ],
-      languages: ["Vanilla Javascript", "HTML", "CSS"],
+      category: "Web App",
+      date: "01/2023",
+      name: "Pokedex",
+      website: "brayancclindo.github.io/pokedex/",
+      languages: ["Vanilla Javascript", "HTML", "CSS", "APIs RESTful"],
       cover: "../../images/pokedex/pokedex.jpg",
-      image: "../../images/pokedex/pokedexPortrait.jpg",
       photos: [
         "../../images/pokedex/pokedexPhoto1.jpg",
         "../../images/pokedex/pokedexPhoto2.jpg",
@@ -250,12 +306,23 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       slogan:
         "A GitHub clone that gives you the ability to browse profiles and repositories",
       description: [
-        "At our development platform, we know that every developer has unique needs when managing and collaborating on source code projects. That's why we've created a comprehensive and versatile filtering feature that allows you to navigate and find your repositories and projects efficiently.",
+        "At our development platform, we know that every developer has unique needs when managing and collaborating on source code projects.",
+        "That's why we've created a comprehensive and versatile filtering feature that allows you to navigate and find your repositories and projects efficiently.",
         "With our filtering options, customize your experience, quickly find any repository or user using our powerful search bar.",
       ],
-      languages: ["HTML", "Styled-Components", "React.Js", "Radix UI"],
+      category: "Web Development",
+      date: "06/2023",
+      name: "GitHub Clone",
+      website: "github-clone-nine-neon.vercel.app/",
+      languages: [
+        "HTML",
+        "Styled-Components",
+        "React.Js",
+        "Radix UI",
+        "APIs RESTful",
+        "Vercel",
+      ],
       cover: "../../images/github/github-clone.jpg",
-      image: "../../images/githubClone-photo.jpg",
 
       photos: [
         "../../images/github/githubPhoto1.jpg",
@@ -275,9 +342,18 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
         "We understand that every gamer has unique tastes and preferences. That's why we have developed a comprehensive and versatile filtering feature that allows you to efficiently browse and find your ideal games. With our filtering options, customize your gaming experience according to your desires.",
         "Filter video games by genre, whether action, adventure, role-playing, strategy, sports, simulation, and many more. Find games that suit your style and preferences.",
       ],
-      languages: ["Vanilla Javascript", "HTML", "CSS"],
+      category: "Web Development",
+      date: "07/2023",
+      name: "Game Store",
+      website: "tl-videogames.netlify.app/",
+      languages: [
+        "Vanilla Javascript",
+        "HTML",
+        "CSS",
+        "APIs RESTful",
+        "Netlify",
+      ],
       cover: "../../images/game-app/gameApp.jpg",
-      image: "../../images/gameStore-photo.jpg",
       photos: [
         "../../images/game-app/gameAppPhoto1.jpg",
         "../../images/game-app/gameAppPhoto2.jpg",
@@ -285,7 +361,7 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
         "../../images/game-app/gameAppPhoto4.jpg",
       ],
       github: "https://github.com/frontendUI-labs/invoices-app",
-      web: "https://invoices-ui.netlify.app/",
+      web: "https://tl-videogames.netlify.app/",
     },
   ];
 
@@ -312,9 +388,54 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       certificaded: "Platzi",
     },
   ];
+  const techStackImg = [
+    {
+      logo: "../../images/svg/html.svg",
+      title: "HTML",
+    },
+    {
+      logo: "./../images/svg/css.svg",
+      title: "CSS",
+    },
+    {
+      logo: "../../images/svg/javascript.svg",
+      title: "JAVASCRIPT",
+    },
+    {
+      logo: "../../images/svg/react.svg",
+      title: "REACT",
+    },
+    {
+      logo: "../../images/svg/nextJs.svg",
+      title: "NEXT.JS",
+    },
+    {
+      logo: "../../images/svg/tailwind.svg",
+      title: "TAILWIND",
+    },
+    {
+      logo: "../../vite.svg",
+      title: "VITE",
+    },
+    {
+      logo: "../../images/svg/git.svg",
+      title: "GIT",
+    },
+    {
+      logo: "../../images/svg/figma.svg",
+      title: "FIGMA",
+    },
+  ];
   return (
     <PortfolioContext.Provider
-      value={{ education, experience, skills, projectNames, certifications }}
+      value={{
+        education,
+        experience,
+        skills,
+        projectNames,
+        certifications,
+        techStackImg,
+      }}
     >
       {children}
     </PortfolioContext.Provider>

@@ -1,9 +1,9 @@
-import { Github, Linkedin } from "lucide-react";
+import { FileDown, Github, Linkedin, Mail } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 
 // import { aboutMe } from "../types/about";
 import Layout from "../ui/layout";
-import { CardComponent } from "./Home";
+import { CardComponent, DescriptionTechStack } from "./Home";
 import { useProtfolioContext } from "../appContext/portfolio-context";
 import { Link } from "react-router-dom";
 
@@ -18,15 +18,22 @@ function ExperienceCard({ title }: { title: string }) {
           ? experience?.map((exp, id) => (
               <div key={id} className="flex flex-col gap-4 ">
                 <span className="text-gray-200 font-medium">{exp.year}</span>
-                <h4 className="text-xl text-purple font-semibold">{exp.job}</h4>
-                <p className="text-gray-200 uppercase">{exp.detail}</p>
+                <h4 className="text-xl text-purple font-semibold">
+                  {exp.job} - {exp.detail}
+                </h4>
+                <ul className="list-disc pl-8">
+                  {exp.description.map((duties, index) => (
+                    <li key={index}>{duties}</li>
+                  ))}
+                </ul>
               </div>
             ))
           : education?.map((edu, id) => (
               <div key={id} className="flex flex-col gap-4 ">
-                <span className="text-gray-200 font-medium">{edu.year}</span>
+                <span className="text-gray-200 font-medium">
+                  {edu.detail} - {edu.year}
+                </span>
                 <h4 className="text-xl text-purple font-semibold">{edu.job}</h4>
-                <p className="text-gray-200 uppercase">{edu.detail}</p>
               </div>
             ))}
       </div>
@@ -35,6 +42,8 @@ function ExperienceCard({ title }: { title: string }) {
 }
 
 function About() {
+  const { techStackImg } = useProtfolioContext();
+
   return (
     <Layout>
       <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[1fr,2fr]")}>
@@ -48,11 +57,11 @@ function About() {
         </div>
         <div className="flex flex-col gap-8 justify-between  ">
           <h2 className="text-4xl font-semibold text-center lg:text-7xl">
-            SELF-SUMMARY
+            ABOUT ME
           </h2>
           <div className=" p-8 rounded-xl bg-white">
             <h1 className="mb-4 text-3xl ">Brayan Ccari Lindo</h1>
-            <p className="text-lg text-gray-200">
+            <p>
               Passionate frontend developer with experience creating attractive
               and functional web interfaces. With a solid knowledge of modern
               web technologies such as HTML, CSS and JavaScript. Always
@@ -69,7 +78,7 @@ function About() {
         <ExperienceCard title="EXPRIENCE" />
         <ExperienceCard title="EDUCATION" />
       </div>
-      <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[1fr,2fr,1fr]")}>
+      <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[1fr,2fr]")}>
         <CardComponent
           isClickable={false}
           title="Get in touch"
@@ -90,8 +99,26 @@ function About() {
             >
               <Linkedin size={40} strokeWidth={1} />{" "}
             </a>
+            <a
+              href="mailto:brayancclindo@gmail.com"
+              className="bg-white p-4 rounded-full text-purple hover:bg-purple hover:text-white"
+            >
+              <Mail size={40} strokeWidth={1} />{" "}
+            </a>
           </div>
         </CardComponent>
+        <CardComponent isClickable={false} title="Tech Stack" subtitle="Skills">
+          <div
+            className={twMerge("flex gap-4 text-purple flex-wrap ", "md:gap-8")}
+          >
+            {techStackImg.map((item) => (
+              <DescriptionTechStack key={item.title} image={item} />
+            ))}
+          </div>
+        </CardComponent>
+      </div>
+
+      <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[2fr,1fr,1fr]")}>
         <Link
           className="flex justify-between bg-white p-8 items-end rounded-2xl"
           to={"/contact"}
@@ -102,19 +129,28 @@ function About() {
             </h3>
           </div>
         </Link>
-        <Link to={"/credentials"}>
-          <CardComponent
-            isClickable={true}
-            title="Credentials"
-            subtitle="MORE ABOUT ME"
-          >
+        <Link to={"/my-projects"}>
+          <CardComponent isClickable={true} title="Projects" subtitle="My">
             <img
-              className="object-cover"
-              src="../../public/images/credentialsPhoto.jpg"
+              className="object-cover w-[300px]"
+              src="../../images/credentialsPhoto.jpg"
               alt=""
             />
           </CardComponent>
         </Link>
+        {/* <CardComponent isClickable={true} title="My CV" subtitle="Drownload">
+          <FileDown size={100} strokeWidth={1} />
+        </CardComponent> */}
+        <div className="flex items-center justify-center cursor-pointer">
+          <a
+            href="../../files/BrayanCcari.pdf"
+            download={"BrayanCcari.pdf"}
+            className="bg-gray-400 text-white rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full flex items-center justify-center gap-8 hover:scale-105 duration-100 text-center"
+          >
+            <FileDown size={50} strokeWidth={1} />
+            Download CV
+          </a>
+        </div>
       </div>
     </Layout>
   );

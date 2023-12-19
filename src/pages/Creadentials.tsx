@@ -154,6 +154,7 @@ function Creadentials() {
                 Passionate frontend developer with experience creating
                 attractive and functional web interfaces. With a solid knowledge
                 of modern web technologies such as HTML, CSS and JavaScript.
+                <br />
                 Always interested in learning new technologies and approaches to
                 keep myself updated in the constantly evolving world of frontend
                 development.

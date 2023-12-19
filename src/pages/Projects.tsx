@@ -17,7 +17,7 @@ function WorkCard({ project }: { project: Project }) {
         onClick={() => {
           window.scrollTo(0, 0);
         }}
-        to={`/my-work/${project?.slug}`}
+        to={`/my-projects/${project?.slug}`}
         className="w-full h-4/5 absolute top-0 bg-transparent"
       ></Link>
       <div className="flex items-center justify-center">
@@ -34,7 +34,7 @@ function WorkCard({ project }: { project: Project }) {
           <h4 className="text-2xl text-black font-semibold">
             <Link
               className="hover:text-purple"
-              to={`/my-work/${project?.slug}`}
+              to={`/my-projects/${project?.slug}`}
             >
               {project?.title}
             </Link>

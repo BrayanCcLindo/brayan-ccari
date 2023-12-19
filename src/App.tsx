@@ -28,10 +28,10 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/about-me" element={<About />} />
-            <Route path="/my-work" element={<Proyects />} />
+            <Route path="/my-projects" element={<Proyects />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/credentials" element={<Creadentials />} />
-            <Route path="/my-work/:projectName" element={<Project />} />
+            <Route path="/my-projects/:projectName" element={<Project />} />
 
             {/* <Route path="/filter" element={<FilterPage />} />
             <Route path="/details/:bookSlug" element={<DetailsPage />} /> */}

@@ -1,8 +1,12 @@
-import { ArrowRight, ArrowUpRight, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, FileDown, Github, Linkedin, Mail } from "lucide-react";
 import Layout from "../ui/layout";
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
+import {
+  TechStackType,
+  useProtfolioContext,
+} from "../appContext/portfolio-context";
 
 export const CardComponent = ({
   children,
@@ -38,6 +42,21 @@ export const CardComponent = ({
   );
 };
 
+export const DescriptionTechStack = ({ image }: { image: TechStackType }) => {
+  return (
+    <div className="flex flex-col items-center justify-center gap-4 relative group/item">
+      <img
+        className="duration-100 hover:scale-110 cursor-pointer"
+        src={image.logo}
+        alt={image.title}
+      />
+      <span className="text-center text-xs bg-gray-100 font-bold p-2 rounded-lg absolute top-[65px] z-20  group/edit invisible group-hover/item:visible ">
+        {image.title}
+      </span>
+    </div>
+  );
+};
+
 const DetailedInfo = ({
   title,
   description,
@@ -54,16 +73,17 @@ const DetailedInfo = ({
 };
 
 function Home() {
+  const { techStackImg } = useProtfolioContext();
+
   return (
     <Layout>
       <div className="flex flex-col gap-8 p-4  ">
         <div className=" flex flex-col justify-between gap-8  md:flex-row">
-          <Link
-            to={"/credentials"}
+          <div
             className={twMerge(
               "flex flex-col gap-8 p-8 rounded-xl bg-white flex-1  items-center group relative duration-500",
-              "lg:flex-row gap-14",
-              "hover:scale-105 duration-500"
+              "lg:flex-row gap-14"
+              // "hover:scale-105 duration-500"
             )}
           >
             <img
@@ -83,15 +103,18 @@ function Home() {
                 transforming concepts into attractive and highly usable
                 interfaces.
               </p>
-
-              <Link
-                to={"/credentials"}
-                className="text-gray-100 absolute right-[10px] top-[10px] p-4 rounded-full hidden group-hover:flex hover:bg-gray-300"
-              >
-                <ArrowUpRight />
-              </Link>
+              <div className="flex grow-0 justify-center">
+                <a
+                  href="../../files/BrayanCcari.pdf"
+                  download={"BrayanCcari.pdf"}
+                  className="bg-gray-400 text-white rounded-2xl hover:bg-purple  font-semibold py-2 px-3  flex items-center justify-center gap-2 hover:scale-105 duration-100 text-center grow-0"
+                >
+                  <FileDown size={20} strokeWidth={1} />
+                  Download CV
+                </a>
+              </div>
             </div>
-          </Link>
+          </div>
           <div className="flex flex-col gap-4 justify-evenly flex-1">
             <div className="marquee-container  rounded-full bg-white p-2">
               <p className="marquee-text font-basic text-gray-200">
@@ -105,8 +128,8 @@ function Home() {
               <Link to={"/credentials"}>
                 <CardComponent
                   isClickable={true}
-                  title="Credentials"
-                  subtitle="more about me"
+                  title="About me"
+                  subtitle="more"
                 >
                   <img
                     className="object-cover"
@@ -115,11 +138,11 @@ function Home() {
                   />
                 </CardComponent>
               </Link>
-              <Link to={"/my-work"}>
+              <Link to={"/my-projects"}>
                 <CardComponent
                   isClickable={true}
                   title="Projects"
-                  subtitle="showcase"
+                  subtitle="my"
                 >
                   <img
                     className="object-cover"
@@ -137,11 +160,7 @@ function Home() {
             "md:grid-cols-[1fr_2fr]"
           )}
         >
-          <CardComponent
-            isClickable={false}
-            title="Get in touch"
-            subtitle="STAY WITH ME"
-          >
+          <CardComponent isClickable={false} title="Get in touch">
             <div className="flex gap-8 items-center bg-[#FBFBFC] p-2 w-full justify-evenly rounded-3xl">
               <a
                 href="mailto:brayancclindo@gmail.com"
@@ -156,27 +175,25 @@ function Home() {
               >
                 <Linkedin size={40} strokeWidth={1} />{" "}
               </a>
+              <a
+                href="https://github.com/BrayanCcLindo"
+                target="_blank"
+                className="bg-white p-4 rounded-full text-purple hover:bg-purple hover:text-white"
+              >
+                <Github size={40} strokeWidth={1} />
+              </a>
             </div>
           </CardComponent>
-          <CardComponent
-            isClickable={false}
-            title="Tech Skills"
-            subtitle="blog"
-          >
+          <CardComponent isClickable={false} title="Tech Stack">
             <div
               className={twMerge(
                 "flex gap-4 text-purple flex-wrap ",
                 "md:gap-8"
               )}
             >
-              <img src="../../images/svg/html.svg" alt="" />
-              <img src="../../images/svg/css.svg" alt="" />
-              <img src="../../images/svg/javascript.svg" alt="" />
-              <img src="../../images/svg/react.svg" alt="" />
-              <img src="../../images/svg/tailwind.svg" alt="" />
-              <img src="../../vite.svg" alt="" />
-              <img src="../../images/svg/git.svg" alt="" />
-              <img src="../../images/svg/figma.svg" alt="" />
+              {techStackImg.map((item) => (
+                <DescriptionTechStack key={item.title} image={item} />
+              ))}
             </div>
           </CardComponent>
         </div>
