@@ -125,7 +125,7 @@ function Home() {
               </p>
             </div>
             <div className={twMerge("grid  gap-8", "lg:grid-cols-[1fr_1fr]")}>
-              <Link to={"/credentials"}>
+              <Link to={"/about-me"}>
                 <CardComponent
                   isClickable={true}
                   title="About me"

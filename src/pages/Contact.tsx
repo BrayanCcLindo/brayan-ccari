@@ -74,7 +74,7 @@ function Contact() {
           </CardContact>
 
           <CardContact title="LOCATION" icon={<MapPin />}>
-            <p className="">Huancayo - Junin, Perú</p>
+            <p> Perú</p>
           </CardContact>
           <h2 className="font-semibold">SOCIAL INFO</h2>
           <div className="flex gap-8 items-center ">
