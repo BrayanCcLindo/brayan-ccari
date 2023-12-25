@@ -12,7 +12,11 @@ function Footer() {
       <Layout>
         <div className="flex flex-col gap-4 items-center justify-center p-[6rem]">
           <Link to={"/"}>
-            <img width={120} src="../../images/logoPorfolio.png" alt="" />
+            <img
+              width={120}
+              src="../../images/logoPorfolio.png"
+              alt="brayan-ccari-logo"
+            />
           </Link>
           <ul className="flex gap-8 items-center text-gray-500 font-medium text-lg">
             <li>

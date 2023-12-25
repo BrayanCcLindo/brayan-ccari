@@ -31,18 +31,18 @@ function Project() {
               "h-[314px] object-cover object-center rounded-xl  w-full object-fit p-8 bg-white md:h-[628px]"
             )}
             src={oficialProyect.photos[1]}
-            alt=""
+            alt="proyect-main-picture"
           />
           <div className="flex flex-col justify-between gap-4 h-[628px]">
             <img
               className=" object-cover p-8 bg-white rounded-xl h-[314px]    "
               src={oficialProyect.photos[0]}
-              alt=""
+              alt="proyect-main-picture"
             />
             <img
               className=" h-[314px]  object-cover p-8 bg-white rounded-xl"
               src={oficialProyect.photos[2]}
-              alt=""
+              alt="proyect-main-picture"
             />
           </div>
         </div>

@@ -52,7 +52,7 @@ function About() {
             width={300}
             className="object-cover"
             src="../../images/profilePhoto.jpg"
-            alt=""
+            alt="brayan-ccari"
           />
         </div>
         <div className="flex flex-col gap-8 justify-between  ">
@@ -134,7 +134,7 @@ function About() {
             <img
               className="object-cover w-[300px]"
               src="../../images/credentialsPhoto.jpg"
-              alt=""
+              alt="brayan-ccari-projects"
             />
           </CardComponent>
         </Link>

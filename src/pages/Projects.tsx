@@ -24,7 +24,7 @@ function WorkCard({ project }: { project: Project }) {
         <img
           className="rounded-2xl mb-4 object-cover "
           src={project?.cover}
-          alt=""
+          alt="project-cover"
         />
       </div>
 

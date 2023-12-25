@@ -31,7 +31,7 @@ function Header() {
             className="relative z-10"
             width={120}
             src="../../images/logoPorfolio.png"
-            alt=""
+            alt="brayan-ccari-logo"
           />
         </Link>
 

@@ -89,7 +89,7 @@ function Home() {
             <img
               className="max-w-[200px] md:w-[300px] "
               src="../../images/profilePhoto.jpg"
-              alt=""
+              alt="brayan-ccari"
             />
             <div className="flex flex-col gap-4 justify-between  ">
               <span className="text-gray-200 text-lg text-center">
@@ -134,7 +134,7 @@ function Home() {
                   <img
                     className="object-cover"
                     src="../../images/credentialsPhoto.jpg"
-                    alt=""
+                    alt="about-brayan-ccari"
                   />
                 </CardComponent>
               </Link>
@@ -147,7 +147,7 @@ function Home() {
                   <img
                     className="object-cover"
                     src="../../images/projectsPhoto.jpg"
-                    alt=""
+                    alt="brayan-projects"
                   />
                 </CardComponent>
               </Link>
