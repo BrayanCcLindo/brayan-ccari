@@ -63,20 +63,20 @@ function Contact() {
     <Layout>
       <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[1fr,2fr]")}>
         <div className="flex gap-8 flex-col justify-start">
-          <h2 className="font-semibold">CONTACT INFO</h2>
+          <h2 className="font-semibold text-black">CONTACT INFO</h2>
           <CardContact title="MAIL" icon={<MailCheck />}>
             <a
               href="mailto:brayancclindo@gmail.com"
-              className="hover:text-purple"
+              className="text-black hover:text-purple"
             >
               brayancclindo@gmail.com
             </a>
           </CardContact>
 
           <CardContact title="LOCATION" icon={<MapPin />}>
-            <p> Perú</p>
+            <p className="text-black"> Perú</p>
           </CardContact>
-          <h2 className="font-semibold">SOCIAL INFO</h2>
+          <h2 className="font-semibold text-black">SOCIAL INFO</h2>
           <div className="flex gap-8 items-center ">
             <a
               className={twMerge(
@@ -111,7 +111,7 @@ function Contact() {
           </div>
         </div>
         <div className="bg-white p-4 rounded-xl flex flex-col gap-8 justify-center">
-          <h3 className="text-4xl">
+          <h3 className="text-4xl text-black">
             Let's work <span className="text-purple">together</span>
           </h3>
           <form

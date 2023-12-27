@@ -10,7 +10,7 @@ function ButtonComponent({
   return (
     <button
       onClick={onClick}
-      className="bg-gray-400 text-white rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full hover:scale-105 duration-100 text-center "
+      className="bg-gray-400 text-gray-50 rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full hover:scale-105 duration-100 text-center "
     >
       {children}
     </button>

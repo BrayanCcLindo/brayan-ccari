@@ -35,7 +35,7 @@ export const CardComponent = ({
       </div>
       {isClickable && (
         <div className="text-gray-200 absolute right-0 bottom-0 p-2 rounded-full hidden  group-hover:flex ">
-          <ArrowRight size={25} strokeWidth={1} />
+          <ArrowRight size={25} />
         </div>
       )}
     </div>
@@ -65,7 +65,7 @@ const DetailedInfo = ({
   description: string;
 }) => {
   return (
-    <div className="p-8 flex flex-col items-center  gap-4 justify-center bg-[#FBFBFC] rounded-3xl">
+    <div className="p-8 flex flex-col items-center  gap-4 justify-center bg-gray-600 rounded-3xl">
       <span className="text-3xl font-medium text-purple">{title}</span>
       <p className="text-xl text-gray-200 text-center ">{description}</p>
     </div>
@@ -77,7 +77,7 @@ function Home() {
 
   return (
     <Layout>
-      <div className="flex flex-col gap-8 p-4  ">
+      <div className="flex flex-col gap-8 p-4">
         <div className=" flex flex-col justify-between gap-8  md:flex-row">
           <div
             className={twMerge(
@@ -87,7 +87,7 @@ function Home() {
             )}
           >
             <img
-              className="max-w-[200px] md:w-[300px] "
+              className="max-w-[200px] md:w-[300px] rounded-full"
               src="../../images/profilePhoto.jpg"
               alt="brayan-ccari"
             />
@@ -107,15 +107,15 @@ function Home() {
                 <a
                   href="../../files/BrayanCcari.pdf"
                   download={"BrayanCcari.pdf"}
-                  className="bg-gray-400 text-white rounded-2xl hover:bg-purple  font-semibold py-2 px-3  flex items-center justify-center gap-2 hover:scale-105 duration-100 text-center grow-0"
+                  className="bg-gray-400 text-gray-50 rounded-2xl hover:bg-purple  font-semibold py-2 px-3  flex items-center justify-center gap-2 hover:scale-105 duration-100 text-center grow-0"
                 >
-                  <FileDown size={20} strokeWidth={1} />
+                  <FileDown size={20} />
                   Download CV
                 </a>
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4 justify-evenly flex-1">
+          <div className="flex flex-col gap-4 flex-1">
             <div className="marquee-container  rounded-full bg-white p-2">
               <p className="marquee-text font-basic text-gray-200">
                 Transforming ideas into .
@@ -132,8 +132,8 @@ function Home() {
                   subtitle="more"
                 >
                   <img
-                    className="object-cover"
-                    src="../../images/credentialsPhoto.jpg"
+                    className="object-cover w-[58%]"
+                    src="../../images/aboutMePhoto.png"
                     alt="about-brayan-ccari"
                   />
                 </CardComponent>
@@ -146,7 +146,7 @@ function Home() {
                 >
                   <img
                     className="object-cover"
-                    src="../../images/projectsPhoto.jpg"
+                    src="../../images/homeprojectPhoto.png"
                     alt="brayan-projects"
                   />
                 </CardComponent>
@@ -161,7 +161,7 @@ function Home() {
           )}
         >
           <CardComponent isClickable={false} title="Get in touch">
-            <div className="flex gap-8 items-center bg-[#FBFBFC] p-2 w-full justify-evenly rounded-3xl">
+            <div className="flex gap-8 items-center bg-gray-600 p-2 w-full justify-evenly rounded-3xl">
               <a
                 href="mailto:brayancclindo@gmail.com"
                 className="bg-white p-4 rounded-full text-purple hover:bg-purple hover:text-white"
@@ -213,7 +213,7 @@ function Home() {
             to={"/contact"}
           >
             <div className="">
-              <h3 className="text-4xl ">
+              <h3 className="text-4xl text-black ">
                 Let's work <span className="text-purple">together</span>
               </h3>
             </div>

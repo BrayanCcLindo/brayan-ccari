@@ -20,7 +20,7 @@ function Project() {
         <p className="text-gray-200 uppercase mb-4 p-4">
           {oficialProyect.slogan}
         </p>
-        <h1 className="text-3xl md:text-7xl font-semibold mb-8 p-4">
+        <h1 className="text-3xl text-black md:text-7xl font-semibold mb-8 p-4">
           {oficialProyect.title}
         </h1>
         <div
@@ -51,9 +51,9 @@ function Project() {
           <div className="flex flex-col gap-8">
             <h2 className="text-2xl text-black font-semibold">DESCRIPTION:</h2>
             {oficialProyect.description.map((description) => (
-              <p className="text-xl"> {description}</p>
+              <p className="text-xl text-black"> {description}</p>
             ))}
-            <div className="bg-[#FBFBFC] rounded-xl py-8 flex justify-center  gap-8 flex-wrap">
+            <div className="bg-gray-600 rounded-xl py-8 flex justify-center  gap-8 flex-wrap">
               <h3 className="text-2xl text-black font-semibold">
                 Developed by:
               </h3>
@@ -67,10 +67,8 @@ function Project() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-8">
-            <h2 className="text-2xl text-black  font-semibold">
-              PROJECT INFO:
-            </h2>
+          <div className="flex flex-col gap-8 text-black">
+            <h2 className="text-2xl font-semibold">PROJECT INFO:</h2>
             <p className="text-xl">
               Category:{" "}
               <span className="font-bold ">{oficialProyect.category}</span>

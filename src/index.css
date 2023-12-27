@@ -3,8 +3,20 @@
 @tailwind utilities;
 
 body {
-  background: #f7f9fc;
+  background: var(--main-bg);
+
   font-family: "Cairo", sans-serif;
+}
+/* body[data-theme="light"] {
+} */
+body[data-theme="dark"] {
+  --main-bg: var(--dark-bg);
+  --white: var(--dark-cards);
+  --black: #ffffff;
+  --button-bg: var(--purple);
+  --icons-bg: #304973;
+  --menu: #e5e5e5;
+  --text: #e5e5e5;
 }
 
 .marquee-container {
@@ -36,6 +48,11 @@ body {
   --button-bg: #323232;
   --subtitle: #d4d4d4;
   --text: #a4a5a7;
+  --dark-bg: #182135;
+  --dark-cards: #253452;
+  --icons-bg: #fbfbfc;
+  --button-text: #fefeff;
+  /* color-scheme: light dark; */
   scroll-behavior: smooth;
 
   /* --primary-soft: #f0eeff;
@@ -62,7 +79,7 @@ body {
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 

@@ -46,7 +46,7 @@ function WorkCard({ project }: { project: Project }) {
           href={project?.github}
           target="_blank"
           className={twMerge(
-            "bg-gray-400 whitespace-nowrap	 flex items-center gap-1 justify-center text-white rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full",
+            "bg-gray-400 whitespace-nowrap flex items-center gap-1 justify-center text-gray-50 rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full",
             "hover:scale-105 duration-100 text-center "
           )}
         >
@@ -57,7 +57,7 @@ function WorkCard({ project }: { project: Project }) {
           href={project?.web}
           target="_blank"
           className={twMerge(
-            "bg-gray-400 whitespace-nowrap	 flex items-center gap-1 justify-center text-white rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full",
+            "bg-gray-400 whitespace-nowrap	 flex items-center gap-1 justify-center text-gray-50 rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full",
             "hover:scale-105 duration-100 text-center "
           )}
         >
@@ -89,7 +89,7 @@ function Proyects() {
         <div className="flex flex-col gap-8 justify-start items-center">
           <h2
             className={twMerge(
-              "text-4xl text-center font-semibold",
+              "text-4xl text-center font-semibold text-black",
               "md:hidden text:7xl mb-8"
             )}
           >
@@ -102,7 +102,7 @@ function Proyects() {
         <div className="">
           <h2
             className={twMerge(
-              "hidden text-3xl text-center font-semibold",
+              "hidden text-3xl text-center font-semibold text-black",
               "md:flex text-7xl mb-8"
             )}
           >

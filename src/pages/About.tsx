@@ -23,7 +23,9 @@ function ExperienceCard({ title }: { title: string }) {
                 </h4>
                 <ul className="list-disc pl-8">
                   {exp.description.map((duties, index) => (
-                    <li key={index}>{duties}</li>
+                    <li className="text-black" key={index}>
+                      {duties}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -50,16 +52,16 @@ function About() {
         <div className="flex items-center justify-center p-8 rounded-xl bg-white ">
           <img
             width={300}
-            className="object-cover"
+            className="object-cover rounded-full"
             src="../../images/profilePhoto.jpg"
             alt="brayan-ccari"
           />
         </div>
         <div className="flex flex-col gap-8 justify-between  ">
-          <h2 className="text-4xl font-semibold text-center lg:text-7xl">
+          <h2 className="text-4xl text-black font-semibold text-center lg:text-7xl">
             ABOUT ME
           </h2>
-          <div className=" p-8 rounded-xl bg-white">
+          <div className=" p-8 rounded-xl bg-white text-black ">
             <h1 className="mb-4 text-3xl ">Brayan Ccari Lindo</h1>
             <p>
               Passionate frontend developer with experience creating attractive
@@ -84,7 +86,7 @@ function About() {
           title="Get in touch"
           subtitle="CHAT WITH ME"
         >
-          <div className="flex gap-8 items-center bg-[#FBFBFC] p-2 w-full justify-evenly rounded-3xl">
+          <div className="flex gap-8 items-center bg-gray-600 p-2 w-full justify-evenly rounded-3xl">
             <a
               href="https://github.com/BrayanCcLindo"
               target="_blank"
@@ -124,7 +126,7 @@ function About() {
           to={"/contact"}
         >
           <div className="">
-            <h3 className="text-4xl ">
+            <h3 className="text-4xl text-black">
               Let's work <span className="text-purple">together</span>
             </h3>
           </div>
@@ -138,16 +140,14 @@ function About() {
             />
           </CardComponent>
         </Link>
-        {/* <CardComponent isClickable={true} title="My CV" subtitle="Drownload">
-          <FileDown size={100} strokeWidth={1} />
-        </CardComponent> */}
+
         <div className="flex items-center justify-center cursor-pointer">
           <a
             href="../../files/BrayanCcari.pdf"
             download={"BrayanCcari.pdf"}
-            className="bg-gray-400 text-white rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full flex items-center justify-center gap-8 hover:scale-105 duration-100 text-center"
+            className="bg-gray-400 text-gray-50 rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full flex items-center justify-center gap-8 hover:scale-105 duration-100 text-center"
           >
-            <FileDown size={50} strokeWidth={1} />
+            <FileDown size={50} />
             Download CV
           </a>
         </div>
