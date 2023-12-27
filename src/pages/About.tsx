@@ -135,7 +135,7 @@ function About() {
           <CardComponent isClickable={true} title="Projects" subtitle="My">
             <img
               className="object-cover w-[300px]"
-              src="../../images/credentialsPhoto.jpg"
+              src="../../public/images/projectPhoto.png"
               alt="brayan-ccari-projects"
             />
           </CardComponent>

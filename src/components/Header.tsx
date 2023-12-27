@@ -101,7 +101,7 @@ function Header() {
                   </a>
                   <button
                     onClick={handleTheme}
-                    className={twMerge(" text-purple")}
+                    className={twMerge(" text-purple cursor-pointer ")}
                   >
                     {nextMode === "dark" ? <Moon /> : <Sun />}
                   </button>
@@ -165,12 +165,16 @@ function Header() {
           <button
             onClick={handleTheme}
             className={twMerge(
-              "bg-white p-4 rounded-full text-purple hover:bg-purple",
-              " hover:text-white"
+              "bg-white p-4 rounded-full text-purple  hover:bg-purple",
+              `hover:text-white rotate-0  ${
+                nextMode === "dark"
+                  ? "rotate-[360deg] duration-700"
+                  : "rotate:180 duration-700"
+              }  `
             )}
           >
             {nextMode === "dark" ? (
-              <Moon strokeWidth={1} />
+              <Moon strokeWidth={1} className=" " />
             ) : (
               <Sun strokeWidth={1} />
             )}
