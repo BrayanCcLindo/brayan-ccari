@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import Layout from "../ui/layout";
 import ButtonComponent from "./button-component";
 import { ChevronUp } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-function Footer() {
+function Footer({ nextMode }: { nextMode: string }) {
   function handleScroll() {
     window.scrollTo(0, 0);
   }
+  const { t } = useTranslation("global");
+
   return (
     <>
       <Layout>
@@ -14,29 +17,33 @@ function Footer() {
           <Link to={"/"}>
             <img
               width={120}
-              src="../../images/logoPorfolio.png"
+              src={
+                nextMode === "dark"
+                  ? "../../images/azul.png"
+                  : "../../images/blanco.png"
+              }
               alt="brayan-ccari-logo"
             />
           </Link>
           <ul className="flex gap-8 items-center text-gray-500 font-medium text-lg">
             <li>
               <Link onClick={handleScroll} to="/">
-                Home
+                {t("menu.home")}
               </Link>
             </li>
             <li>
               <Link onClick={handleScroll} to="/about-me">
-                About
+                {t("menu.about")}
               </Link>
             </li>
             <li>
               <Link onClick={handleScroll} to="/my-projects">
-                Projects
+                {t("menu.projects")}
               </Link>
             </li>
             <li>
               <Link onClick={handleScroll} to="/contact">
-                Contact
+                {t("menu.contact")}
               </Link>
             </li>
           </ul>

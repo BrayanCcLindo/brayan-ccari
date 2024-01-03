@@ -7,13 +7,21 @@ import { PortfolioProvider } from "./appContext/portfolio-context";
 import Proyects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Project from "./pages/ProjectName";
+import { useEffect, useState } from "react";
 
 function MainLayout() {
+  const [mode, setMode] = useState("dark");
+
+  const nextMode = mode === "light" ? "dark" : "light";
+  useEffect(() => {
+    document.body.dataset.theme = mode;
+  }, [mode]);
+
   return (
     <>
-      <Header />
+      <Header setMode={setMode} nextMode={nextMode} />
       <Outlet />
-      <Footer />
+      <Footer nextMode={nextMode} />
     </>
   );
 }

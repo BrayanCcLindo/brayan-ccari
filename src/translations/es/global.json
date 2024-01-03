@@ -1,0 +1,125 @@
+{
+  "menu": {
+    "home": "Inicio",
+    "about": "Perfil",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+
+  "home": {
+    "name": "¡Hola! Soy Brayan",
+    "description": "Apasionado por crear experiencias digitales cautivadoras, transformando conceptos en interfaces atractivas y altamente utilizables.",
+    "sliderText": "Transformando ideas en código y código en soluciones.",
+    "aboutMeTitle": "Sobre mí",
+    "aboutMeSubTitle": "Más",
+    "projectsTitle": "Proyectos",
+    "projectsSubTitle": "Mis",
+    "contact": "Ponte en contacto",
+    "TechStack": "Pila Tecnológica",
+    "experience": "Años de experiencia",
+    "totalProjects": "Proyectos totales",
+    "responsiveApps": "Aplicaciones responsivas",
+    "worktogether": "Trabajemos",
+    "together": "Juntos",
+    "downloadButton": "Descargar CV"
+  },
+  "about": {
+    "title": "SOBRE MÍ",
+    "description": "Desarrollador frontend apasionado con experiencia en la creación de interfaces web atractivas y funcionales. Con un sólido conocimiento de tecnologías web modernas como HTML, CSS y JavaScript. Siempre interesado en aprender nuevas tecnologías y enfoques para mantenerme actualizado en el mundo en constante evolución del desarrollo frontend.",
+    "experience": "EXPERIENCIA",
+    "education": "EDUCACIÓN"
+  },
+  "experience1": {
+    "year": "12/2021 - 04/2023",
+    "job": "Desarrollador Frontend - WordPress",
+    "detail": "Remoto",
+
+    "description1": "Construí páginas de destino y sitios web para agencias de turismo desde el diseño hasta la producción.",
+    "description2": "Implementé estrategias de crecimiento de ventas y desarrollo de productos utilizando React.",
+    "description3": "Realicé optimización SEO mejorando la investigación de palabras clave y el rendimiento de muchos sitios web.",
+    "description4": "Contribuí a la integración de Firebase, mejorando significativamente la calidad y velocidad del desarrollo de páginas web."
+  },
+  "experience2": {
+    "year": "04/2023 - Presente",
+    "job": "Desarrollador Frontend, Freelance",
+    "detail": "Remoto",
+
+    "description1": "Construí un sitio accesible y funcional para una librería electrónica.",
+    "description2": "Trabajé en frontend con React, TypeScript, Tailwind y React-i18next.",
+    "description3": "Documenté el uso de APIs de rendimiento en React, lo que aumentó la calidad del código.",
+    "description4": "Integré múltiples funcionalidades de filtrado para mejorar la experiencia del usuario."
+  },
+  "projects": {
+    "title": "TODOS LOS PROYECTOS",
+    "website": "Sitio web",
+    "description": "DESCRIPCIÓN:",
+    "projInfo": "INFORMACIÓN DEL PROYECTO:",
+    "category": "Categoría",
+    "date": "Fecha",
+    "name": "Nombre",
+    "web": "Sitio Web",
+    "developed": "Desarrollado con:"
+  },
+  "iBookShelf": {
+    "slogan": "iBookShelf es el lugar ideal para acceder a tus libros favoritos y aquellos que estás a punto de descubrir.",
+    "description1": "iBookShelf cuenta con múltiples funciones de filtrado sólidas y versátiles que te permiten navegar por nuestra extensa colección de libros de manera eficiente y personalizada. Con nuestras opciones de filtrado, encontrarás fácilmente tu próxima lectura favorita.",
+    "description2": "Uno de los desafíos radica en la gestión de diferentes estados para cada libro y las categorías donde se encuentran, seguido por la creación de una experiencia de usuario que garantice una navegación fluida y receptiva. Además, el objetivo es ofrecer personalización y flexibilidad que te permitan construir tu propia biblioteca según tus preferencias, y así gestionar tus actividades de lectura de manera eficiente.",
+    "category": "Desarrollo Web"
+  },
+  "Weather": {
+    "slogan": "Una aplicación meteorológica que proporciona información en tiempo real sobre las condiciones climáticas basadas en la ubicación y el tiempo del usuario.",
+    "description1": "Weather App es una aplicación meteorológica intuitiva y completa que te mantiene siempre un paso adelante en cuanto a las condiciones climáticas. Desde la comodidad de tu smartphone o tablet",
+    "description2": "Weather App te brinda acceso instantáneo a una amplia gama de información meteorológica, proporcionando una experiencia de usuario excepcional.",
+    "description3": "Gestionar diversos estados por ubicación y elementos de información meteorológica presenta un desafío. Busco crear una experiencia de usuario fluida, permitiendo un fácil acceso a los detalles meteorológicos. También priorizo la flexibilidad y la personalización para ajustar la aplicación a las preferencias individuales, adaptándola a las necesidades específicas de cada usuario.",
+    "category": "Aplicación Móvil"
+  },
+  "Memory": {
+    "slogan": "¡Acepta el desafío y dime cuántos movimientos te llevará resolverlo!",
+    "description1": "El juego de memoria es un ejercicio mental emocionante y desafiante que pone a prueba nuestra capacidad para recordar patrones y detalles.",
+    "description2": "El desarrollo de este juego involucró múltiples desafíos, como la correcta gestión del estado que me ayuda a sincronizar cada acción del usuario, seguido de un diseño receptivo que hace que sea mucho más accesible disfrutar del juego en diferentes dispositivos, y finalmente, la incorporación de la lógica del juego de manera sincronizada y eficiente a cada evento que realiza el usuario, lo que permite mostrar las cartas que son iguales, con el número de movimientos y el tiempo total que llevó resolverlo.",
+
+    "category": "Desarrollo Web"
+  },
+  "TaskBoard": {
+    "slogan": "Imagina una plataforma diseñada para simplificar y organizar tu vida diaria de manera eficiente",
+    "description1": "Task Board es una herramienta altamente intuitiva y flexible que te permite gestionar tus actividades pendientes, en progreso y completadas de manera organizada y eficaz.",
+    "description2": "La aplicación web Task Board presenta una serie de desafíos técnicos y de diseño que te ayudan a mejorar tus habilidades como desarrollador frontend.",
+    "description3": "Uno de los desafíos es la gestión de estados complejos para cada tarjeta y las columnas donde se alojan estas tarjetas, seguido de una buena experiencia de usuario que proporciona un arrastrar y soltar suave y receptivo, y finalmente la personalización y flexibilidad para construir tus tarjetas a tu gusto y gestionar tus actividades.",
+
+    "category": "Aplicación Web"
+  },
+  "Pokedex": {
+    "slogan": "¡Explora el emocionante mundo de Pokémon y aprende más sobre tu Pokémon favorito!",
+    "description1": "Cada Entrenador Pokémon tiene su compañero especial, su Pokémon favorito que los ha acompañado en innumerables aventuras. Por eso hemos creado una herramienta excepcional que te permite encontrar tu Pokémon favorito y explorar todas sus características y evoluciones en detalle.",
+    "description2": "Es por eso que hemos incorporado una función especial que te permite encontrar tu Pokémon favorito y escuchar todas sus características en detalle. Ya sea que prefieras a Pikachu, Charizard, Eevee, o cualquier otro Pokémon, podrás encontrar tu Pokémon favorito.",
+
+    "category": "Aplicación Web"
+  },
+  "GitHub": {
+    "slogan": "Un clon de GitHub que te brinda la capacidad de navegar perfiles y repositorios",
+    "description1": "En nuestra plataforma de desarrollo, sabemos que cada desarrollador tiene necesidades únicas al manejar y colaborar en proyectos de código fuente.",
+    "description2": "Es por eso que hemos creado una función de filtrado integral y versátil que te permite navegar y encontrar tus repositorios y proyectos de manera eficiente.",
+    "description3": "Con nuestras opciones de filtrado, personaliza tu experiencia, encuentra rápidamente cualquier repositorio o usuario usando nuestra potente barra de búsqueda.",
+
+    "category": "Aplicación Web"
+  },
+  "GameStore": {
+    "slogan": "Aplicación web que proporciona información sobre videojuegos, disponibilidad de plataformas y filtrado a través de APIs RESTful.",
+    "description1": "Entendemos que cada jugador tiene gustos y preferencias únicos. Es por eso que hemos desarrollado una función de filtrado integral y versátil que te permite navegar y encontrar tus juegos ideales de manera eficiente. Con nuestras opciones de filtrado, personaliza tu experiencia de juego según tus deseos.",
+    "description2": "Filtra videojuegos por género, ya sea acción, aventura, rol, estrategia, deportes, simulación y muchos más. Encuentra juegos que se adapten a tu estilo y preferencias.",
+
+    "category": "Desarrollo Web"
+  },
+  "Contact": {
+    "info": "INFORMACIÓN DE CONTACTO",
+    "mail": "CORREO",
+    "location": "UBICACIÓN",
+    "social": "REDES SOCIALES",
+    "formName": "Nombre",
+    "formEmail": "Correo electrónico",
+    "formSubject": "Asunto",
+    "formMessage": "Mensaje",
+    "formButton": "Enviar mensaje",
+    "formSucces": "Su mensaje fue enviado correctamente"
+  }
+}

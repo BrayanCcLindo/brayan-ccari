@@ -1,4 +1,5 @@
 import { ReactNode, createContext, useContext } from "react";
+import { useTranslation } from "react-i18next";
 
 export type Project = {
   title: string;
@@ -54,30 +55,33 @@ export type CertificationType = {
 const PortfolioContext = createContext<AppContextType>({} as AppContextType);
 
 export function PortfolioProvider({ children }: { children: ReactNode }) {
+  const { t } = useTranslation("global");
+
   const experience = [
     {
-      year: "12/2021 - 04/2023",
-      job: "Frontend Developer - WordPress",
-      detail: "Remote",
+      year: t("experience1.year"),
+      job: t("experience1.job"),
+      detail: t("experience1.detail"),
       description: [
-        "Built landing pages and websites fortourism agencies from design toproduction.",
-        "Implemented sales growth and productdevelopment strategies using React.",
-        "Performed SEO optimization by improvingthe keyword research & performance ofmany websites.",
-        "Contributed to the integration of Firebase,significantly improving both the quality andspeed of web page development.",
+        t("experience1.description1"),
+        t("experience1.description2"),
+        t("experience1.description3"),
+        t("experience1.description4"),
       ],
     },
     {
-      year: "04/2023 - Present",
-      job: "Front End Developer, Freelancer",
-      detail: "Remote",
+      year: t("experience2.year"),
+      job: t("experience2.job"),
+      detail: t("experience2.detail"),
       description: [
-        "Built an accessible and functional site for an electronic book store.",
-        "Work on frontend with React, TypeScript,Tailwind & React-i18next.",
-        "Documented usage of performance APIs inReact, which increase code quality.",
-        "Integrated multiple filtering functionalitiesto enhance the user experience.",
+        t("experience2.description1"),
+        t("experience2.description2"),
+        t("experience2.description3"),
+        t("experience2.description4"),
       ],
     },
   ];
+
   const education = [
     {
       year: "2021",
@@ -150,13 +154,9 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     {
       title: "iBookShelf",
       slug: "iBookShelf-app",
-      slogan:
-        "iBookShelf is the ideal place to access your favorite books and those you are about to discover.",
-      description: [
-        "iBookShelf has multiple robust and versatile filtering features that allow you to browse our extensive collection of books in an efficient and personalized way. With our filter options, you will easily find your next favorite read.",
-        "One of the challenges lies in the management of different statuses for each book and the categories where they are located, followed by the creation of a user experience that ensures smooth and responsive navigation. In addition, the aim is to offer personalization and flexibility that allows you to build your own library according to your preferences, and thus manage your reading activities in an efficient way.",
-      ],
-      category: "Web Development",
+      slogan: t("iBookShelf.slogan"),
+      description: [t("iBookShelf.description1"), t("iBookShelf.description2")],
+      category: t("iBookShelf.category"),
       date: "10/2023",
       name: "iBookShelf",
       website: "ibookshelf-app.netlify.app",
@@ -187,14 +187,13 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     {
       title: "Weather App",
       slug: "weather-app",
-      slogan:
-        "A weather application that provides real-time information on weather conditions based on the user's location and time.",
+      slogan: t("Weather.slogan"),
       description: [
-        "Weather App is an intuitive and comprehensive weather app that keeps you always one step ahead when it comes to weather conditions. From the convenience of your smartphone or tablet,",
-        " Weather App gives you instant access to a wide range of weather information, providing an exceptional user experience.",
-        " Managing varied status by location and weather information elements presents a challenge. I seek to create a smooth user experience, allowing easy access to weather details. I also prioritize flexibility and customization to adjust the app to individual preferences, adapting it to the specific needs of each user.",
+        t("Weather.description1"),
+        t("Weather.description2"),
+        t("Weather.description3"),
       ],
-      category: "Mobile App",
+      category: t("Weather.category"),
       date: "11/2022",
       name: "Weather App",
       website: "brayancclindo.github.io/weather-app/",
@@ -214,12 +213,8 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     {
       title: "Memory Game",
       slug: "memory-game",
-      slogan:
-        "Accept the challenge and tell me how many moves it will take you to solve it?",
-      description: [
-        "The memory game is an exciting and challenging mental exercise that tests our ability to remember patterns and details.",
-        "The development of this game involved multiple challenges such as the correct management of the state that help me to synchronize each user action, followed by a responsive design making it much more accessible to enjoy the game on different devices, and finally, the incorporation of the logic of the game that synchronized and efficient way to each event that the user performs that allow you to show the cards that are equal, with number of moves and the total time it took to solve it.",
-      ],
+      slogan: t("Memory.slogan"),
+      description: [t("Memory.description1"), t("Memory.description2")],
       languages: [
         "NextJs",
         "TailwindCSS",
@@ -229,7 +224,7 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
         "Vercel",
       ],
       cover: "../../images/memory-game/memory-game.jpg",
-      category: "Web Development",
+      category: t("Memory.category"),
       date: "06/2023",
       name: "Memory Game",
       website: "memory-game-gules-two.vercel.app/",
@@ -245,12 +240,11 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     {
       title: "Task Board",
       slug: "task-board",
-      slogan:
-        "Imagine a platform designed to simplify and organize your daily life in an efficient way",
+      slogan: t("TaskBoard.slogan"),
       description: [
-        "Task Board is a highly intuitive and flexible tool that allows you to manage your to-do, in-progress and completed activities in an organized and effective way.",
-        "Task Board web application brings a series of technical and design challenges that help you improve your skills as a frontend developer. ",
-        "One of the challenges is the management of complex states for each card and the columns where these cards are hosted, followed by a good user experience that provides smooth and responsive drag and drop, and finally the customization and flexibility to build your cards to your liking and manage your activities.",
+        t("TaskBoard.description1"),
+        t("TaskBoard.description2"),
+        t("TaskBoard.description3"),
       ],
       languages: [
         "NextJs",
@@ -262,7 +256,7 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       ],
       cover: "../../images/task-board/task-board.jpg",
 
-      category: "Web App",
+      category: t("TaskBoard.category"),
       date: "05/2023",
       name: "Task Board",
       website: "task-board-three.vercel.app/",
@@ -279,13 +273,10 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     {
       title: "Pokedex",
       slug: "pokedex",
-      slogan:
-        "Explore the exciting world of Pokémon and learn more about your favorite Pokémon!",
-      description: [
-        "Every Pokémon Trainer has their special companion, their favorite Pokémon that has accompanied them on countless adventures. That's why we've created an exceptional tool that allows you to find your favorite Pokémon and explore all its characteristics and evolutions in detail.",
-        "That's why we've incorporated a special feature that lets you find your favorite Pokémon and listen to all of its characteristics in detail. Whether you prefer Pikachu, Charizard, Eevee, or any other Pokémon, you'll be able to find your favorite Pokémon.",
-      ],
-      category: "Web App",
+      slogan: t("Pokedex.slogan"),
+      description: [t("Pokedex.description1"), t("Pokedex.description2")],
+      category: t("Pokedex.category"),
+
       date: "01/2023",
       name: "Pokedex",
       website: "brayancclindo.github.io/pokedex/",
@@ -303,14 +294,16 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     {
       title: "GitHub Clone",
       slug: "github-clone",
-      slogan:
-        "A GitHub clone that gives you the ability to browse profiles and repositories",
+      slogan: t("GitHub.slogan"),
+
       description: [
-        "At our development platform, we know that every developer has unique needs when managing and collaborating on source code projects.",
-        "That's why we've created a comprehensive and versatile filtering feature that allows you to navigate and find your repositories and projects efficiently.",
-        "With our filtering options, customize your experience, quickly find any repository or user using our powerful search bar.",
+        t("GitHub.description1"),
+        t("GitHub.description2"),
+
+        t("GitHub.description3"),
       ],
-      category: "Web Development",
+      category: t("GitHub.category"),
+
       date: "06/2023",
       name: "GitHub Clone",
       website: "github-clone-nine-neon.vercel.app/",
@@ -336,13 +329,10 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     {
       title: "Game Store",
       slug: "game-store",
-      slogan:
-        "Web app providing video game info, platform availability, and filtering via RESTful APIs.",
-      description: [
-        "We understand that every gamer has unique tastes and preferences. That's why we have developed a comprehensive and versatile filtering feature that allows you to efficiently browse and find your ideal games. With our filtering options, customize your gaming experience according to your desires.",
-        "Filter video games by genre, whether action, adventure, role-playing, strategy, sports, simulation, and many more. Find games that suit your style and preferences.",
-      ],
-      category: "Web Development",
+      slogan: t("GameStore.slogan"),
+
+      description: [t("GameStore.description1"), t("GameStore.description2")],
+      category: t("GameStore.category"),
       date: "07/2023",
       name: "Game Store",
       website: "tl-videogames.netlify.app/",

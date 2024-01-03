@@ -1,0 +1,124 @@
+{
+  "menu": {
+    "home": "Home",
+    "about": "About Me",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "name": "Hi! I'm Brayan",
+    "description": "Passionate about creating captivating digital experiences, transforming concepts into attractive and highly usable interfaces.",
+    "sliderText": "Transforming ideas into code ,and code into solutions.",
+    "aboutMeTitle": "About Me",
+    "aboutMeSubTitle": "More",
+    "projectsTitle": "Projects",
+    "projectsSubTitle": "My",
+    "contact": "Get in touch",
+    "TechStack": "Tech Stack",
+    "experience": "Years Experience",
+    "totalProjects": "Total Projects",
+    "responsiveApps": "Responsive Apps",
+    "worktogether": "Let's work",
+    "together": "Together",
+    "downloadButton": "Download CV"
+  },
+  "about": {
+    "title": "ABOUT ME",
+    "description": "Passionate frontend developer with experience creating attractive and functional web interfaces. With a solid knowledge of modern web technologies such as HTML, CSS and JavaScript. I'm always interested in learning new technologies and approaches to keep myself updated in the constantly evolving world of frontend development.",
+    "experience": "EXPRIENCE",
+    "education": "EDUCATION"
+  },
+  "experience1": {
+    "year": "12/2021 - 04/2023",
+    "job": "Frontend Developer - WordPress",
+    "detail": "Remote",
+
+    "description1": "Built landing pages and websites for tourism agencies from design to production.",
+    "description2": "Implemented sales growth and product development strategies using React.",
+    "description3": "Performed SEO optimization by improving the keyword research & performance of many websites.",
+    "description4": "Contributed to the integration of Firebase, significantly improving both the quality andspeed of web page development."
+  },
+  "experience2": {
+    "year": "04/2023 - Present",
+    "job": "Front End Developer, Freelancer",
+    "detail": "Remote",
+
+    "description1": "Built an accessible and functional site for an electronic book store.",
+    "description2": "Work on the frontend with React, TypeScript, Tailwind & React-i18next.",
+    "description3": "Documented usage of performance APIs inReact, which increase code quality.",
+    "description4": "Integrated multiple filtering functionalities to enhance the user experience."
+  },
+  "projects": {
+    "title": "ALL PROJECTS",
+    "website": "Website",
+    "description": "DESCRIPTION:",
+    "projInfo": "PROJECT INFO:",
+    "category": "Category",
+    "date": "Date",
+    "name": "Name",
+    "web": "Web",
+    "developed": "Developed by:"
+  },
+  "iBookShelf": {
+    "slogan": "iBookShelf is the ideal place to access your favorite books and those you are about to discover.",
+    "description1": "iBookShelf has multiple robust and versatile filtering features that allow you to browse our extensive collection of books in an efficient and personalized way. With our filter options, you will easily find your next favorite read.",
+    "description2": "One of the challenges lies in the management of different statuses for each book and the categories where they are located, followed by the creation of a user experience that ensures smooth and responsive navigation. In addition, the aim is to offer personalization and flexibility that allow you to build your own library according to your preferences, and thus manage your reading activities in an efficient way.",
+    "category": "Web Development"
+  },
+  "Weather": {
+    "slogan": "A weather application that provides real-time information on weather conditions based on the user's location and time.",
+    "description1": "Weather App is an intuitive and comprehensive weather app that keeps you always one step ahead when it comes to weather conditions. From the convenience of your smartphone or tablet",
+    "description2": "Weather App gives you instant access to a wide range of weather information, providing an exceptional user experience.",
+    "description3": "Managing varied status by location and weather information elements presents a challenge. I seek to create a smooth user experience, allowing easy access to weather details. I also prioritize flexibility and customization to adjust the app to individual preferences, adapting it to the specific needs of each user.",
+    "category": "Mobile App"
+  },
+  "Memory": {
+    "slogan": "Accept the challenge and tell me how many moves it will take you to solve it?",
+    "description1": "The memory game is an exciting and challenging mental exercise that tests our ability to remember patterns and details.",
+    "description2": "The development of this game involved multiple challenges, such as the correct management of the state that helps me to synchronize each user action, followed by a responsive design that makes it much more accessible to enjoy the game on different devices, and finally, the incorporation of the logic of the game that synchronizes in an efficient way to each event that the user performs that allows you to show the cards that are equal, with the number of moves and the total time it took to solve it.",
+
+    "category": "Web Development"
+  },
+  "TaskBoard": {
+    "slogan": "Imagine a platform designed to simplify and organize your daily life in an efficient way",
+    "description1": "Task Board is a highly intuitive and flexible tool that allows you to manage your to-do, in-progress and completed activities in an organized and effective way.",
+    "description2": "Task Board web application brings a series of technical and design challenges that help you improve your skills as a frontend developer.",
+    "description3": "One of the challenges is the management of complex states for each card and the columns where these cards are hosted, followed by a good user experience that provides smooth and responsive drag and drop, and finally the customization and flexibility to build your cards to your liking and manage your activities.",
+
+    "category": "Web App"
+  },
+  "Pokedex": {
+    "slogan": "Explore the exciting world of Pokémon and learn more about your favorite Pokémon!",
+    "description1": "Every Pokémon Trainer has their special companion, their favorite Pokémon that has accompanied them on countless adventures. That's why we've created an exceptional tool that allows you to find your favorite Pokémon and explore all its characteristics and evolutions in detail.",
+    "description2": "That's why we've incorporated a special feature that lets you find your favorite Pokémon and listen to all of its characteristics in detail. Whether you prefer Pikachu, Charizard, Eevee, or any other Pokémon, you'll be able to find your favorite Pokémon.",
+
+    "category": "Web App"
+  },
+  "GitHub": {
+    "slogan": "A GitHub clone that gives you the ability to browse profiles and repositories",
+    "description1": "At our development platform, we know that every developer has unique needs when managing and collaborating on source code projects.",
+    "description2": "That's why we've created a comprehensive and versatile filtering feature that allows you to navigate and find your repositories and projects efficiently.",
+    "description3": "With our filtering options, customize your experience, quickly find any repository or user using our powerful search bar.",
+
+    "category": "Web App"
+  },
+  "GameStore": {
+    "slogan": "Web app providing video game info, platform availability, and filtering via RESTful APIs.",
+    "description1": "We understand that every gamer has unique tastes and preferences. That's why we have developed a comprehensive and versatile filtering feature that allows you to efficiently browse and find your ideal games. With our filtering options, customize your gaming experience according to your desires.",
+    "description2": "Filter video games by genre, whether action, adventure, role-playing, strategy, sports, simulation, and many more. Find games that suit your style and preferences.",
+
+    "category": "Web Development"
+  },
+  "Contact": {
+    "info": "CONTACT INFO",
+    "mail": "MAIL",
+    "location": "LOCATION",
+    "social": "SOCIAL INFO",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formSubject": "Your Subject",
+    "formMessage": "Your Message",
+    "formButton": "Send Message",
+    "formSucces": "Your message was sent successfully"
+  }
+}

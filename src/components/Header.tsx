@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { Github, Linkedin, Menu, Moon, Sun, X } from "lucide-react";
+import { useState } from "react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { twMerge } from "tailwind-merge";
+import { useTranslation } from "react-i18next";
 
-function Header() {
+interface DarkLight {
+  setMode: React.Dispatch<React.SetStateAction<string>>;
+  nextMode: string;
+}
+
+function Header({ setMode, nextMode }: DarkLight) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [mode, setMode] = useState("light");
-  const nextMode = mode === "light" ? "dark" : "light";
-
-  useEffect(() => {
-    document.body.dataset.theme = mode;
-  }, [mode]);
+  const { t, i18n } = useTranslation("global");
+  const styleLang = i18n.resolvedLanguage;
 
   const toggleDisplay = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -21,7 +23,6 @@ function Header() {
     window.scrollTo(0, 0);
   };
 
-  console.log(nextMode);
   const handleTheme = () => {
     setMode(nextMode);
   };
@@ -39,8 +40,12 @@ function Header() {
       >
         <Link to={"/"}>
           <img
-            className="relative z-10 w-[80px] md:w-[120px]"
-            src="../../images/logoPorfolio.png"
+            className="relative z-10 w-[80px] md:w-[120px] rounded-full"
+            src={
+              nextMode === "dark"
+                ? "../../images/azul.png"
+                : "../../images/blanco.png"
+            }
             alt="brayan-ccari-logo"
           />
         </Link>
@@ -59,7 +64,7 @@ function Header() {
                   className="w-full text-lg hover:text-purple"
                   to="/"
                 >
-                  Home
+                  {t("menu.home")}
                 </Link>
                 {/* <li className="text-lg hover:text-purple">
               </li> */}
@@ -68,37 +73,49 @@ function Header() {
                   className="w-full text-lg hover:text-purple"
                   to="/about-me"
                 >
-                  About
+                  {t("menu.about")}
                 </Link>
                 <Link
                   onClick={handleScroll}
                   className="w-full text-lg hover:text-purple"
                   to="/my-projects"
                 >
-                  Projects
+                  {t("menu.projects")}
                 </Link>
                 <Link
                   onClick={handleScroll}
                   className="w-full text-lg hover:text-purple"
                   to="/contact"
                 >
-                  Contact
+                  {t("menu.contact")}
                 </Link>
                 <div className="flex justify-center gap-6">
-                  <a
-                    className={twMerge(" text-purple")}
-                    href="https://www.linkedin.com/in/brayan-ccari/"
-                    target="_blank"
+                  <button
+                    onClick={() => {
+                      i18n.changeLanguage("es");
+                    }}
+                    className={twMerge(
+                      `bg-white p-4 rounded-full text-purple hover:bg-purple ${
+                        styleLang === "es" && "bg-purple text-white"
+                      }`,
+                      " hover:text-white"
+                    )}
                   >
-                    <Linkedin />
-                  </a>
-                  <a
-                    className={twMerge(" text-purple")}
-                    href="https://github.com/BrayanCcLindo"
-                    target="_blank"
+                    <img src="../../images/svg/peru.svg" alt="" />
+                  </button>
+                  <button
+                    onClick={() => {
+                      i18n.changeLanguage("en");
+                    }}
+                    className={twMerge(
+                      `bg-white p-4 rounded-full text-purple hover:bg-purple ${
+                        styleLang === "en" && "bg-purple text-white"
+                      }`,
+                      " hover:text-white"
+                    )}
                   >
-                    <Github />
-                  </a>
+                    <img src="../../images/svg/usa.svg" alt="" />
+                  </button>
                   <button
                     onClick={handleTheme}
                     className={twMerge(" text-purple cursor-pointer ")}
@@ -121,47 +138,53 @@ function Header() {
           <ul className="flex gap-8 items-center text-gray-500 font-medium text-lg">
             <li className=" hover:text-purple">
               <Link onClick={handleScroll} to="/">
-                Home
+                {t("menu.home")}
               </Link>
             </li>
             <li className=" hover:text-purple">
               <Link onClick={handleScroll} to="/about-me">
-                About
+                {t("menu.about")}
               </Link>
             </li>
             <li className=" hover:text-purple">
               <Link onClick={handleScroll} to="/my-projects">
-                Projects
+                {t("menu.projects")}
               </Link>
             </li>
             <li className=" hover:text-purple">
               <Link onClick={handleScroll} to="/contact">
-                Contact
+                {t("menu.contact")}
               </Link>
             </li>
           </ul>
         </div>
         <div className="hidden md:flex gap-6">
-          <a
+          <button
+            onClick={() => {
+              i18n.changeLanguage("es");
+            }}
             className={twMerge(
-              "bg-white p-4 rounded-full text-purple hover:bg-purple",
+              `bg-white p-4 rounded-full text-purple hover:bg-purple ${
+                styleLang === "es" && "bg-purple text-white"
+              }`,
               " hover:text-white"
             )}
-            href="https://www.linkedin.com/in/brayan-ccari/"
-            target="_blank"
           >
-            <Linkedin strokeWidth={1} />
-          </a>
-          <a
+            <img src="../../images/svg/peru.svg" alt="" />
+          </button>
+          <button
+            onClick={() => {
+              i18n.changeLanguage("en");
+            }}
             className={twMerge(
-              "bg-white p-4 rounded-full text-purple hover:bg-purple",
+              `bg-white p-4 rounded-full text-purple hover:bg-purple ${
+                styleLang === "en" && "bg-purple text-white"
+              }`,
               " hover:text-white"
             )}
-            href="https://github.com/BrayanCcLindo"
-            target="_blank"
           >
-            <Github strokeWidth={1} />
-          </a>
+            <img src="../../images/svg/usa.svg" alt="" />
+          </button>
           <button
             onClick={handleTheme}
             className={twMerge(

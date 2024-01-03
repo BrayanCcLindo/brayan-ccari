@@ -7,6 +7,7 @@ import {
   TechStackType,
   useProtfolioContext,
 } from "../appContext/portfolio-context";
+import { useTranslation } from "react-i18next";
 
 export const CardComponent = ({
   children,
@@ -74,6 +75,7 @@ const DetailedInfo = ({
 
 function Home() {
   const { techStackImg } = useProtfolioContext();
+  const { t } = useTranslation("global");
 
   return (
     <Layout>
@@ -93,16 +95,12 @@ function Home() {
             />
             <div className="flex flex-col gap-4 justify-between  ">
               <span className="text-gray-200 text-lg text-center">
-                Hi! I'm Brayan
+                {t("home.name")}
               </span>
               <h1 className=" text-2xl text-purple font-semibold text-center">
                 Frontend Developer
               </h1>
-              <p className="text-black text-center">
-                Passionate about creating captivating digital experiences,
-                transforming concepts into attractive and highly usable
-                interfaces.
-              </p>
+              <p className="text-black text-center">{t("home.description")}</p>
               <div className="flex grow-0 justify-center">
                 <a
                   href="../../files/BrayanCcari.pdf"
@@ -110,26 +108,27 @@ function Home() {
                   className="bg-gray-400 text-gray-50 rounded-2xl hover:bg-purple  font-semibold py-2 px-3  flex items-center justify-center gap-2 hover:scale-105 duration-100 text-center grow-0"
                 >
                   <FileDown size={20} />
-                  Download CV
+                  {t("home.downloadButton")}
                 </a>
               </div>
             </div>
           </div>
           <div className="flex flex-col gap-4 flex-1">
             <div className="marquee-container  rounded-full bg-white p-2">
-              <p className="marquee-text font-basic text-gray-200">
-                Transforming ideas into .
+              <p className="marquee-text font-basic text-gray-200 font-bold">
+                {/* Transforming ideas into .
                 <span className="font-semibold text-purple">code </span>
                 ,and code into{" "}
-                <span className="font-semibold text-purple">solutions. </span>
+                <span className="font-semibold text-purple">solutions. </span> */}
+                {t("home.sliderText")}
               </p>
             </div>
             <div className={twMerge("grid  gap-8", "lg:grid-cols-[1fr_1fr]")}>
               <Link to={"/about-me"}>
                 <CardComponent
                   isClickable={true}
-                  title="About me"
-                  subtitle="more"
+                  title={t("home.aboutMeTitle")}
+                  subtitle={t("home.aboutMeSubTitle")}
                 >
                   <img
                     className="object-cover w-[58%]"
@@ -141,8 +140,8 @@ function Home() {
               <Link to={"/my-projects"}>
                 <CardComponent
                   isClickable={true}
-                  title="Projects"
-                  subtitle="my"
+                  title={t("home.projectsTitle")}
+                  subtitle={t("home.projectsSubTitle")}
                 >
                   <img
                     className="object-cover"
@@ -160,7 +159,7 @@ function Home() {
             "md:grid-cols-[1fr_2fr]"
           )}
         >
-          <CardComponent isClickable={false} title="Get in touch">
+          <CardComponent isClickable={false} title={t("home.contact")}>
             <div className="flex gap-8 items-center bg-gray-600 p-2 w-full justify-evenly rounded-3xl">
               <a
                 href="mailto:brayancclindo@gmail.com"
@@ -184,7 +183,7 @@ function Home() {
               </a>
             </div>
           </CardComponent>
-          <CardComponent isClickable={false} title="Tech Stack">
+          <CardComponent isClickable={false} title={t("home.TechStack")}>
             <div
               className={twMerge(
                 "flex gap-4 text-purple flex-wrap ",
@@ -204,9 +203,9 @@ function Home() {
               "md:flex-row"
             )}
           >
-            <DetailedInfo title="02" description="Years Experience" />
-            <DetailedInfo title="+ 20" description="Total Projects" />
-            <DetailedInfo title="+ 10" description="Responsive Apps" />
+            <DetailedInfo title="+ 01" description={t("home.experience")} />
+            <DetailedInfo title="+ 20" description={t("home.totalProjects")} />
+            <DetailedInfo title="+ 10" description={t("home.responsiveApps")} />
           </div>
           <Link
             className="flex justify-between bg-white p-8 items-end rounded-2xl"
@@ -214,7 +213,8 @@ function Home() {
           >
             <div className="">
               <h3 className="text-4xl text-black ">
-                Let's work <span className="text-purple">together</span>
+                {t("home.worktogether")}{" "}
+                <span className="text-purple">{t("home.together")}</span>
               </h3>
             </div>
           </Link>

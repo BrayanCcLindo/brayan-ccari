@@ -3,8 +3,11 @@ import Layout from "../ui/layout";
 import { twMerge } from "tailwind-merge";
 import { Project, useProtfolioContext } from "../appContext/portfolio-context";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function WorkCard({ project }: { project: Project }) {
+  const { t } = useTranslation("global");
+
   return (
     <div
       // to={`/my-work/${project?.slug}`}
@@ -62,7 +65,7 @@ function WorkCard({ project }: { project: Project }) {
           )}
         >
           <Globe size={15} />
-          Sitio Web
+          {t("projects.website")}
         </a>
       </div>
     </div>
@@ -76,6 +79,7 @@ function Proyects() {
   const secondArrayOfProjects = [...projectNames];
 
   const secondProjects = secondArrayOfProjects.splice(2);
+  const { t } = useTranslation("global");
 
   return (
     <Layout>
@@ -93,7 +97,7 @@ function Proyects() {
               "md:hidden text:7xl mb-8"
             )}
           >
-            ALL PROJECTS
+            {t("projects.title")}
           </h2>
           {firstProyects?.map((project, id) => (
             <WorkCard key={id} project={project} />
@@ -106,7 +110,7 @@ function Proyects() {
               "md:flex text-7xl mb-8"
             )}
           >
-            ALL PROJECTS
+            {t("projects.title")}
           </h2>
           <div className={twMerge("grid  gap-8", "lg:grid-cols-[1fr,1fr]")}>
             {secondProjects?.map((project, id) => (

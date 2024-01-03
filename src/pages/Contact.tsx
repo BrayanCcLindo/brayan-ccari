@@ -10,6 +10,7 @@ import Layout from "../ui/layout";
 import { ReactNode, useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import ButtonComponent from "../components/button-component";
+import { useTranslation } from "react-i18next";
 
 const CardContact = ({
   icon,
@@ -59,12 +60,14 @@ function Contact() {
     }
   }, [succesForm]);
 
+  const { t } = useTranslation("global");
+
   return (
     <Layout>
       <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[1fr,2fr]")}>
         <div className="flex gap-8 flex-col justify-start">
-          <h2 className="font-semibold text-black">CONTACT INFO</h2>
-          <CardContact title="MAIL" icon={<MailCheck />}>
+          <h2 className="font-semibold text-black">{t("Contact.info")}:</h2>
+          <CardContact title={t("Contact.mail")} icon={<MailCheck />}>
             <a
               href="mailto:brayancclindo@gmail.com"
               className="text-black hover:text-purple"
@@ -73,10 +76,10 @@ function Contact() {
             </a>
           </CardContact>
 
-          <CardContact title="LOCATION" icon={<MapPin />}>
+          <CardContact title={t("Contact.location")} icon={<MapPin />}>
             <p className="text-black"> Perú</p>
           </CardContact>
-          <h2 className="font-semibold text-black">SOCIAL INFO</h2>
+          <h2 className="font-semibold text-black">{t("Contact.social")}</h2>
           <div className="flex gap-8 items-center ">
             <a
               className={twMerge(
@@ -112,7 +115,8 @@ function Contact() {
         </div>
         <div className="bg-white p-4 rounded-xl flex flex-col gap-8 justify-center">
           <h3 className="text-4xl text-black">
-            Let's work <span className="text-purple">together</span>
+            {t("home.worktogether")}{" "}
+            <span className="text-purple">{t("home.together")}</span>
           </h3>
           <form
             onSubmit={(event) => {
@@ -146,13 +150,13 @@ function Contact() {
             className="flex flex-col p-4 gap-8 "
           >
             <label className="sr-only" htmlFor="name">
-              Name
+              {t("Contact.formName")}
             </label>
             <input
               className="p-4 bg-gray-300 rounded-xl text-gray-200 placeholder:text-gray-200"
               type="text"
               id="name"
-              placeholder="Name"
+              placeholder={t("Contact.formName")}
               onChange={(event) => {
                 setError({ ...error, name: "" });
                 setInputValue({ ...inputValue, name: event.target.value });
@@ -160,7 +164,7 @@ function Contact() {
             />
             {error.name && <p className="text-red-500 text-sm">{error.name}</p>}
             <label className="sr-only" htmlFor="email">
-              Email
+              {t("Contact.formEmail")}
             </label>
             <input
               className="p-4 bg-gray-300 rounded-xl text-gray-200 placeholder:text-gray-200"
@@ -170,14 +174,14 @@ function Contact() {
               }}
               type="text"
               id="email"
-              placeholder="Email"
+              placeholder={t("Contact.formEmail")}
             />
             {error.email && (
               <p className="text-red-500 text-sm">{error.email}</p>
             )}
 
             <label className="sr-only" htmlFor="subject">
-              Your Subject
+              {t("Contact.formSubject")}
             </label>
             <input
               onChange={(event) => {
@@ -187,7 +191,7 @@ function Contact() {
               className="p-4 bg-gray-300 rounded-xl text-gray-200 placeholder:text-gray-200"
               type="text"
               id="subject"
-              placeholder="Your Subject"
+              placeholder={t("Contact.formSubject")}
             />
             {error.subject && (
               <p className="text-red-500 text-sm">{error.subject}</p>
@@ -198,7 +202,7 @@ function Contact() {
                 setError({ ...error, message: "" });
                 setInputValue({ ...inputValue, message: event.target.value });
               }}
-              placeholder="Your Message"
+              placeholder={t("Contact.formMessage")}
               className="p-4 bg-gray-300 rounded-xl text-gray-200 placeholder:text-gray-200"
               name="textarea"
               rows={4}
@@ -207,11 +211,13 @@ function Contact() {
               <p className="text-red-500 text-sm">{error.message}</p>
             )}
 
-            <ButtonComponent onClick={() => {}}>Send Message</ButtonComponent>
+            <ButtonComponent onClick={() => {}}>
+              {t("Contact.formButton")}
+            </ButtonComponent>
             {succesForm && (
               <div className="flex gap-4 items-center text-purple font-bold">
                 <Check />
-                <p>Su mensaje fue enviado correctamente</p>
+                <p>{t("Contact.formSucces")}</p>
               </div>
             )}
           </form>

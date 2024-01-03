@@ -3,10 +3,12 @@ import Layout from "../ui/layout";
 import { useProtfolioContext } from "../appContext/portfolio-context";
 import { twMerge } from "tailwind-merge";
 import { Github, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function Project() {
   const { projectName } = useParams();
   const { projectNames } = useProtfolioContext();
+  const { t } = useTranslation("global");
 
   const newProyjects = [...projectNames];
   const proyectIndex = newProyjects.findIndex(
@@ -49,13 +51,18 @@ function Project() {
 
         <div className="grid gap-8 p-8 bg-white rounded-xl mt-16 md:grid-cols-[2fr,1fr] ">
           <div className="flex flex-col gap-8">
-            <h2 className="text-2xl text-black font-semibold">DESCRIPTION:</h2>
+            <h2 className="text-2xl text-black font-semibold">
+              {t("projects.description")}{" "}
+            </h2>
             {oficialProyect.description.map((description) => (
-              <p className="text-xl text-black"> {description}</p>
+              <p key={description} className="text-xl text-black">
+                {" "}
+                {description}
+              </p>
             ))}
             <div className="bg-gray-600 rounded-xl py-8 flex justify-center  gap-8 flex-wrap">
               <h3 className="text-2xl text-black font-semibold">
-                Developed by:
+                {t("projects.developed")}{" "}
               </h3>
               {oficialProyect.languages.map((language, index) => (
                 <p
@@ -68,19 +75,25 @@ function Project() {
             </div>
           </div>
           <div className="flex flex-col gap-8 text-black">
-            <h2 className="text-2xl font-semibold">PROJECT INFO:</h2>
-            <p className="text-xl">
-              Category:{" "}
-              <span className="font-bold ">{oficialProyect.category}</span>
+            <h2 className="text-2xl font-semibold">
+              {" "}
+              {t("projects.projInfo")}
+            </h2>
+            <p className="text-xl font-bold ">
+              {t("projects.category")}:{" "}
+              <span className="font-extralight">{oficialProyect.category}</span>
             </p>
-            <p className="text-xl">
-              Date: <span className="font-bold ">{oficialProyect.date}</span>
+            <p className="text-xl font-bold">
+              {t("projects.date")}:{" "}
+              <span className="font-extralight">{oficialProyect.date}</span>
             </p>
-            <p className="text-xl">
-              Name: <span className="font-bold ">{oficialProyect.name}</span>
+            <p className="text-xl font-bold">
+              {t("projects.name")}:{" "}
+              <span className="font-extralight">{oficialProyect.name}</span>
             </p>
-            <p className="text-xl">
-              Web: <span className="font-bold ">{oficialProyect.website}</span>
+            <p className="text-xl font-bold">
+              {t("projects.web")}:{" "}
+              <span className="font-extralight">{oficialProyect.website}</span>
             </p>
             <div className="flex gap-8 items-center  p-2 w-full justify-evenly rounded-3xl">
               <a
