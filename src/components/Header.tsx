@@ -101,7 +101,13 @@ function Header({ setMode, nextMode }: DarkLight) {
                       " hover:text-white"
                     )}
                   >
-                    <img src="../../images/svg/peru.svg" alt="" />
+                    <img
+                      className="h-[30px] w-[30px]"
+                      width={30}
+                      height={30}
+                      src="../../images/svg/peru.svg"
+                      alt=""
+                    />
                   </button>
                   <button
                     onClick={() => {
@@ -114,7 +120,13 @@ function Header({ setMode, nextMode }: DarkLight) {
                       " hover:text-white"
                     )}
                   >
-                    <img src="../../images/svg/usa.svg" alt="" />
+                    <img
+                      width={30}
+                      height={30}
+                      className="h-[30px] w-[30px]"
+                      src="../../images/svg/usa.svg"
+                      alt=""
+                    />
                   </button>
                   <button
                     onClick={handleTheme}

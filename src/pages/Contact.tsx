@@ -1,34 +1,29 @@
-import {
-  Check,
-  Github,
-  Linkedin,
-  MailCheck,
-  MapPin,
-  Twitter,
-} from "lucide-react";
+import { GithubIcon, LinkedinIcon, MailCheck } from "lucide-react";
 import Layout from "../ui/layout";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
-import ButtonComponent from "../components/button-component";
 import { useTranslation } from "react-i18next";
 
 const CardContact = ({
   icon,
   title,
   children,
+  link,
 }: {
   icon: ReactNode;
   title: string;
   children: ReactNode;
+  link: string;
 }) => {
   return (
-    <div className=" flex gap-8 p-4 items-center">
+    <div className=" flex  gap-10 p-10 bg-white items-center relative duration-150 hover:scale-105 hover:duration-150 rounded-tl-[2rem] rounded-br-[2rem] w-[350px]">
       <a
-        href="mailto:brayancclindo@gmail.com"
-        className="p-6 rounded-xl bg-white flex items-center justify-center text-purple"
-      >
-        {icon}
-      </a>
+        // href="mailto:brayancclindo@gmail.com"
+        href={link}
+        target="_blank"
+        className="absolute inset-0 "
+      ></a>
+      <p className=" flex items-center justify-center text-purple">{icon}</p>
       <div>
         <h3 className="text-xl text-gray-200">{title}</h3>
         {children}
@@ -38,82 +33,101 @@ const CardContact = ({
 };
 
 function Contact() {
-  const initialValue = {
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  };
-  const [inputValue, setInputValue] = useState(initialValue);
-  const [succesForm, setSuccedForm] = useState(false);
-  const [error, setError] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-  useEffect(() => {
-    if (succesForm) {
-      setTimeout(() => {
-        setSuccedForm(false);
-      }, 5000);
-    }
-  }, [succesForm]);
+  // const initialValue = {
+  //   name: "",
+  //   email: "",
+  //   subject: "",
+  //   message: "",
+  // };
+  // const [inputValue, setInputValue] = useState(initialValue);
+  // const [succesForm, setSuccedForm] = useState(false);
+  // const [error, setError] = useState({
+  //   name: "",
+  //   email: "",
+  //   subject: "",
+  //   message: "",
+  // });
+  // useEffect(() => {
+  //   if (succesForm) {
+  //     setTimeout(() => {
+  //       setSuccedForm(false);
+  //     }, 5000);
+  //   }
+  // }, [succesForm]);
 
   const { t } = useTranslation("global");
 
   return (
     <Layout>
-      <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[1fr,2fr]")}>
-        <div className="flex gap-8 flex-col justify-start">
-          <h2 className="font-semibold text-black">{t("Contact.info")}:</h2>
-          <CardContact title={t("Contact.mail")} icon={<MailCheck />}>
-            <a
-              href="mailto:brayancclindo@gmail.com"
-              className="text-black hover:text-purple"
-            >
-              brayancclindo@gmail.com
-            </a>
-          </CardContact>
+      <div className={twMerge("flex flex-col  gap-8 p-8")}>
+        <div className="flex  flex-col md:flex-row gap-8 justify-center items-center flex-1">
+          <div className=" flex flex-col gap-8">
+            <h2 className="font-semibold text-black">{t("Contact.info")}:</h2>
+            <div className="flex flex-col  items-start justify-center  gap-6 ">
+              <CardContact
+                link="mailto:brayancclindo@gmail.com"
+                title={t("Contact.mail")}
+                icon={<MailCheck />}
+              >
+                <p className="text-black ">brayancclindo@gmail.com</p>
+              </CardContact>
 
-          <CardContact title={t("Contact.location")} icon={<MapPin />}>
-            <p className="text-black"> Perú</p>
-          </CardContact>
-          <h2 className="font-semibold text-black">{t("Contact.social")}</h2>
-          <div className="flex gap-8 items-center ">
-            <a
-              className={twMerge(
-                "rounded-full bg-white flex items-center justify-center p-6 text-purple",
-                "hover:bg-purple hover:text-white"
-              )}
-              target="_blank"
-              href="https://twitter.com/BrayanCcLi"
-            >
-              <Twitter strokeWidth={1} />
-            </a>
-            <a
-              className={twMerge(
-                "rounded-full bg-white flex items-center justify-center p-6 text-purple",
-                "hover:bg-purple hover:text-white"
-              )}
-              href="https://www.linkedin.com/in/brayan-ccari/"
-              target="_blank"
-            >
-              <Linkedin strokeWidth={1} />
-            </a>
-            <a
-              className={twMerge(
-                "rounded-full bg-white flex items-center justify-center p-6 text-purple",
-                "hover:bg-purple hover:text-white"
-              )}
-              href="https://github.com/BrayanCcLindo"
-              target="_blank"
-            >
-              <Github strokeWidth={1} />
-            </a>
+              <CardContact
+                link="https://www.linkedin.com/in/brayan-ccari/"
+                title={"Linkedin"}
+                icon={<LinkedinIcon />}
+              >
+                <p className="text-black"> Brayan Ccari Lindo</p>
+              </CardContact>
+              <CardContact
+                link="https://github.com/BrayanCcLindo"
+                title={"GitHub"}
+                icon={<GithubIcon />}
+              >
+                <p className="text-black"> BrayanCcLindo</p>
+              </CardContact>
+            </div>
+          </div>
+
+          <div className="flex ">
+            <img src="/images/contact-hero.png" alt="" />
           </div>
         </div>
-        <div className="bg-white p-4 rounded-xl flex flex-col gap-8 justify-center">
+
+        {/* <h2 className="font-semibold text-black">{t("Contact.social")}</h2>
+        <div className="flex gap-8 items-center ">
+          <a
+            className={twMerge(
+              "rounded-full bg-white flex items-center justify-center p-6 text-purple",
+              "hover:bg-purple hover:text-white"
+            )}
+            target="_blank"
+            href="https://twitter.com/BrayanCcLi"
+          >
+            <Twitter strokeWidth={1} />
+          </a>
+          <a
+            className={twMerge(
+              "rounded-full bg-white flex items-center justify-center p-6 text-purple",
+              "hover:bg-purple hover:text-white"
+            )}
+            href="https://www.linkedin.com/in/brayan-ccari/"
+            target="_blank"
+          >
+            <Linkedin strokeWidth={1} />
+          </a>
+          <a
+            className={twMerge(
+              "rounded-full bg-white flex items-center justify-center p-6 text-purple",
+              "hover:bg-purple hover:text-white"
+            )}
+            href="https://github.com/BrayanCcLindo"
+            target="_blank"
+          >
+            <Github strokeWidth={1} />
+          </a>
+        </div> */}
+        {/* <div className="bg-white p-4 rounded-xl flex flex-col gap-8 justify-center">
           <h3 className="text-4xl text-black">
             {t("home.worktogether")}{" "}
             <span className="text-purple">{t("home.together")}</span>
@@ -221,7 +235,7 @@ function Contact() {
               </div>
             )}
           </form>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

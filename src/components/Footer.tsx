@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import Layout from "../ui/layout";
-import ButtonComponent from "./button-component";
-import { ChevronUp } from "lucide-react";
+import { ChevronUp, Github, Linkedin, Twitter } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { twMerge } from "tailwind-merge";
 
 function Footer({ nextMode }: { nextMode: string }) {
   function handleScroll() {
@@ -50,12 +50,47 @@ function Footer({ nextMode }: { nextMode: string }) {
           <p className="text-gray-200">
             © Brayan Ccari, 2023 All rights reserved.
           </p>
+          <div className="flex gap-8 items-center ">
+            <a
+              className={twMerge(
+                "rounded-full bg-white flex items-center justify-center p-6 text-purple",
+                "hover:bg-purple hover:text-white"
+              )}
+              target="_blank"
+              href="https://twitter.com/BrayanCcLi"
+            >
+              <Twitter strokeWidth={1} />
+            </a>
+            <a
+              className={twMerge(
+                "rounded-full bg-white flex items-center justify-center p-6 text-purple",
+                "hover:bg-purple hover:text-white"
+              )}
+              href="https://www.linkedin.com/in/brayan-ccari/"
+              target="_blank"
+            >
+              <Linkedin strokeWidth={1} />
+            </a>
+            <a
+              className={twMerge(
+                "rounded-full bg-white flex items-center justify-center p-6 text-purple",
+                "hover:bg-purple hover:text-white"
+              )}
+              href="https://github.com/BrayanCcLindo"
+              target="_blank"
+            >
+              <Github strokeWidth={1} />
+            </a>
+          </div>
         </div>
       </Layout>
       <div className="fixed bottom-[20px] right-[20px]">
-        <ButtonComponent onClick={handleScroll}>
+        <button
+          className="bg-white p-4 rounded-full text-purple"
+          onClick={handleScroll}
+        >
           <ChevronUp />
-        </ButtonComponent>
+        </button>
       </div>
     </>
   );

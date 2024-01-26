@@ -15,7 +15,7 @@
     "projectsTitle": "Proyectos",
     "projectsSubTitle": "Mis",
     "contact": "Ponte en contacto",
-    "TechStack": "Pila Tecnológica",
+    "TechStack": "Tech Stack",
     "experience": "Años de experiencia",
     "totalProjects": "Proyectos totales",
     "responsiveApps": "Aplicaciones responsivas",
@@ -112,7 +112,7 @@
   },
   "Contact": {
     "info": "INFORMACIÓN DE CONTACTO",
-    "mail": "CORREO",
+    "mail": "Correo",
     "location": "UBICACIÓN",
     "social": "REDES SOCIALES",
     "formName": "Nombre",
