@@ -80,9 +80,9 @@
     "category": "Web Development"
   },
   "TaskBoard": {
-    "slogan": "Imagine a platform designed to simplify and organize your daily life in an efficient way",
+    "slogan": "Web App designed to simplify and organize yourdaily life efficiently",
     "description1": "Task Board is a highly intuitive and flexible tool that allows you to manage your to-do, in-progress and completed activities in an organized and effective way.",
-    "description2": "Task Board web application brings a series of technical and design challenges that help you improve your skills as a frontend developer.",
+    "description2": "Prioritized accessibility through theintegration of inclusive design patterns,ensuring a seamless and user-friendly Dragand Drop experienceDelivers",
     "description3": "One of the challenges is the management of complex states for each card and the columns where these cards are hosted, followed by a good user experience that provides smooth and responsive drag and drop, and finally the customization and flexibility to build your cards to your liking and manage your activities.",
 
     "category": "Web App"

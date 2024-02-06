@@ -116,10 +116,6 @@ function Home() {
           <div className="flex flex-col gap-4 flex-1">
             <div className="marquee-container  rounded-full bg-white p-2">
               <p className="marquee-text font-basic text-gray-200 font-bold">
-                {/* Transforming ideas into .
-                <span className="font-semibold text-purple">code </span>
-                ,and code into{" "}
-                <span className="font-semibold text-purple">solutions. </span> */}
                 {t("home.sliderText")}
               </p>
             </div>

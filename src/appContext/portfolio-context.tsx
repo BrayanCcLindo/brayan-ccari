@@ -152,39 +152,6 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
   ];
   const projectNames = [
     {
-      title: "iBookShelf",
-      slug: "iBookShelf-app",
-      slogan: t("iBookShelf.slogan"),
-      description: [t("iBookShelf.description1"), t("iBookShelf.description2")],
-      category: t("iBookShelf.category"),
-      date: "10/2023",
-      name: "iBookShelf",
-      website: "ibookshelf-app.netlify.app",
-
-      languages: [
-        "ReactJs",
-        "TypeScript",
-        "Redux",
-        "React Query",
-        "Tailwind CSS",
-        "Radix UI",
-        "APIs RESTful",
-        "Vite",
-        "Netlify",
-      ],
-      cover: "../../images/test.jpg",
-
-      photos: [
-        "../../images/iBook/iBookPhoto2.jpg",
-        "../../images/iBook/iBookPhoto3.jpg",
-
-        "../../images/iBook/iBookPhoto4.jpg",
-        "../../images/iBook/iBookPhoto5.jpg",
-      ],
-      github: "https://github.com/frontendUI-labs/iBookshelf",
-      web: "https://ibookshelf-app.netlify.app/",
-    },
-    {
       title: "Weather App",
       slug: "weather-app",
       slogan: t("Weather.slogan"),
@@ -254,21 +221,20 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
         "Responsive Design",
         "Vercel",
       ],
-      cover: "../../images/task-board/task-board.jpg",
+      cover: "../../images/task-board/taskBoard-Portada.jpg",
 
       category: t("TaskBoard.category"),
       date: "05/2023",
       name: "Task Board",
-      website: "task-board-three.vercel.app/",
+      website: "board-task-bcl.vercel.app/",
 
       photos: [
-        "../../images/task-board/taksBoardPhoto1.jpg",
-        "../../images/task-board/taksBoardPhoto2.jpg",
-        "../../images/task-board/taksBoardPhoto3.jpg",
-        "../../images/task-board/taksBoardPhoto4.jpg",
+        "../../images/task-board/TaskBoard-2.jpg",
+        "../../images/task-board/TaskBoard-1.jpg",
+        "../../images/task-board/TaskBoard-3.jpg",
       ],
       github: "https://github.com/BrayanCcLindo/task-board",
-      web: "https://task-board-three.vercel.app/",
+      web: "https://board-task-bcl.vercel.app/",
     },
     {
       title: "Pokedex",
@@ -352,6 +318,39 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       ],
       github: "https://github.com/frontendUI-labs/invoices-app",
       web: "https://tl-videogames.netlify.app/",
+    },
+    {
+      title: "iBookShelf",
+      slug: "iBookShelf-app",
+      slogan: t("iBookShelf.slogan"),
+      description: [t("iBookShelf.description1"), t("iBookShelf.description2")],
+      category: t("iBookShelf.category"),
+      date: "10/2023",
+      name: "iBookShelf",
+      website: "ibookshelf-app.netlify.app",
+
+      languages: [
+        "ReactJs",
+        "TypeScript",
+        "Redux",
+        "React Query",
+        "Tailwind CSS",
+        "Radix UI",
+        "APIs RESTful",
+        "Vite",
+        "Netlify",
+      ],
+      cover: "../../images/test.jpg",
+
+      photos: [
+        "../../images/iBook/iBookPhoto2.jpg",
+        "../../images/iBook/iBookPhoto3.jpg",
+
+        "../../images/iBook/iBookPhoto4.jpg",
+        "../../images/iBook/iBookPhoto5.jpg",
+      ],
+      github: "https://github.com/frontendUI-labs/iBookshelf",
+      web: "https://ibookshelf-app.netlify.app/",
     },
   ];
 
