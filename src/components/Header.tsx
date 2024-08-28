@@ -9,7 +9,7 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t, i18n } = useTranslation("global");
   const styleLang = i18n.resolvedLanguage;
-  const { value } = useProtfolioContext();
+  const { value, switchLang } = useProtfolioContext();
 
   const toggleDisplay = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -160,7 +160,7 @@ function Header() {
         <div className="hidden gap-6 md:flex">
           <button
             onClick={() => {
-              i18n.changeLanguage("es");
+              switchLang("es");
             }}
             className={twMerge(
               `bg-white p-4 rounded-full hover:bg-purple ${
@@ -172,7 +172,7 @@ function Header() {
           </button>
           <button
             onClick={() => {
-              i18n.changeLanguage("en");
+              switchLang("en");
             }}
             className={twMerge(
               `bg-white p-4 rounded-full hover:bg-purple ${

@@ -7,17 +7,25 @@ import global_es from "./translations/es/global.json";
 import global_en from "./translations/en/global.json";
 import { I18nextProvider } from "react-i18next";
 
+function detectarIdiomaDispositivo() {
+  return navigator.language || "en"; // 'en' como idioma por defecto
+}
+
+const idiomaGuardado = localStorage.getItem("language");
+const idiomaDispositivo = detectarIdiomaDispositivo();
+const idiomaInicial = idiomaGuardado || idiomaDispositivo;
+
 i18next.init({
   interpolation: { escapeValue: false },
-  lng: "en",
+  lng: idiomaInicial,
   resources: {
     en: {
-      global: global_en,
+      global: global_en
     },
     es: {
-      global: global_es,
-    },
-  },
+      global: global_es
+    }
+  }
 });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

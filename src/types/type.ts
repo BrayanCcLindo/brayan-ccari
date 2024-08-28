@@ -42,6 +42,7 @@ export type AppContextType = {
   experience: Experience[];
   projectNames: Project[];
   value: { mode: Theme; setMode: (theme: Theme) => void };
+  switchLang: (newLang: lang) => void;
 };
 export type CertificationType = {
   title: string;
@@ -51,6 +52,7 @@ export type CertificationType = {
 };
 
 export type Theme = "dark" | "light" | "system";
+export type lang = "en" | "es";
 export type ThemeProviderState = {
   theme: Theme;
   setTheme: (theme: Theme) => void;

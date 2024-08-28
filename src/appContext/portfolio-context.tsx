@@ -6,7 +6,8 @@ import {
   useState
 } from "react";
 import { useTranslation } from "react-i18next";
-import { AppContextType, Theme } from "../types/type";
+import { AppContextType, Theme, lang } from "../types/type";
+import i18next from "i18next";
 
 const PortfolioContext = createContext<AppContextType>({} as AppContextType);
 
@@ -410,9 +411,9 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       web: "https://ibookshelf-app.netlify.app/"
     }
   ];
-
+  //Dark-Light Mode
   const [mode, setMode] = useState<Theme>(
-    () => (localStorage.getItem("theme") as Theme) || "light"
+    () => (localStorage.getItem("theme") as Theme) || "system"
   );
 
   useEffect(() => {
@@ -440,12 +441,22 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       setMode(theme);
     }
   };
+
+  //en-es lang
+  function switchLang(newLang: lang) {
+    i18next.changeLanguage(newLang, err => {
+      if (err) return console.log("Error al cambiar el idioma", err);
+      localStorage.setItem("language", newLang);
+    });
+  }
+
   return (
     <PortfolioContext.Provider
       value={{
         experience,
         projectNames,
-        value
+        value,
+        switchLang
       }}
     >
       {children}
