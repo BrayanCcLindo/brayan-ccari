@@ -3,11 +3,13 @@ import Layout from "../ui/layout";
 import { ChevronUp, Github, Linkedin, Twitter } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
+import { useProtfolioContext } from "../appContext/portfolio-context";
 
-function Footer({ nextMode }: { nextMode: string }) {
+function Footer() {
   function handleScroll() {
     window.scrollTo(0, 0);
   }
+  const { value } = useProtfolioContext();
   const { t } = useTranslation("global");
 
   return (
@@ -18,14 +20,14 @@ function Footer({ nextMode }: { nextMode: string }) {
             <img
               width={120}
               src={
-                nextMode === "dark"
+                value.mode === "light"
                   ? "../../images/azul.png"
                   : "../../images/blanco.png"
               }
               alt="brayan-ccari-logo"
             />
           </Link>
-          <ul className="flex gap-8 items-center text-gray-500 font-medium text-lg">
+          <ul className="flex items-center gap-8 text-lg font-medium text-gray-500">
             <li>
               <Link onClick={handleScroll} to="/">
                 {t("menu.home")}
@@ -50,7 +52,7 @@ function Footer({ nextMode }: { nextMode: string }) {
           <p className="text-gray-200">
             © Brayan Ccari, 2023 All rights reserved.
           </p>
-          <div className="flex gap-8 items-center ">
+          <div className="flex items-center gap-8 ">
             <a
               className={twMerge(
                 "rounded-full bg-white flex items-center justify-center p-6 text-purple",
@@ -86,7 +88,7 @@ function Footer({ nextMode }: { nextMode: string }) {
       </Layout>
       <div className="fixed bottom-[20px] right-[20px]">
         <button
-          className="bg-white p-4 rounded-full text-purple"
+          className="p-4 bg-white rounded-full text-purple"
           onClick={handleScroll}
         >
           <ChevronUp />

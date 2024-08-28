@@ -1,35 +1,38 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 import { useTranslation } from "react-i18next";
+import { useProtfolioContext } from "../appContext/portfolio-context";
 
-interface DarkLight {
-  setMode: React.Dispatch<React.SetStateAction<string>>;
-  nextMode: string;
-}
-
-function Header({ setMode, nextMode }: DarkLight) {
+function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t, i18n } = useTranslation("global");
   const styleLang = i18n.resolvedLanguage;
+  const { value } = useProtfolioContext();
 
   const toggleDisplay = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   const handleScroll = () => {
     setIsMenuOpen(false);
-
     window.scrollTo(0, 0);
   };
 
   const handleTheme = () => {
-    setMode(nextMode);
+    const nextMode = value.mode === "light" ? "dark" : "light";
+    value.setMode(nextMode);
   };
+  const routes = [
+    { title: t("menu.home"), path: "/" },
+    { title: t("menu.about"), path: "/about-me" },
+    { title: t("menu.projects"), path: "/my-projects" },
+    { title: t("menu.contact"), path: "/contact" }
+  ];
   return (
     <div
       className={twMerge(
-        "flex items-center z-10 p-4 sticky top-0 left-0 right-0  m-auto mb-[50px] bg-gray-300"
+        "flex items-center z-10 p-4 text-black sticky top-0 left-0 right-0 m-auto mb-[50px] bg-gray-300 shadow-sm shadow-gray-600"
       )}
     >
       <div
@@ -40,9 +43,9 @@ function Header({ setMode, nextMode }: DarkLight) {
       >
         <Link to={"/"}>
           <img
-            className="relative z-10 w-[80px] md:w-[120px] rounded-full"
+            className="relative z-10 w-[40px] md:w-[60px] rounded-full"
             src={
-              nextMode === "dark"
+              value.mode === "light"
                 ? "../../images/azul.png"
                 : "../../images/blanco.png"
             }
@@ -53,52 +56,31 @@ function Header({ setMode, nextMode }: DarkLight) {
         <div className="">
           {isMenuOpen && (
             <>
-              <div
-                className={twMerge(
-                  "bg-gray-300 flex flex-col gap-4 text-black absolute left-0 right-0 top-[70px]  text-center pb-8",
-                  "md:hidden"
-                )}
-              >
-                <Link
-                  onClick={handleScroll}
-                  className="w-full text-lg hover:text-purple"
-                  to="/"
-                >
-                  {t("menu.home")}
-                </Link>
-                {/* <li className="text-lg hover:text-purple">
-              </li> */}
-                <Link
-                  onClick={handleScroll}
-                  className="w-full text-lg hover:text-purple"
-                  to="/about-me"
-                >
-                  {t("menu.about")}
-                </Link>
-                <Link
-                  onClick={handleScroll}
-                  className="w-full text-lg hover:text-purple"
-                  to="/my-projects"
-                >
-                  {t("menu.projects")}
-                </Link>
-                <Link
-                  onClick={handleScroll}
-                  className="w-full text-lg hover:text-purple"
-                  to="/contact"
-                >
-                  {t("menu.contact")}
-                </Link>
+              <div className="md:hidden bg-gray-300 flex flex-col gap-4 absolute left-0 right-0 top-[70px]  text-center pb-8">
+                <ul className="flex flex-col gap-4 pb-8 text-center bg-gray-300">
+                  {routes.map(route => (
+                    <li className=" hover:text-purple">
+                      <NavLink
+                        onClick={handleScroll}
+                        className={({ isActive }) => {
+                          return isActive ? "text-purple" : "text-black";
+                        }}
+                        to={route.path}
+                      >
+                        {route.title}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
                 <div className="flex justify-center gap-6">
                   <button
                     onClick={() => {
                       i18n.changeLanguage("es");
                     }}
                     className={twMerge(
-                      `bg-white p-4 rounded-full text-purple hover:bg-purple ${
-                        styleLang === "es" && "bg-purple text-white"
-                      }`,
-                      " hover:text-white"
+                      `bg-white p-4 rounded-full hover:bg-purple ${
+                        styleLang === "es" && "bg-purple"
+                      }`
                     )}
                   >
                     <img
@@ -114,10 +96,9 @@ function Header({ setMode, nextMode }: DarkLight) {
                       i18n.changeLanguage("en");
                     }}
                     className={twMerge(
-                      `bg-white p-4 rounded-full text-purple hover:bg-purple ${
-                        styleLang === "en" && "bg-purple text-white"
-                      }`,
-                      " hover:text-white"
+                      `bg-white p-4 rounded-full hover:bg-purple ${
+                        styleLang === "en" && "bg-purple"
+                      }`
                     )}
                   >
                     <img
@@ -132,7 +113,7 @@ function Header({ setMode, nextMode }: DarkLight) {
                     onClick={handleTheme}
                     className={twMerge(" text-purple cursor-pointer ")}
                   >
-                    {nextMode === "dark" ? <Moon /> : <Sun />}
+                    {value.mode === "dark" ? <Moon /> : <Sun />}
                   </button>
                 </div>
               </div>
@@ -147,39 +128,44 @@ function Header({ setMode, nextMode }: DarkLight) {
           )}
         </button>
         <div className={twMerge("hidden md:flex")}>
-          <ul className="flex gap-8 items-center text-gray-500 font-medium text-lg">
-            <li className=" hover:text-purple">
-              <Link onClick={handleScroll} to="/">
-                {t("menu.home")}
-              </Link>
-            </li>
-            <li className=" hover:text-purple">
-              <Link onClick={handleScroll} to="/about-me">
-                {t("menu.about")}
-              </Link>
-            </li>
-            <li className=" hover:text-purple">
-              <Link onClick={handleScroll} to="/my-projects">
-                {t("menu.projects")}
-              </Link>
-            </li>
-            <li className=" hover:text-purple">
-              <Link onClick={handleScroll} to="/contact">
-                {t("menu.contact")}
-              </Link>
-            </li>
+          <ul className="flex items-center gap-8 text-lg font-medium text-black">
+            {routes.map(route => (
+              <li key={route.title} className="relative group">
+                <NavLink
+                  to={route.path}
+                  className={({ isActive }) =>
+                    `text-lg font-medium transition-colors duration-200 relative pb-1
+                  ${isActive ? "text-purple" : "text-black hover:text-purple"}`
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
+                      {route.title}
+                      <span
+                        className={`absolute bottom-0 left-0 w-full h-0.5 bg-purple 
+                                  transform transition-transform duration-300 ease-out origin-left
+                                  ${
+                                    isActive
+                                      ? "scale-x-100"
+                                      : "scale-x-0 group-hover:scale-x-100"
+                                  }`}
+                      ></span>
+                    </>
+                  )}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
-        <div className="hidden md:flex gap-6">
+        <div className="hidden gap-6 md:flex">
           <button
             onClick={() => {
               i18n.changeLanguage("es");
             }}
             className={twMerge(
-              `bg-white p-4 rounded-full text-purple hover:bg-purple ${
-                styleLang === "es" && "bg-purple text-white"
-              }`,
-              " hover:text-white"
+              `bg-white p-4 rounded-full hover:bg-purple ${
+                styleLang === "es" && "bg-purple"
+              }`
             )}
           >
             <img src="../../images/svg/peru.svg" alt="" />
@@ -189,10 +175,9 @@ function Header({ setMode, nextMode }: DarkLight) {
               i18n.changeLanguage("en");
             }}
             className={twMerge(
-              `bg-white p-4 rounded-full text-purple hover:bg-purple ${
-                styleLang === "en" && "bg-purple text-white"
-              }`,
-              " hover:text-white"
+              `bg-white p-4 rounded-full hover:bg-purple ${
+                styleLang === "en" && "bg-purple"
+              }`
             )}
           >
             <img src="../../images/svg/usa.svg" alt="" />
@@ -200,16 +185,16 @@ function Header({ setMode, nextMode }: DarkLight) {
           <button
             onClick={handleTheme}
             className={twMerge(
-              "bg-white p-4 rounded-full text-purple  hover:bg-purple",
+              "bg-white p-4 rounded-full text-gray-200 hover:bg-purple",
               `hover:text-white rotate-0  ${
-                nextMode === "dark"
+                value.mode === "light"
                   ? "rotate-[360deg] duration-700"
                   : "rotate:180 duration-700"
               }  `
             )}
           >
-            {nextMode === "dark" ? (
-              <Moon strokeWidth={1} className=" " />
+            {value.mode === "light" ? (
+              <Moon strokeWidth={1} />
             ) : (
               <Sun strokeWidth={1} />
             )}

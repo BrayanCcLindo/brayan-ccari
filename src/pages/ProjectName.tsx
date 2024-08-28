@@ -1,115 +1,138 @@
 import { useParams } from "react-router-dom";
 import Layout from "../ui/layout";
 import { useProtfolioContext } from "../appContext/portfolio-context";
-import { twMerge } from "tailwind-merge";
 import { Github, Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import ButtonComponent from "../components/button-component";
 
 function Project() {
   const { projectName } = useParams();
   const { projectNames } = useProtfolioContext();
   const { t } = useTranslation("global");
+  const [isListShowed, setIsListShowed] = useState(false);
 
   const newProyjects = [...projectNames];
   const proyectIndex = newProyjects.findIndex(
-    (project) => project.slug === projectName
+    project => project.slug === projectName
   );
   const oficialProyect = newProyjects[proyectIndex];
+
+  const bulletList = isListShowed
+    ? oficialProyect.bullets
+    : [oficialProyect.bullets[0]];
 
   return (
     <>
       <Layout>
-        <p className="text-gray-200 uppercase mb-4 p-4">
+        <p className="p-4 mb-4 text-gray-200 uppercase">
           {oficialProyect.slogan}
         </p>
-        <h1 className="text-3xl text-black md:text-7xl font-semibold mb-8 p-4">
+        <h1 className="p-4 mb-8 text-3xl font-semibold text-black md:text-7xl">
           {oficialProyect.title}
         </h1>
-        <div
-          className={twMerge("grid  md:grid-cols-[2fr,1fr] gap-8 rounded-xl  ")}
-        >
-          <img
-            className={twMerge(
-              "h-[314px] object-cover object-center rounded-xl  w-full object-fit p-8 bg-white md:h-[628px]"
-            )}
-            src={oficialProyect.photos[1]}
-            alt="proyect-main-picture"
-          />
-          <div className="flex flex-col justify-between gap-4 h-[628px]">
-            <img
-              className=" object-cover p-8 bg-white rounded-xl h-[314px]    "
-              src={oficialProyect.photos[0]}
-              alt="proyect-main-picture"
-            />
-            <img
-              className=" h-[314px]  object-cover p-8 bg-white rounded-xl"
-              src={oficialProyect.photos[2]}
-              alt="proyect-main-picture"
-            />
-          </div>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {oficialProyect.photos.map((image, index) => (
+            <div key={index} className="overflow-hidden rounded-lg ">
+              <img
+                src={image}
+                alt="imagenes de proyecto"
+                width={400}
+                height={400}
+                className="object-cover w-full h-full transition-all duration-300 hover:scale-105 hover:duration-300 aspect-square "
+              />
+            </div>
+          ))}
         </div>
 
-        <div className="grid gap-8 p-8 bg-white rounded-xl mt-16 md:grid-cols-[2fr,1fr] ">
+        <div className="grid gap-4 p-8 bg-white rounded-xl mt-16 md:grid-cols-[2fr,1fr] ">
           <div className="flex flex-col gap-8">
-            <h2 className="text-2xl text-black font-semibold">
+            <h2 className="text-xl font-semibold text-black">
               {t("projects.description")}{" "}
             </h2>
-            {oficialProyect.description.map((description) => (
-              <p key={description} className="text-xl text-black">
+            {oficialProyect.description.map(description => (
+              <p key={description} className="text-black">
                 {" "}
                 {description}
               </p>
             ))}
-            <div className="bg-gray-600 rounded-xl py-8 flex justify-center  gap-8 flex-wrap">
-              <h3 className="text-2xl text-black font-semibold">
-                {t("projects.developed")}{" "}
-              </h3>
-              {oficialProyect.languages.map((language, index) => (
-                <p
-                  key={index}
-                  className="text-xl text-purple font-semibold flex-flex-nowrap"
-                >
-                  {language}
-                </p>
-              ))}
-            </div>
-          </div>
-          <div className="flex flex-col gap-8 text-black">
-            <h2 className="text-2xl font-semibold">
-              {" "}
-              {t("projects.projInfo")}
+            <h2 className="text-xl font-semibold text-black">
+              Funcionalidades Clave
             </h2>
-            <p className="text-xl font-bold ">
+            <ul className="grid gap-6 text-black md:grid-cols-2 lg:grid-cols-2">
+              {bulletList.map((bullet, index) => (
+                <li
+                  key={index}
+                  className="p-4 border border-gray-600 rounded-lg"
+                >
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-semibold">{bullet.title}</h3>
+                    <p className="text-base text-muted-foreground">
+                      {bullet.bullet}
+                    </p>
+                  </div>
+                </li>
+              ))}
+              {!isListShowed ? (
+                <ButtonComponent onClick={() => setIsListShowed(true)}>
+                  Mostrar todos los usuarios
+                </ButtonComponent>
+              ) : (
+                <ButtonComponent onClick={() => setIsListShowed(false)}>
+                  Ocualtar todos los usuarios
+                </ButtonComponent>
+              )}
+            </ul>
+          </div>
+          <div className="flex flex-col gap-8 text-black border-l border-gray-600 md:pl-4">
+            <h2 className="text-xl font-semibold"> {t("projects.projInfo")}</h2>
+            <p className="font-bold ">
               {t("projects.category")}:{" "}
               <span className="font-extralight">{oficialProyect.category}</span>
             </p>
-            <p className="text-xl font-bold">
+            <p className="font-bold ">
               {t("projects.date")}:{" "}
               <span className="font-extralight">{oficialProyect.date}</span>
             </p>
-            <p className="text-xl font-bold">
+            <p className="font-bold ">
               {t("projects.name")}:{" "}
               <span className="font-extralight">{oficialProyect.name}</span>
             </p>
-            <p className="text-xl font-bold">
+            <p className="font-bold ">
               {t("projects.web")}:{" "}
               <span className="font-extralight">{oficialProyect.website}</span>
             </p>
-            <div className="flex gap-8 items-center  p-2 w-full justify-evenly rounded-3xl">
+            <div className="flex items-center w-full gap-8 p-2 justify-evenly rounded-3xl">
               <a
                 href={oficialProyect.web}
                 target="_blank"
-                className="bg-white p-4 rounded-full text-purple hover:bg-purple hover:text-white"
+                className="p-4 bg-white rounded-full text-purple hover:bg-purple hover:text-white"
               >
                 <Globe size={40} strokeWidth={1} />
               </a>
               <a
                 href={oficialProyect.github}
                 target="_blank"
-                className="bg-white p-4 rounded-full text-purple hover:bg-purple hover:text-white"
+                className="p-4 bg-white rounded-full text-purple hover:bg-purple hover:text-white"
               >
                 <Github size={40} strokeWidth={1} />{" "}
               </a>
+            </div>
+            <div className="flex flex-col flex-wrap justify-center gap-8 px-4 py-8 bg-gray-600 rounded-xl">
+              <h3 className="text-xl font-semibold text-black">
+                {t("projects.developed")}{" "}
+              </h3>
+              <div className="flex flex-col gap-4">
+                {oficialProyect.languages.map((language, index) => (
+                  <p
+                    key={index}
+                    className="font-semibold text-purple flex-flex-nowrap"
+                  >
+                    {language}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         </div>

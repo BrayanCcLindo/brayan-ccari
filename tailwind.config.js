@@ -5,24 +5,23 @@ export default {
     extend: {
       fontFamily: {
         heading: ["Cairo", "sans-serif"],
-        basic: ["Open Sans", "sans-serif"],
+        basic: ["Open Sans", "sans-serif"]
       },
       colors: {
-        white: "var(--white)",
-        // black: "var(--black)",
+        white: "rgba(var(--white))",
         gray: {
-          50: "var(--button-text)",
-          100: "var(--subtitle)",
-          200: "var(--text)",
-          300: "var(--main-bg)",
-          400: "var(--button-bg)",
-          500: "var(--menu)",
-          600: "var(--icons-bg)",
+          50: "rgba(var(--button-text))",
+          100: "rgba(var(--subtitle))",
+          200: "rgba(var(--text))",
+          300: "rgba(var(--main-bg))",
+          400: "rgba(var(--button-bg))",
+          500: "rgba(var(--menu))",
+          600: "rgba(var(--icons-bg))"
         },
-        purple: "var(--purple)",
-        black: "var(--black)",
-      },
-    },
+        purple: "rgba(var(--purple))",
+        black: "rgba(var(--black))"
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 };

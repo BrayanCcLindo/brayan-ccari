@@ -1,30 +1,34 @@
 import { FileDown, Github, Linkedin, Mail } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 import { useTranslation } from "react-i18next";
-
-// import { aboutMe } from "../types/about";
 import Layout from "../ui/layout";
-import { CardComponent, DescriptionTechStack } from "./Home";
 import { useProtfolioContext } from "../appContext/portfolio-context";
 import { Link } from "react-router-dom";
+import { education } from "../profileData/education";
+import { techStackImg } from "../profileData/techStack";
+import { CardComponent } from "../components/CardComponent";
+import { DescriptionTechStack } from "../components/TechstackCard";
 
 function ExperienceCard({ title }: { title: string }) {
   const { experience } = useProtfolioContext();
 
   return (
-    <div className="p-8 rounded-xl bg-white flex flex-col gap-8">
-      <h3 className="text-2xl text-black font-semibold">{title}</h3>
+    <div className="flex flex-col gap-8 p-8 bg-white rounded-xl">
+      <h3 className="text-2xl font-semibold text-black">{title}</h3>
       <div className="flex flex-col gap-8 ">
         {experience?.map((exp, id) => (
           <div key={id} className="flex flex-col gap-4 ">
-            <span className="text-gray-200 font-medium">{exp.year}</span>
-            <h4 className="text-xl text-purple font-semibold">
+            <span className="font-medium text-gray-200">{exp.year}</span>
+            <h4 className="text-xl font-semibold text-purple">
               {exp.job} - {exp.detail}
             </h4>
-            <ul className="list-disc pl-8">
-              {exp.description.map((duties, index) => (
-                <li className="text-black" key={index}>
-                  {duties}
+            <ul className="divide-y divide-gray-600">
+              {exp.description.map((item, index) => (
+                <li
+                  key={index}
+                  className="p-4 text-black transition duration-300 ease-in-out hover:bg-gray-600 hover:duration-300"
+                >
+                  {item}
                 </li>
               ))}
             </ul>
@@ -35,33 +39,38 @@ function ExperienceCard({ title }: { title: string }) {
   );
 }
 function EducationCard({ title }: { title: string }) {
-  const { education } = useProtfolioContext();
-
   return (
-    <div className="p-8 rounded-xl bg-white flex flex-col gap-8">
-      <h3 className="text-2xl text-black font-semibold">{title}</h3>
-      <div className="flex flex-col gap-8 ">
-        {education?.map((edu, id) => (
-          <div key={id} className="flex flex-col gap-4 ">
-            <span className="text-gray-200 font-medium">
-              {edu.detail} - {edu.year}
-            </span>
-            <h4 className="text-xl text-purple font-semibold">{edu.job}</h4>
-          </div>
+    <div className="flex flex-col gap-8 p-8 bg-white rounded-xl">
+      <h3 className="text-2xl font-semibold text-black">{title}</h3>
+      <ul className="divide-y divide-gray-600">
+        {education.map((item, index) => (
+          <li
+            key={index}
+            className="p-4 transition duration-150 ease-in-out hover:bg-gray-600"
+          >
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start">
+              <h3 className="mb-1 text-lg font-semibold text-black sm:mb-0">
+                {item.job}
+              </h3>
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple/20 text-purple">
+                {item.year}
+              </span>
+            </div>
+            <p className="mt-2 text-gray-200">{item.detail}</p>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
 
 function About() {
-  const { techStackImg } = useProtfolioContext();
   const { t } = useTranslation("global");
 
   return (
     <Layout>
       <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[1fr,2fr]")}>
-        <div className="flex items-center justify-center p-8 rounded-xl bg-white ">
+        <div className="flex items-center justify-center p-8 bg-white rounded-xl ">
           <img
             width={300}
             className="object-cover rounded-full"
@@ -69,11 +78,11 @@ function About() {
             alt="brayan-ccari"
           />
         </div>
-        <div className="flex flex-col gap-8 justify-between  ">
-          <h2 className="text-4xl text-black font-semibold text-center lg:text-7xl">
+        <div className="flex flex-col justify-between gap-8 ">
+          <h2 className="text-4xl font-semibold text-center text-black lg:text-7xl">
             {t("about.title")}
           </h2>
-          <div className=" p-8 rounded-xl bg-white text-black ">
+          <div className="p-8 text-black bg-white rounded-xl">
             <h1 className="mb-4 text-3xl ">Brayan Ccari Lindo</h1>
             <p>{t("about.description")}</p>
           </div>
@@ -85,28 +94,28 @@ function About() {
         <ExperienceCard title={t("about.experience")} />
         <EducationCard title={t("about.education")} />
       </div>
-      <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[1fr,2fr]")}>
+      <div className={twMerge("grid gap-8 p-4", "md:grid-cols-[1fr,2fr]")}>
         <CardComponent isClickable={false} title={t("home.contact")}>
-          <div className="flex gap-8 items-center bg-gray-600 p-2 w-full justify-evenly rounded-3xl">
+          <div className="flex items-center w-full gap-8 p-2 justify-evenly rounded-3xl">
             <a
-              href="https://github.com/BrayanCcLindo"
-              target="_blank"
-              className="bg-white p-4 rounded-full text-purple hover:bg-purple hover:text-white"
+              href="mailto:brayancclindo@gmail.com"
+              className="p-4 border border-gray-600 rounded-full text-purple hover:bg-purple hover:text-white"
             >
-              <Github size={40} strokeWidth={1} />
+              <Mail size={40} strokeWidth={1} />
             </a>
             <a
               href="https://www.linkedin.com/in/brayan-ccari/"
               target="_blank"
-              className="bg-white p-4 rounded-full text-purple hover:bg-purple hover:text-white"
+              className="p-4 border border-gray-600 rounded-full text-purple hover:bg-purple hover:text-white"
             >
               <Linkedin size={40} strokeWidth={1} />{" "}
             </a>
             <a
-              href="mailto:brayancclindo@gmail.com"
-              className="bg-white p-4 rounded-full text-purple hover:bg-purple hover:text-white"
+              href="https://github.com/BrayanCcLindo"
+              target="_blank"
+              className="p-4 border border-gray-600 rounded-full text-purple hover:bg-purple hover:text-white"
             >
-              <Mail size={40} strokeWidth={1} />{" "}
+              <Github size={40} strokeWidth={1} />
             </a>
           </div>
         </CardComponent>
@@ -114,7 +123,7 @@ function About() {
           <div
             className={twMerge("flex gap-4 text-purple flex-wrap ", "md:gap-8")}
           >
-            {techStackImg.map((item) => (
+            {techStackImg.map(item => (
               <DescriptionTechStack key={item.title} image={item} />
             ))}
           </div>
@@ -123,7 +132,7 @@ function About() {
 
       <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[2fr,1fr,1fr]")}>
         <Link
-          className="flex justify-between bg-white p-8 items-end rounded-2xl"
+          className="flex items-end justify-between p-8 bg-white rounded-2xl"
           to={"/contact"}
         >
           <div className="">
@@ -151,7 +160,7 @@ function About() {
           <a
             href="../../files/BrayanCcari.pdf"
             download={"BrayanCcari.pdf"}
-            className="bg-gray-400 text-gray-50 rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full flex items-center justify-center gap-8 hover:scale-105 duration-100 text-center"
+            className="flex items-center justify-center w-full gap-8 px-8 py-4 font-semibold text-center duration-100 bg-gray-400 text-gray-50 rounded-2xl hover:bg-purple hover:scale-105"
           >
             <FileDown size={50} />
             {t("home.downloadButton")}

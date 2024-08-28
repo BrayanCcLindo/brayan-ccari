@@ -3,20 +3,22 @@
 @tailwind utilities;
 
 body {
-  background: var(--main-bg);
+  background: rgba(var(--main-bg));
 
   font-family: "Cairo", sans-serif;
 }
 /* body[data-theme="light"] {
 } */
-body[data-theme="dark"] {
-  --main-bg: var(--dark-bg);
-  --white: var(--dark-cards);
-  --black: #ffffff;
-  --button-bg: var(--purple);
-  --icons-bg: #304973;
-  --menu: #e5e5e5;
-  --text: #e5e5e5;
+.dark {
+  --main-bg: 1, 5, 9;
+  --white: 16, 21, 28;
+  --black: 225, 225, 225;
+  --button-bg: 63, 90, 243;
+  --icons-bg: 34, 39, 49;
+  --menu: 229, 229, 229;
+  --text: 156, 163, 175;
+  --purple: 63, 90, 243;
+  --button-text: 254, 254, 255;
 }
 
 .marquee-container {
@@ -38,20 +40,21 @@ body[data-theme="dark"] {
     ); /* Termina fuera del contenedor en la dirección opuesta */
   }
 }
-
+.light {
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
+  --main-bg: 247, 249, 252;
+  --purple: 63, 90, 243;
+  --menu: 103, 103, 103;
+  --button-bg: 50, 50, 50;
+  --subtitle: 212, 212, 212;
+  --text: 164, 165, 167;
+  --dark-bg: 1, 5, 9;
+  --dark-cards: 16, 21, 28;
+  --icons-bg: 230, 231, 235;
+  --button-text: 254, 254, 255;
+}
 :root {
-  --white: #fff;
-  --black: #000;
-  --main-bg: #f7f9fc;
-  --purple: #5b78f6;
-  --menu: #676767;
-  --button-bg: #323232;
-  --subtitle: #d4d4d4;
-  --text: #a4a5a7;
-  --dark-bg: #182135;
-  --dark-cards: #253452;
-  --icons-bg: #fbfbfc;
-  --button-text: #fefeff;
   /* color-scheme: light dark; */
   scroll-behavior: smooth;
 

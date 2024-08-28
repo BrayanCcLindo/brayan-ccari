@@ -7,21 +7,13 @@ import { PortfolioProvider } from "./appContext/portfolio-context";
 import Proyects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Project from "./pages/ProjectName";
-import { useEffect, useState } from "react";
 
 function MainLayout() {
-  const [mode, setMode] = useState("dark");
-
-  const nextMode = mode === "light" ? "dark" : "light";
-  useEffect(() => {
-    document.body.dataset.theme = mode;
-  }, [mode]);
-
   return (
     <>
-      <Header setMode={setMode} nextMode={nextMode} />
+      <Header />
       <Outlet />
-      <Footer nextMode={nextMode} />
+      <Footer />
     </>
   );
 }
@@ -37,9 +29,6 @@ function App() {
             <Route path="/my-projects" element={<Proyects />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/my-projects/:projectName" element={<Project />} />
-
-            {/* <Route path="/filter" element={<FilterPage />} />
-            <Route path="/details/:bookSlug" element={<DetailsPage />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>

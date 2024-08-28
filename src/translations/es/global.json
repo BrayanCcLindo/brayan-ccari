@@ -8,13 +8,13 @@
 
   "home": {
     "name": "¡Hola! Soy Brayan",
-    "description": "Apasionado por crear experiencias digitales cautivadoras, transformando conceptos en interfaces atractivas y altamente utilizables.",
+    "description": "Apasionado por crear experiencias digitales cautivadoras, transformo conceptos en interfaces atractivas y altamente intuitivas, siempre con un enfoque en la usabilidad y la satisfacción del usuario.",
     "sliderText": "Transformando ideas en código y código en soluciones.",
     "aboutMeTitle": "Sobre mí",
     "aboutMeSubTitle": "Más",
     "projectsTitle": "Proyectos",
     "projectsSubTitle": "Mis",
-    "contact": "Ponte en contacto",
+    "contact": "Contáctame",
     "TechStack": "Tech Stack",
     "experience": "Años de experiencia",
     "totalProjects": "Proyectos totales",
@@ -25,29 +25,29 @@
   },
   "about": {
     "title": "SOBRE MÍ",
-    "description": "Desarrollador frontend apasionado con experiencia en la creación de interfaces web atractivas y funcionales. Con un sólido conocimiento de tecnologías web modernas como HTML, CSS y JavaScript. Siempre interesado en aprender nuevas tecnologías y enfoques para mantenerme actualizado en el mundo en constante evolución del desarrollo frontend.",
+    "description": "Desarrollador frontend con una sólida trayectoria en la creación de interfaces web responsive y pixel-perfect. Dominio de HTML, CSS, JavaScript, React y Next.js, con experiencia en comunicación en tiempo real, gestión de bases de datos e integración de pagos seguros. Continuamente aprendiendo y adaptándose a las últimas tecnologías.",
     "experience": "EXPERIENCIA",
     "education": "EDUCACIÓN"
   },
   "experience1": {
-    "year": "12/2021 - 04/2023",
-    "job": "Desarrollador Frontend - WordPress",
+    "year": "06/2024 - Presente",
+    "job": "Frontend Developer - Pun Game (NFTs)",
     "detail": "Remoto",
 
-    "description1": "Construí páginas de destino y sitios web para agencias de turismo desde el diseño hasta la producción.",
-    "description2": "Implementé estrategias de crecimiento de ventas y desarrollo de productos utilizando React.",
-    "description3": "Realicé optimización SEO mejorando la investigación de palabras clave y el rendimiento de muchos sitios web.",
-    "description4": "Contribuí a la integración de Firebase, mejorando significativamente la calidad y velocidad del desarrollo de páginas web."
+    "description1": "Desarrollé una aplicación web desde cero utilizando Next.js, WebSocket, WalletConnect y Postgres como base tecnológica.",
+    "description2": "Logré una integración responsive que permite a los usuarios conectarse sin problemas desde distintos dispositivos, crear lobbies y unirse a amigos mediante un código de lobby para iniciar el juego.",
+    "description3": "Diseñé la mecánica del juego basada en dibujar y adivinar palabras, integrando WebSocket para asegurar la comunicación en tiempo real, gestionar la pizarra, el temporizador y las rondas.",
+    "description4": "Implementé soluciones backend para manejar peticiones HTTP, gestionar la puntuación global de los usuarios y mostrarla en una tabla de clasificación en tiempo real."
   },
   "experience2": {
-    "year": "04/2023 - Presente",
-    "job": "Desarrollador Frontend, Freelance",
+    "year": "04/2024 - Presente",
+    "job": "Frontend Developer - Own Crowdfunding Project",
     "detail": "Remoto",
 
-    "description1": "Construí un sitio accesible y funcional para una librería electrónica.",
-    "description2": "Trabajé en frontend con React, TypeScript, Tailwind y React-i18next.",
-    "description3": "Documenté el uso de APIs de rendimiento en React, lo que aumentó la calidad del código.",
-    "description4": "Integré múltiples funcionalidades de filtrado para mejorar la experiencia del usuario."
+    "description1": "Desarrollé una interfaz de usuario interactiva y dinámica utilizando React.js, Express y Firebase como la base tecnológica, logrando una experiencia de usuario responsive y pixel-perfect.",
+    "description2": "Implementé Firebase para gestionar una base de datos en tiempo real, la autenticación de usuarios y el almacenamiento de archivos, configurando reglas de seguridad y optimizando consultas para un mejor rendimiento.",
+    "description3": "Integré una pasarela de pago segura que permite a los usuarios contribuir a proyectos de crowdfunding, utilizando APIs de pago reconocidas para procesar transacciones de manera segura y eficiente.",
+    "description4": "Aseguré que cada componente de la aplicación funcione de manera fluida y consistente en todos los dispositivos, garantizando tanto la seguridad como la eficiencia en las operaciones de los usuarios."
   },
   "projects": {
     "title": "TODOS LOS PROYECTOS",
@@ -63,50 +63,147 @@
   "iBookShelf": {
     "slogan": "iBookShelf es el lugar ideal para acceder a tus libros favoritos y aquellos que estás a punto de descubrir.",
     "description1": "iBookShelf cuenta con múltiples funciones de filtrado sólidas y versátiles que te permiten navegar por nuestra extensa colección de libros de manera eficiente y personalizada. Con nuestras opciones de filtrado, encontrarás fácilmente tu próxima lectura favorita.",
-    "description2": "Uno de los desafíos radica en la gestión de diferentes estados para cada libro y las categorías donde se encuentran, seguido por la creación de una experiencia de usuario que garantice una navegación fluida y receptiva. Además, el objetivo es ofrecer personalización y flexibilidad que te permitan construir tu propia biblioteca según tus preferencias, y así gestionar tus actividades de lectura de manera eficiente.",
+
+    "title1": "Funcionalidades avanzadas",
+    "bullet1": "iBookShelf ofrece múltiples funciones de filtrado sólidas y versátiles para explorar nuestra amplia colección de libros.",
+
+    "title2": "Navegación eficiente y personalizada",
+    "bullet2": "Las opciones de filtrado te permiten encontrar fácilmente tu próxima lectura favorita.",
+
+    "title3": "Gestión de estados y categorías",
+    "bullet3": "Enfrentamos el desafío de manejar diferentes estados y categorías de libros para una experiencia de usuario fluida y receptiva.",
+
+    "title4": "Personalización y flexibilidad",
+    "bullet4": "Permite construir tu propia biblioteca según tus preferencias y gestionar tus actividades de lectura de manera eficiente.",
+
+    "category": "Desarrollo Web"
+  },
+  "kuziFund": {
+    "slogan": "Plataforma de crowdfunding para apoyar causas sociales, empresas innovadoras y generar impacto positivo.",
+    "description1": "Diseñada para apoyar diversos tipos de campañas, permitiendo a las personas contribuir voluntariamente a proyectos que les apasionan. La plataforma gestiona tres tipos de campañas principales: para Emprendedores, Albergues y Fundaciones y de Impacto social.",
+
+    "title1": "Visualización y Transparencia de Campañas",
+    "bullet1": "Los usuarios pueden ver campañas con detalles claros sobre las donaciones, incluyendo opciones para donar públicamente o de forma anónima.",
+
+    "title2": "Donaciones Públicas o Anónimas",
+    "bullet2": "Se permite a los usuarios elegir entre donaciones públicas o anónimas, respetando su privacidad.",
+
+    "title3": "Gestión de Usuarios y Filtrado",
+    "bullet3": "La plataforma incluye herramientas para la gestión eficiente de usuarios y la capacidad de filtrar campañas según intereses.",
+
+    "title4": "Integración de Pasarelas de Pago",
+    "bullet4": "La plataforma maneja transacciones de manera segura a través de pasarelas de pago, asegurando un proceso de donación fluido y confiable.",
+
+    "title5": "Base de Datos en Firebase",
+    "bullet5": "Utiliza Firebase para una gestión de datos en tiempo real, asegurando seguridad y disponibilidad constante.",
     "category": "Desarrollo Web"
   },
   "Weather": {
-    "slogan": "Una aplicación meteorológica que proporciona información en tiempo real sobre las condiciones climáticas basadas en la ubicación y el tiempo del usuario.",
-    "description1": "Weather App es una aplicación meteorológica intuitiva y completa que te mantiene siempre un paso adelante en cuanto a las condiciones climáticas. Desde la comodidad de tu smartphone o tablet",
-    "description2": "Weather App te brinda acceso instantáneo a una amplia gama de información meteorológica, proporcionando una experiencia de usuario excepcional.",
-    "description3": "Gestionar diversos estados por ubicación y elementos de información meteorológica presenta un desafío. Busco crear una experiencia de usuario fluida, permitiendo un fácil acceso a los detalles meteorológicos. También priorizo la flexibilidad y la personalización para ajustar la aplicación a las preferencias individuales, adaptándola a las necesidades específicas de cada usuario.",
+    "slogan": "Ofrece datos climáticos en tiempo real, personalizados según la ubicación y el momento del usuario",
+    "description1": "Weather App es una aplicación meteorológica intuitiva y completa que te mantiene siempre informado sobre las condiciones climáticas. Accede a pronósticos precisos y detallados directamente desde la comodidad de tu smartphone o tablet",
+    "title1": "Acceso Instantáneo",
+    "bullet1": "Weather App ofrece acceso inmediato a una amplia variedad de información meteorológica.",
+
+    "title2": "Experiencia de Usuario Excepcional",
+    "bullet2": "Se enfoca en brindar una experiencia de usuario fluida y de alta calidad.",
+
+    "title3": "Gestión de Estados por Ubicación",
+    "bullet3": "El manejo de diferentes estados meteorológicos por ubicación es un desafío clave.",
+
+    "title4": "Facilidad de Acceso",
+    "bullet4": "Busca facilitar el acceso a los detalles meteorológicos, simplificando la experiencia del usuario.",
+
+    "title5": "Flexibilidad y Personalización",
+    "bullet5": "Prioriza la personalización y flexibilidad para que los usuarios puedan ajustar la aplicación según sus preferencias y necesidades individuales",
+
     "category": "Aplicación Móvil"
   },
   "Memory": {
     "slogan": "¡Acepta el desafío y dime cuántos movimientos te llevará resolverlo!",
-    "description1": "El juego de memoria es un ejercicio mental emocionante y desafiante que pone a prueba nuestra capacidad para recordar patrones y detalles.",
-    "description2": "El desarrollo de este juego involucró múltiples desafíos, como la correcta gestión del estado que me ayuda a sincronizar cada acción del usuario, seguido de un diseño receptivo que hace que sea mucho más accesible disfrutar del juego en diferentes dispositivos, y finalmente, la incorporación de la lógica del juego de manera sincronizada y eficiente a cada evento que realiza el usuario, lo que permite mostrar las cartas que son iguales, con el número de movimientos y el tiempo total que llevó resolverlo.",
+    "description1": "El juego de memoria es un emocionante y desafiante ejercicio mental que pone a prueba tu habilidad para recordar patrones y detalles con precisión.",
+    "title1": "Gestión del Estado",
+    "bullet1": "Implementé una gestión precisa del estado para sincronizar cada acción del usuario de manera efectiva.",
+
+    "title2": "Diseño Receptivo",
+    "bullet2": "Creé un diseño responsive para garantizar que el juego sea accesible y disfrutable en diferentes dispositivos.",
+
+    "title3": "Lógica de Juego Sincronizada",
+    "bullet3": "Incorporé una lógica de juego eficiente, asegurando que cada evento del usuario se sincronice correctamente.",
+
+    "title4": "Visualización de Cartas y Estadísticas",
+    "bullet4": "El juego muestra automáticamente las cartas iguales, el número de movimientos y el tiempo total necesario para resolverlo.",
 
     "category": "Desarrollo Web"
   },
   "TaskBoard": {
     "slogan": "Imagina una plataforma diseñada para simplificar y organizar tu vida diaria de manera eficiente",
     "description1": "Task Board es una herramienta altamente intuitiva y flexible que te permite gestionar tus actividades pendientes, en progreso y completadas de manera organizada y eficaz.",
-    "description2": "La aplicación web Task Board presenta una serie de desafíos técnicos y de diseño que te ayudan a mejorar tus habilidades como desarrollador frontend.",
-    "description3": "Uno de los desafíos es la gestión de estados complejos para cada tarjeta y las columnas donde se alojan estas tarjetas, seguido de una buena experiencia de usuario que proporciona un arrastrar y soltar suave y receptivo, y finalmente la personalización y flexibilidad para construir tus tarjetas a tu gusto y gestionar tus actividades.",
+    "title1": "Gestión Eficaz de Tareas",
+    "bullet1": "Task Board es una herramienta intuitiva y flexible para organizar actividades pendientes, en progreso y completadas de manera eficaz.",
+
+    "title2": "Desafíos Técnicos y de Diseño",
+    "bullet2": "La aplicación web presenta desafíos que te permiten mejorar tus habilidades como desarrollador frontend.",
+
+    "title3": "Gestión de Estados Complejos",
+    "bullet3": ": Maneja estados complejos para cada tarjeta y las columnas donde se alojan, asegurando un funcionamiento correcto.",
+
+    "title4": "Experiencia de Usuario Optimizada",
+    "bullet4": "Proporciona una experiencia de usuario fluida con una función de arrastrar y soltar suave y receptiva.",
+
+    "title5": "Personalización y Flexibilidad",
+    "bullet5": "Ofrece opciones para personalizar las tarjetas y gestionar actividades según tus preferencias.",
 
     "category": "Aplicación Web"
   },
   "Pokedex": {
     "slogan": "¡Explora el emocionante mundo de Pokémon y aprende más sobre tu Pokémon favorito!",
     "description1": "Cada Entrenador Pokémon tiene su compañero especial, su Pokémon favorito que los ha acompañado en innumerables aventuras. Por eso hemos creado una herramienta excepcional que te permite encontrar tu Pokémon favorito y explorar todas sus características y evoluciones en detalle.",
-    "description2": "Es por eso que hemos incorporado una función especial que te permite encontrar tu Pokémon favorito y escuchar todas sus características en detalle. Ya sea que prefieras a Pikachu, Charizard, Eevee, o cualquier otro Pokémon, podrás encontrar tu Pokémon favorito.",
+    "title1": "Búsqueda Personalizada",
+    "bullet1": "Hemos incorporado una función especial que te permite encontrar fácilmente tu Pokémon favorito.",
+
+    "title2": "Descripciones Detalladas",
+    "bullet2": "Escucha todas las características en detalle de cualquier Pokémon, ya sea Pikachu, Charizard, Eevee, o cualquier otro.",
+
+    "title3": "Reproducción de Sonido",
+    "bullet3": "La Pokédex reproduce sonidos que describen a cada Pokémon, enriqueciendo la experiencia del usuario.",
+
+    "title4": "Animaciones CSS Atractivas",
+    "bullet4": "Disfruta de animaciones CSS suaves y atractivas que mejoran la visualización de tu Pokémon favorito",
 
     "category": "Aplicación Web"
   },
   "GitHub": {
     "slogan": "Un clon de GitHub que te brinda la capacidad de navegar perfiles y repositorios",
     "description1": "En nuestra plataforma de desarrollo, sabemos que cada desarrollador tiene necesidades únicas al manejar y colaborar en proyectos de código fuente.",
-    "description2": "Es por eso que hemos creado una función de filtrado integral y versátil que te permite navegar y encontrar tus repositorios y proyectos de manera eficiente.",
-    "description3": "Con nuestras opciones de filtrado, personaliza tu experiencia, encuentra rápidamente cualquier repositorio o usuario usando nuestra potente barra de búsqueda.",
+
+    "title1": "Reconocimiento de necesidades únicas",
+    "bullet1": "Nuestra plataforma entiende que cada desarrollador tiene requerimientos específicos al gestionar y colaborar en proyectos de código fuente.",
+
+    "title2": "Función de filtrado integral",
+    "bullet2": "Hemos implementado una función de filtrado avanzada y versátil para facilitar la navegación y búsqueda de repositorios y proyectos.",
+
+    "title3": "Experiencia personalizada",
+    "bullet3": "Ofrecemos opciones de filtrado que te permiten ajustar la experiencia a tus necesidades individuales.",
+
+    "title4": "Búsqueda eficiente",
+    "bullet4": "Utiliza nuestra potente barra de búsqueda para localizar rápidamente cualquier repositorio o usuario.",
 
     "category": "Aplicación Web"
   },
   "GameStore": {
-    "slogan": "Aplicación web que proporciona información sobre videojuegos, disponibilidad de plataformas y filtrado a través de APIs RESTful.",
+    "slogan": "Brinda detalles sobre juegos, plataformas disponibles y filtrado mediante APIs RESTful",
     "description1": "Entendemos que cada jugador tiene gustos y preferencias únicos. Es por eso que hemos desarrollado una función de filtrado integral y versátil que te permite navegar y encontrar tus juegos ideales de manera eficiente. Con nuestras opciones de filtrado, personaliza tu experiencia de juego según tus deseos.",
-    "description2": "Filtra videojuegos por género, ya sea acción, aventura, rol, estrategia, deportes, simulación y muchos más. Encuentra juegos que se adapten a tu estilo y preferencias.",
+    "title1": "Reconocimiento de preferencias únicas",
+    "bullet1": "Entendemos que cada jugador tiene gustos y preferencias individuales.",
+
+    "title2": "Función de filtrado avanzada",
+    "bullet2": "Hemos desarrollado una herramienta de filtrado integral y versátil para facilitar la búsqueda de juegos ideales.",
+
+    "title3": "Personalización de la experiencia",
+    "bullet3": "Ajusta tu experiencia de juego según tus deseos con nuestras opciones de filtrado.",
+
+    "title4": "Filtrado por género",
+    "bullet4": "Encuentra juegos categorizados en géneros como acción, aventura, rol, estrategia, deportes, simulación, entre otros, que se adapten a tu estilo.",
 
     "category": "Desarrollo Web"
   },
