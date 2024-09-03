@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { techStackImg } from "../profileData/techStack";
 import { CardComponent } from "../components/CardComponent";
 import { DescriptionTechStack } from "../components/TechstackCard";
+import { SEOComponent } from "../assets/SEO/seoComponent";
 
 const DetailedInfo = ({
   title,
@@ -27,6 +28,11 @@ function Home() {
 
   return (
     <Layout>
+      <SEOComponent
+        canonicalUrl="https://brayan-ccari.vercel.app/"
+        title="Brayan Ccari | Frontend Developer"
+        description="I'm a Frontend Engineer, enthusiast UI UX Designer, and content creator who has a passion for learning and building my knowledge at the intersection of design and engineering."
+      />
       <div className="flex flex-col gap-8 p-4">
         <div className="flex flex-col justify-between gap-8 md:flex-row">
           <div

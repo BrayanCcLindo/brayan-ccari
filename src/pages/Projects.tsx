@@ -5,6 +5,7 @@ import { useProtfolioContext } from "../appContext/portfolio-context";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Project } from "../types/type";
+import { SEOComponent } from "../assets/SEO/seoComponent";
 
 function WorkCard({ project }: { project: Project }) {
   const { t } = useTranslation("global");
@@ -90,6 +91,11 @@ function Proyects() {
 
   return (
     <Layout>
+      <SEOComponent
+        canonicalUrl="https://brayan-ccari.vercel.app/my-projects"
+        title="My Projects | Frontend Developer"
+        description="Explore my projects. Throughout my years of experience, I've utilized various technologies such as React.js, Next.js, Express, and many more. Take a look and discover the innovative solutions I've developed."
+      />
       <div
         className={twMerge(
           "grid  gap-8 p-4 ",

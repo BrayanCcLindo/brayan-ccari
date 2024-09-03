@@ -8,6 +8,7 @@ import { education } from "../profileData/education";
 import { techStackImg } from "../profileData/techStack";
 import { CardComponent } from "../components/CardComponent";
 import { DescriptionTechStack } from "../components/TechstackCard";
+import { SEOComponent } from "../assets/SEO/seoComponent";
 
 function ExperienceCard({ title }: { title: string }) {
   const { experience } = useProtfolioContext();
@@ -69,6 +70,11 @@ function About() {
 
   return (
     <Layout>
+      <SEOComponent
+        canonicalUrl="https://brayan-ccari.vercel.app/about-me"
+        title="About Brayan | Frontend Developer"
+        description="Frontend developer with a strong track record of creating pixel-perfect, responsive web interfaces. Proficient in HTML, CSS, JavaScript, React, and Next.js."
+      />
       <div className={twMerge("grid  gap-8 p-4", "md:grid-cols-[1fr,2fr]")}>
         <div className="flex items-center justify-center p-8 bg-white rounded-xl ">
           <img
