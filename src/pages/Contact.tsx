@@ -22,6 +22,7 @@ const CardContact = ({
         // href="mailto:brayancclindo@gmail.com"
         href={link}
         target="_blank"
+        rel="noopener"
         className="absolute inset-0 "
       ></a>
       <p className="flex items-center justify-center text-purple">{icon}</p>

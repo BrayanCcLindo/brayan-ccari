@@ -107,6 +107,7 @@ function Project() {
               <a
                 href={oficialProyect.web}
                 target="_blank"
+                rel="noopener"
                 className="p-4 bg-white rounded-full text-purple hover:bg-purple hover:text-white"
               >
                 <Globe size={40} strokeWidth={1} />
@@ -114,6 +115,7 @@ function Project() {
               <a
                 href={oficialProyect.github}
                 target="_blank"
+                rel="noopener"
                 className="p-4 bg-white rounded-full text-purple hover:bg-purple hover:text-white"
               >
                 <Github size={40} strokeWidth={1} />{" "}

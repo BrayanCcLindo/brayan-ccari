@@ -119,6 +119,7 @@ function Home() {
               <a
                 href="https://www.linkedin.com/in/brayan-ccari/"
                 target="_blank"
+                rel="noopener"
                 className="p-4 border border-gray-600 rounded-full text-purple hover:bg-purple hover:text-white"
               >
                 <Linkedin size={40} strokeWidth={1} />{" "}
@@ -126,6 +127,7 @@ function Home() {
               <a
                 href="https://github.com/BrayanCcLindo"
                 target="_blank"
+                rel="noopener"
                 className="p-4 border border-gray-600 rounded-full text-purple hover:bg-purple hover:text-white"
               >
                 <Github size={40} strokeWidth={1} />

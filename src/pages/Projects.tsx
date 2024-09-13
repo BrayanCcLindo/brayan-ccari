@@ -54,6 +54,7 @@ function WorkCard({ project }: { project: Project }) {
             <a
               href={project?.github}
               target="_blank"
+              rel="noopener"
               className={twMerge(
                 "bg-gray-400 whitespace-nowrap flex items-center gap-1 justify-center text-gray-50 rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full",
                 "hover:scale-105 duration-100 text-center "
@@ -65,6 +66,7 @@ function WorkCard({ project }: { project: Project }) {
             <a
               href={project?.web}
               target="_blank"
+              rel="noopener"
               className={twMerge(
                 "bg-gray-400 whitespace-nowrap	 flex items-center gap-1 justify-center text-gray-50 rounded-2xl hover:bg-purple py-4 px-8 font-semibold w-full",
                 "hover:scale-105 duration-100 text-center "

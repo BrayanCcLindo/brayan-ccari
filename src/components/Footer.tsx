@@ -60,6 +60,7 @@ function Footer() {
               )}
               target="_blank"
               href="https://twitter.com/BrayanCcLi"
+              rel="noopener"
             >
               <Twitter strokeWidth={1} />
             </a>
@@ -70,6 +71,7 @@ function Footer() {
               )}
               href="https://www.linkedin.com/in/brayan-ccari/"
               target="_blank"
+              rel="noopener"
             >
               <Linkedin strokeWidth={1} />
             </a>
@@ -80,6 +82,7 @@ function Footer() {
               )}
               href="https://github.com/BrayanCcLindo"
               target="_blank"
+              rel="noopener"
             >
               <Github strokeWidth={1} />
             </a>
