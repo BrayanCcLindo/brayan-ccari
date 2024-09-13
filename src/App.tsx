@@ -1,12 +1,9 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./pages/Home";
 import Footer from "./components/Footer";
-import About from "./pages/About";
 import { PortfolioProvider } from "./appContext/portfolio-context";
-import Proyects from "./pages/Projects";
-import Contact from "./pages/Contact";
-import Project from "./pages/ProjectName";
+import { lazy, Suspense } from "react";
+import FullscreenLoader from "./components/Loader";
 
 function MainLayout() {
   return (
@@ -17,6 +14,11 @@ function MainLayout() {
     </>
   );
 }
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Proyects = lazy(() => import("./pages/Projects"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Project = lazy(() => import("./pages/ProjectName"));
 
 function App() {
   return (
@@ -24,11 +26,46 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about-me" element={<About />} />
-            <Route path="/my-projects" element={<Proyects />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/my-projects/:projectName" element={<Project />} />
+            <Route
+              path="/"
+              element={
+                <Suspense fallback={<FullscreenLoader />}>
+                  <Home />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/about-me"
+              element={
+                <Suspense fallback={<FullscreenLoader />}>
+                  <About />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/my-projects"
+              element={
+                <Suspense fallback={<FullscreenLoader />}>
+                  <Proyects />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <Suspense fallback={<FullscreenLoader />}>
+                  <Contact />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/my-projects/:projectName"
+              element={
+                <Suspense fallback={<FullscreenLoader />}>
+                  <Project />
+                </Suspense>
+              }
+            />
           </Route>
         </Routes>
       </BrowserRouter>
