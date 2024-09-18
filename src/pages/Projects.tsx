@@ -98,13 +98,7 @@ function Proyects() {
         title="My Projects | Frontend Developer"
         description="Explore my projects. Throughout my years of experience, I've utilized various technologies such as React.js, Next.js, Express, and many more. Take a look and discover the innovative solutions I've developed."
       />
-      <div
-        className={twMerge(
-          "grid  gap-8 p-4 ",
-          "md:grid-cols-[1fr,1fr]",
-          "lg:grid-cols-[1fr,2fr]"
-        )}
-      >
+      <div className={twMerge("grid gap-8 p-4", "lg:grid-cols-[1fr,2fr]")}>
         <div className="flex flex-col items-center justify-start gap-8">
           <h2
             className={twMerge(
@@ -114,9 +108,11 @@ function Proyects() {
           >
             {t("projects.title")}
           </h2>
-          {firstProyects?.map((project, id) => (
-            <WorkCard key={id} project={project} />
-          ))}
+          <div className="hidden lg:grid">
+            {firstProyects?.map((project, id) => (
+              <WorkCard key={id} project={project} />
+            ))}
+          </div>
         </div>
         <div className="">
           <h2
@@ -127,7 +123,7 @@ function Proyects() {
           >
             {t("projects.title")}
           </h2>
-          <div className={twMerge("grid  gap-8", "lg:grid-cols-[1fr,1fr]")}>
+          <div className={twMerge("grid gap-8", "sm:grid-cols-[1fr,1fr]")}>
             {secondProjects?.map((project, id) => (
               <WorkCard key={id} project={project} />
             ))}

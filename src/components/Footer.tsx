@@ -4,6 +4,7 @@ import { ChevronUp, Github, Linkedin, Twitter } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { twMerge } from "tailwind-merge";
 import { useProtfolioContext } from "../appContext/portfolio-context";
+import Chatbot from "./chatBot";
 
 function Footer() {
   function handleScroll() {
@@ -97,6 +98,7 @@ function Footer() {
           <ChevronUp />
         </button>
       </div>
+      <Chatbot />
     </>
   );
 }

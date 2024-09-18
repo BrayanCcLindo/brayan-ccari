@@ -127,7 +127,50 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       github: "https://github.com/BrayanCcLindo/memory-game",
       web: "https://memory-game-gules-two.vercel.app/"
     },
+    {
+      title: "Pun Game",
+      slug: "pun-game",
+      slogan: t("PunGame.slogan"),
 
+      description: [t("PunGame.description1")],
+      bullets: [
+        {
+          title: t("PunGame.title1"),
+          bullet: t("PunGame.bullet1")
+        },
+        {
+          title: t("PunGame.title2"),
+          bullet: t("PunGame.bullet2")
+        },
+        {
+          title: t("PunGame.title3"),
+          bullet: t("PunGame.bullet3")
+        },
+        {
+          title: t("PunGame.title4"),
+          bullet: t("PunGame.bullet4")
+        }
+      ],
+      category: t("PunGame.category"),
+      date: "09/2024",
+      name: "Pun Game",
+      website: "thepolacy-pun-game.vercel.app/",
+      languages: [
+        "Next Js",
+        "Tailwind CSS",
+        "WebSocket",
+        "WalletConnect",
+        "postgress"
+      ],
+      cover: "../../images/pun-game/pun-game.jpeg",
+      photos: [
+        "../../images/pun-game/pun-gamePhoto1.jpg",
+        "../../images/pun-game/pun-gamePhoto2.jpg",
+        "../../images/pun-game/pun-gamePhoto3.jpg"
+      ],
+      github: "https://github.com/theveloperseu/thepolacy-pun-game",
+      web: "https://thepolacy-pun-game.vercel.app/"
+    },
     {
       title: "Kuzi Fund",
       slug: "kuzi-fund",

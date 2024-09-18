@@ -76,11 +76,11 @@ function Project() {
               ))}
               {!isListShowed ? (
                 <ButtonComponent onClick={() => setIsListShowed(true)}>
-                  Mostrar todos los usuarios
+                  {t("projects.Show-details")}
                 </ButtonComponent>
               ) : (
                 <ButtonComponent onClick={() => setIsListShowed(false)}>
-                  Ocualtar todos los usuarios
+                  {t("projects.Hide-details")}
                 </ButtonComponent>
               )}
             </ul>

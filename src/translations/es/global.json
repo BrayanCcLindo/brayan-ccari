@@ -58,7 +58,9 @@
     "date": "Fecha",
     "name": "Nombre",
     "web": "Sitio Web",
-    "developed": "Desarrollado con:"
+    "developed": "Desarrollado con:",
+    "Show-details": "Mostrar más detalles",
+    "Hide-details": "Ocultar detalles"
   },
   "iBookShelf": {
     "slogan": "iBookShelf es el lugar ideal para acceder a tus libros favoritos y aquellos que estás a punto de descubrir.",
@@ -77,6 +79,24 @@
     "bullet4": "Permite construir tu propia biblioteca según tus preferencias y gestionar tus actividades de lectura de manera eficiente.",
 
     "category": "Desarrollo Web"
+  },
+  "PunGame": {
+    "slogan": "Dibuja, adivina y desafía a tus amigos en emocionantes partidas en tiempo real, donde la creatividad y la rapidez son la clave para ganar.",
+    "description1": "Pun Game es una experiencia interactiva en la que los jugadores dibujan y adivinan palabras basadas en los dibujos de sus amigos. Los usuarios pueden unirse a lobbies mediante un código y competir en tiempo real para ver quién puede adivinar más rápido. Cada ronda tiene un temporizador y los jugadores ganan puntos por cada respuesta correcta, con las puntuaciones reflejadas en una tabla de clasificación al final de cada partida.",
+
+    "title1": "Framework principal (Next.js)",
+    "bullet1": "Utilicé Next.js como el framework principal para el desarrollo del frontend, garantizando una experiencia fluida y eficiente en todos los dispositivos.",
+
+    "title2": "Comunicación en tiempo real (WebSocket):",
+    "bullet2": "Integré WebSocket para la comunicación en tiempo real, permitiendo que los jugadores interactúen instantáneamente con el juego, gestionando la pizarra de dibujo, el temporizador y el flujo de rondas.",
+
+    "title3": "Autenticación segura (WalletConnect):",
+    "bullet3": "Implementé WalletConnect para ofrecer una integración de billeteras digitales, brindando a los usuarios la opción de utilizar servicios de autenticación segura dentro del juego.",
+
+    "title4": "Gestión de datos (Postgres)",
+    "bullet4": "Usé Postgres como la base de datos principal, manejando el almacenamiento de usuarios, puntuaciones y clasificaciones globales, optimizando las consultas para una respuesta rápida.",
+
+    "category": "Web Application"
   },
   "kuziFund": {
     "slogan": "Plataforma de crowdfunding para apoyar causas sociales, empresas innovadoras y generar impacto positivo.",
@@ -218,5 +238,8 @@
     "formMessage": "Mensaje",
     "formButton": "Enviar mensaje",
     "formSucces": "Su mensaje fue enviado correctamente"
+  },
+  "chatBot": {
+    "main-sms": "¡Hola! Soy el chatbot de tu portafolio. ¿En qué puedo ayudarle hoy?"
   }
 }

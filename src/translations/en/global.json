@@ -57,7 +57,9 @@
     "date": "Date",
     "name": "Name",
     "web": "Web",
-    "developed": "Developed by:"
+    "developed": "Developed by:",
+    "Show-details": "Show details",
+    "Hide-details": "Hide details"
   },
   "iBookShelf": {
     "slogan": "iBookShelf is the ideal place to access your favorite books and those you are about to discover.",
@@ -154,7 +156,24 @@
 
     "category": "Web Application"
   },
+  "PunGame": {
+    "slogan": "Draw, guess, and challenge your friends in thrilling real-time matches, where creativity and speed are the keys to victory.",
+    "description1": "Pun Game is an interactive experience where players draw and guess words based on their friends' drawings. Users can join lobbies via a code and compete in real-time to see who can guess the fastest. Each round has a timer, and players earn points for correct answers, with scores displayed on a leaderboard at the end of each game",
 
+    "title1": "Main Framework (Next.js)",
+    "bullet1": "I used Next.js as the main framework for frontend development, ensuring a smooth and efficient experience across all devices.",
+
+    "title2": "Real-time Communication (WebSocket)",
+    "bullet2": "I integrated WebSocket for real-time communication, allowing players to interact instantly within the game, managing the drawing board, timer, and round flow.",
+
+    "title3": "Secure Authentication (WalletConnect)",
+    "bullet3": "I implemented WalletConnect to offer secure wallet integration, giving users the option to use digital authentication services within the game.",
+
+    "title4": "Data Management (Postgres)",
+    "bullet4": "I utilized Postgres as the primary database, handling user storage, global scores, and leaderboards, optimizing queries for fast response times.",
+
+    "category": "Web Application"
+  },
   "Pokedex": {
     "slogan": "Explore the exciting world of Pokémon and learn more about your favorite Pokémon!",
     "description1": "Every Pokémon Trainer has their special companion, their favorite Pokémon that has accompanied them on countless adventures. That's why we've created an exceptional tool that allows you to find your favorite Pokémon and explore all its features and evolutions in detail.",
@@ -220,5 +239,8 @@
     "formMessage": "Your Message",
     "formButton": "Send Message",
     "formSucces": "Your message was sent successfully"
+  },
+  "chatBot": {
+    "main-sms": "Hello! I'm your portfolio chatbot. How can I assist you today?"
   }
 }

@@ -18,6 +18,17 @@ export type Project = {
   photos: string[];
 };
 
+export type Message = {
+  text: string;
+  isUser: boolean;
+  options?: Option[];
+};
+
+export type Option = {
+  text: string;
+  action: () => void;
+};
+
 export type Experience = {
   year: string;
   job: string;
