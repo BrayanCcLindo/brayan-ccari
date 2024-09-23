@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-toast": "^1.1.4",
     "autoprefixer": "^10.4.15",
     "i18next": "^23.7.12",

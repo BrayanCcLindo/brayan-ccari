@@ -5,6 +5,7 @@ import { Github, Globe } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import ButtonComponent from "../components/button-component";
+import GaleriaImagenes from "../components/galleryImg";
 
 function Project() {
   const { projectName } = useParams();
@@ -32,20 +33,21 @@ function Project() {
           {oficialProyect.title}
         </h1>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {oficialProyect.photos.map((image, index) => (
-            <div key={index} className="overflow-hidden rounded-lg ">
+        <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 sm:hidden">
+          {oficialProyect.photos.map(image => (
+            <div key={image.id} className="overflow-hidden rounded-lg ">
               <img
-                src={image}
-                alt="imagenes de proyecto"
+                src={image.src}
+                alt={image.alt}
                 width={400}
                 height={400}
-                className="object-cover w-full h-full transition-all duration-300 hover:scale-105 hover:duration-300 aspect-square "
+                className="aspect-[3/2] object-cover w-full h-full transition-all duration-300 hover:scale-105 hover:duration-300"
               />
             </div>
           ))}
         </div>
 
+        <GaleriaImagenes images={oficialProyect.photos} />
         <div className="grid gap-4 p-8 bg-white rounded-xl mt-16 md:grid-cols-[2fr,1fr] ">
           <div className="flex flex-col gap-8">
             <h2 className="text-xl font-semibold text-black">
@@ -85,7 +87,7 @@ function Project() {
               )}
             </ul>
           </div>
-          <div className="flex flex-col gap-8 text-black border-l border-gray-600 md:pl-4">
+          <div className="flex flex-col gap-8 text-black md:border-l md:border-gray-600 md:pl-4">
             <h2 className="text-xl font-semibold"> {t("projects.projInfo")}</h2>
             <p className="font-bold ">
               {t("projects.category")}:{" "}

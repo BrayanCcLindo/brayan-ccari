@@ -241,6 +241,26 @@
     "formSucces": "Your message was sent successfully"
   },
   "chatBot": {
-    "main-sms": "Hello! I'm your portfolio chatbot. How can I assist you today?"
+    "main-sms": "Hello! I'm your portfolio chatbot. How can I assist you today?",
+    "botMsgPjt": "Tell me about your projects",
+    "botMsgExp": "Tell about your experience",
+    "botMsgCtt": "How can I contact you?",
+    "chatExp": "Great! I'd love to tell you more about my experience and projects. Here are some options:",
+    "expOption1": "Checkout my ABOUT ME page",
+    "expOption2": "See my Projects",
+    "expOption3": "Download my CV",
+    "includes": {
+      "expOption1": "experience",
+      "cttOption1": "contact",
+      "cttOption2": "hire",
+      "pjtOption1": "Projects",
+      "cttOption3": "Contact",
+      "expOption2": "Experience"
+    },
+    "chatCtt": "I'm always open to new opportunities! Here's how you can reach me:",
+    "cttOption1": "Email me",
+    "cttOption2": "LinkedIn Profile",
+    "cttOption3": "View Contact Page",
+    "noMatch": "I'm sorry, I didn't quite understand that. Could you please choose one of these options?"
   }
 }

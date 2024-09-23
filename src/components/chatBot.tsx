@@ -1,30 +1,60 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Message } from "../types/type";
+import { useTranslation } from "react-i18next";
+
+function useTranslatedText() {
+  const { t, i18n } = useTranslation("global");
+
+  const getTranslation = useCallback(
+    (key: string) => {
+      return t(key);
+    },
+    [t, i18n.language]
+  );
+
+  return getTranslation;
+}
 
 export default function Chatbot() {
+  const { i18n } = useTranslation("global");
+
   const navigate = useNavigate();
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      text: "Hello! I'm your portfolio chatbot. How can I assist you today?",
-      isUser: false,
-      options: [
-        {
-          text: "Tell me about your projects",
-          action: () => navigateTo("/my-projects")
-        },
-        {
-          text: "Tell me about your experience",
-          action: () => handleOptionClick("experience")
-        },
-        {
-          text: "How can I contact you?",
-          action: () => handleOptionClick("contact")
-        }
-      ]
-    }
-  ]);
+  const [, updateState] = useState({});
+  useEffect(() => {
+    updateState({});
+  }, [i18n.language]);
+
+  const translate = useTranslatedText();
+
+  const [messages, setMessages] = useState<Message[]>([]);
+
+  useEffect(() => {
+    setMessages([
+      {
+        text: translate("chatBot.main-sms"),
+        isUser: false,
+        options: [
+          {
+            text: translate("chatBot.botMsgPjt"),
+            action: () => navigateTo("/my-projects")
+          },
+          {
+            text: translate("chatBot.botMsgExp"),
+            action: () =>
+              handleOptionClick(translate("chatBot.includes.expOption1"))
+          },
+          {
+            text: translate("chatBot.botMsgCtt"),
+            action: () =>
+              handleOptionClick(translate("chatBot.includes.cttOption1"))
+          }
+        ]
+      }
+    ]);
+  }, [translate]);
+
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -54,57 +84,78 @@ export default function Chatbot() {
     }, 500);
   };
 
-  const getBotReply = (userInput: string): Message => {
-    const lowerInput = userInput.toLowerCase();
-    if (lowerInput.includes("experience")) {
-      return {
-        text: "Great! I'd love to tell you more about my experience and projects. Here are some options:",
-        isUser: false,
-        options: [
-          {
-            text: "Check out my About Me page",
-            action: () => navigateTo("/about-me")
-          },
-          {
-            text: "See my Projects",
-            action: () => navigateTo("/my-projects")
-          },
-          {
-            text: "Download my CV",
-            action: handleDownloadCV
-          }
-        ]
-      };
-    } else if (lowerInput.includes("contact") || lowerInput.includes("hire")) {
-      return {
-        text: "I'm always open to new opportunities! Here's how you can reach me:",
-        isUser: false,
-        options: [
-          {
-            text: "Email me",
-            action: () =>
-              (window.location.href = "mailto:brayancclindo@gmail.com")
-          },
-          {
-            text: "LinkedIn Profile",
-            action: () =>
-              window.open("https://www.linkedin.com/in/brayan-ccari/", "_blank")
-          },
-          { text: "View Contact Page", action: () => navigateTo("/contact") }
-        ]
-      };
-    } else {
-      return {
-        text: "I'm sorry, I didn't quite understand that. Could you please choose one of these options?",
-        isUser: false,
-        options: [
-          { text: "Projects", action: () => handleOptionClick("projects") },
-          { text: "Skills", action: () => handleOptionClick("skills") },
-          { text: "Contact", action: () => handleOptionClick("contact") }
-        ]
-      };
-    }
-  };
+  const getBotReply = useCallback(
+    (userInput: string): Message => {
+      const lowerInput = userInput.toLowerCase();
+      if (lowerInput.includes(translate("chatBot.includes.expOption1"))) {
+        return {
+          text: translate("chatBot.chatExp"),
+          isUser: false,
+          options: [
+            {
+              text: translate("chatBot.expOption1"),
+              action: () => navigateTo("/about-me")
+            },
+            {
+              text: translate("chatBot.expOption2"),
+              action: () => navigateTo("/my-projects")
+            },
+            {
+              text: translate("chatBot.expOption3"),
+              action: handleDownloadCV
+            }
+          ]
+        };
+      } else if (
+        lowerInput.includes(translate("chatBot.includes.cttOption1")) ||
+        lowerInput.includes(translate("chatBot.includes.cttOption2"))
+      ) {
+        return {
+          text: translate("chatBot.chatCtt"),
+          isUser: false,
+          options: [
+            {
+              text: translate("chatBot.cttOption1"),
+              action: () =>
+                (window.location.href = "mailto:brayancclindo@gmail.com")
+            },
+            {
+              text: translate("chatBot.cttOption2"),
+              action: () =>
+                window.open(
+                  "https://www.linkedin.com/in/brayan-ccari/",
+                  "_blank"
+                )
+            },
+            {
+              text: translate("chatBot.cttOption3"),
+              action: () => navigateTo("/contact")
+            }
+          ]
+        };
+      } else {
+        return {
+          text: translate("chatBot.noMatch"),
+          isUser: false,
+          options: [
+            {
+              text: translate("chatBot.includes.pjtOption1"),
+              action: () => handleOptionClick("projects")
+            },
+            {
+              text: translate("chatBot.includes.expOption2"),
+              action: () => handleOptionClick("experience")
+            },
+            {
+              text: translate("chatBot.includes.cttOption3"),
+              action: () => handleOptionClick("contact")
+            }
+          ]
+        };
+      }
+    },
+    [translate]
+  );
 
   const navigateTo = (path: string) => {
     window.scrollTo(0, 0);

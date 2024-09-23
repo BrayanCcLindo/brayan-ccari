@@ -15,7 +15,11 @@ export type Project = {
   date: string;
   name: string;
   website: string;
-  photos: string[];
+  photos: {
+    id: number;
+    src: string;
+    alt: string;
+  }[];
 };
 
 export type Message = {

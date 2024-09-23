@@ -76,9 +76,21 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       cover: "../../images/weather-app.jpg",
 
       photos: [
-        "../../images/weather-app/weatherApp-Photo1.jpg",
-        "../../images/weather-app/weatherApp-Photo3.jpg",
-        "../../images/weather-app/weatherApp-Photo4.jpg"
+        {
+          id: 1,
+          src: "../../images/weather-app/weatherApp-Photo1.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 2,
+          src: "../../images/weather-app/weatherApp-Photo3.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 3,
+          src: "../../images/weather-app/weatherApp-Photo4.jpg",
+          alt: "project-image"
+        }
       ],
       github: "https://github.com/BrayanCcLindo/weather-app",
       web: "https://brayancclindo.github.io/weather-app/"
@@ -120,9 +132,21 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       name: "Memory Game",
       website: "memory-game-gules-two.vercel.app/",
       photos: [
-        "../../images/memory-game/memoryGamePhoto2.jpg",
-        "../../images/memory-game/memoryGamePhoto3.jpg",
-        "../../images/memory-game/memoryGamePhoto4.jpg"
+        {
+          id: 1,
+          src: "../../images/memory-game/memoryGamePhoto2.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 2,
+          src: "../../images/memory-game/memoryGamePhoto3.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 3,
+          src: "../../images/memory-game/memoryGamePhoto4.jpg",
+          alt: "project-image"
+        }
       ],
       github: "https://github.com/BrayanCcLindo/memory-game",
       web: "https://memory-game-gules-two.vercel.app/"
@@ -164,9 +188,21 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       ],
       cover: "../../images/pun-game/pun-game.jpeg",
       photos: [
-        "../../images/pun-game/pun-gamePhoto1.jpg",
-        "../../images/pun-game/pun-gamePhoto2.jpg",
-        "../../images/pun-game/pun-gamePhoto3.jpg"
+        {
+          id: 1,
+          src: "../../images/pun-game/pun-gamePhoto1.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 2,
+          src: "../../images/pun-game/pun-gamePhoto2.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 3,
+          src: "../../images/pun-game/pun-gamePhoto3.jpg",
+          alt: "project-image"
+        }
       ],
       github: "https://github.com/theveloperseu/thepolacy-pun-game",
       web: "https://thepolacy-pun-game.vercel.app/"
@@ -218,9 +254,21 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       cover: "../../images/kuzi/kuzi-cover.jpeg",
 
       photos: [
-        "../../images/kuzi/kuzi-photo2.jpg",
-        "../../images/kuzi/kuzi-photo3.jpg",
-        "../../images/kuzi/kuzi-photo4.jpg"
+        {
+          id: 1,
+          src: "../../images/kuzi/kuzi-photo2.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 2,
+          src: "../../images/kuzi/kuzi-photo3.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 3,
+          src: "../../images/kuzi/kuzi-photo4.jpg",
+          alt: "project-image"
+        }
       ],
       github: "https://github.com/BrayanCcLindo/smile",
       web: "https://smile-two.vercel.app/"
@@ -268,9 +316,21 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       website: "board-task-bcl.vercel.app/",
 
       photos: [
-        "../../images/task-board/TaskBoard-2.jpg",
-        "../../images/task-board/TaskBoard-1.jpg",
-        "../../images/task-board/TaskBoard-3.jpg"
+        {
+          id: 1,
+          src: "../../images/task-board/TaskBoard-2.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 2,
+          src: "../../images/task-board/TaskBoard-1.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 3,
+          src: "../../images/task-board/TaskBoard-3.jpg",
+          alt: "project-image"
+        }
       ],
       github: "https://github.com/BrayanCcLindo/task-board",
       web: "https://board-task-bcl.vercel.app/"
@@ -306,9 +366,21 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       languages: ["Vanilla Javascript", "HTML", "CSS", "APIs RESTful"],
       cover: "../../images/pokedex/pokedex.jpg",
       photos: [
-        "../../images/pokedex/pokedexPhoto1.jpg",
-        "../../images/pokedex/pokedexPhoto3.jpg",
-        "../../images/pokedex/pokedexPhoto4.jpg"
+        {
+          id: 1,
+          src: "../../images/pokedex/pokedexPhoto1.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 2,
+          src: "../../images/pokedex/pokedexPhoto3.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 3,
+          src: "../../images/pokedex/pokedexPhoto4.jpg",
+          alt: "project-image"
+        }
       ],
       github: "https://github.com/BrayanCcLindo/pokedex",
       web: "https://brayancclindo.github.io/pokedex/"
@@ -353,9 +425,21 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       cover: "../../images/github/github-clone.jpg",
 
       photos: [
-        "../../images/github/githubPhoto1.jpg",
-        "../../images/github/githubPhoto3.jpg",
-        "../../images/github/githubPhoto4.jpg"
+        {
+          id: 1,
+          src: "../../images/github/githubPhoto1.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 2,
+          src: "../../images/github/githubPhoto3.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 3,
+          src: "../../images/github/githubPhoto4.jpg",
+          alt: "project-image"
+        }
       ],
       github: "https://github.com/BrayanCcLindo/git-hub-clone",
       web: "https://github-clone-nine-neon.vercel.app/"
@@ -397,9 +481,21 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       ],
       cover: "../../images/game-app/gameApp.jpg",
       photos: [
-        "../../images/game-app/gameAppPhoto1.jpg",
-        "../../images/game-app/gameAppPhoto2.jpg",
-        "../../images/game-app/gameAppPhoto4.jpg"
+        {
+          id: 1,
+          src: "../../images/game-app/gameAppPhoto1.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 2,
+          src: "../../images/game-app/gameAppPhoto2.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 3,
+          src: "../../images/game-app/gameAppPhoto4.jpg",
+          alt: "project-image"
+        }
       ],
       github: "https://github.com/frontendUI-labs/invoices-app",
       web: "https://tl-videogames.netlify.app/"
@@ -446,9 +542,21 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       cover: "../../images/test.jpg",
 
       photos: [
-        "../../images/iBook/iBookPhoto2.jpg",
-        "../../images/iBook/iBookPhoto3.jpg",
-        "../../images/iBook/iBookPhoto4.jpg"
+        {
+          id: 1,
+          src: "../../images/iBook/iBookPhoto2.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 2,
+          src: "../../images/iBook/iBookPhoto3.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 3,
+          src: "../../images/iBook/iBookPhoto4.jpg",
+          alt: "project-image"
+        }
       ],
       github: "https://github.com/frontendUI-labs/iBookshelf",
       web: "https://ibookshelf-app.netlify.app/"

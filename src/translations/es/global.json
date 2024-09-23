@@ -240,6 +240,26 @@
     "formSucces": "Su mensaje fue enviado correctamente"
   },
   "chatBot": {
-    "main-sms": "¡Hola! Soy el chatbot de tu portafolio. ¿En qué puedo ayudarle hoy?"
+    "main-sms": "¡Hola! Soy el chatbot de tu portafolio. ¿En qué puedo ayudarte hoy?",
+    "botMsgPjt": "Cuéntame sobre tus proyectos",
+    "botMsgExp": "Háblame de tu experiencia",
+    "botMsgCtt": "¿Cómo puedo contactarte?",
+    "chatExp": "¡Genial! Me encantaría contarte más sobre mi experiencia y proyectos. Aquí tienes algunas opciones:",
+    "expOption1": "Revisa mi página PERFÍL",
+    "expOption2": "Ver mis Proyectos",
+    "expOption3": "Descargar mi CV",
+    "includes": {
+      "expOption1": "experiencia",
+      "cttOption1": "contacto",
+      "cttOption2": "contratar",
+      "pjtOption1": "Projectos",
+      "cttOption3": "Contacto",
+      "expOption2": "Experiencia"
+    },
+    "chatCtt": "¡Siempre estoy abierto a nuevas oportunidades! Aquí tienes cómo puedes contactarme:",
+    "cttOption1": "Envíame un correo",
+    "cttOption2": "Perfil de LinkedIn",
+    "cttOption3": "Ver página de Contacto",
+    "noMatch": "Lo siento, no entendí bien eso. ¿Podrías elegir una de estas opciones por favor?"
   }
 }

@@ -12,19 +12,11 @@ function WorkCard({ project }: { project: Project }) {
 
   return (
     <div
-      // to={`/my-work/${project?.slug}`}
       className={twMerge(
         "flex flex-col gap-2 bg-white p-8 justify-between items-center rounded-2xl duration-500 relative",
         "hover:scale-[1.02] hover:duration-500 "
       )}
     >
-      {/* <Link
-        onClick={() => {
-          window.scrollTo(0, 0);
-        }}
-        to={`/my-projects/${project?.slug}`}
-        className="absolute top-0 w-full bg-transparent h-4/5"
-      ></Link> */}
       <Link
         onClick={() => {
           window.scrollTo(0, 0);
