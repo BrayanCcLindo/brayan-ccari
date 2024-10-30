@@ -57,7 +57,7 @@ function Home() {
               <div className="flex justify-center grow-0">
                 <a
                   href="../../files/CV.pdf"
-                  download={"CV.pdf"}
+                  download={"BrayanCcari-CV.pdf"}
                   className="flex items-center justify-center gap-2 px-3 py-2 font-semibold text-center duration-100 bg-gray-400 text-gray-50 rounded-2xl hover:bg-purple hover:scale-105 grow-0"
                 >
                   <FileDown size={20} />
