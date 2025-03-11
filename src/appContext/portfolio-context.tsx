@@ -152,6 +152,68 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
       web: "https://memory-game-gules-two.vercel.app/"
     },
     {
+      title: "Estilo Sumaq",
+      slug: "estilo-sumaq",
+      slogan: t("Sumaq.slogan"),
+
+      description: [t("Sumaq.description1")],
+      bullets: [
+        {
+          title: t("Sumaq.title1"),
+          bullet: t("Sumaq.bullet1")
+        },
+        {
+          title: t("Sumaq.title2"),
+          bullet: t("Sumaq.bullet2")
+        },
+        {
+          title: t("Sumaq.title3"),
+          bullet: t("Sumaq.bullet3")
+        },
+        {
+          title: t("Sumaq.title4"),
+          bullet: t("Sumaq.bullet4")
+        },
+        {
+          title: t("Sumaq.title5"),
+          bullet: t("Sumaq.bullet5")
+        }
+      ],
+      category: t("Sumaq.category"),
+      date: "03/2025",
+      name: "Estilo Sumaq",
+      website: "estilo-sumaq.vercel.app/",
+      languages: [
+        "Next Js 15",
+        "Tailwind CSS",
+        "SupaBase",
+        "TypeScript",
+        "Framer Motion",
+        "Vercel",
+        "APIs RESTful"
+      ],
+      cover: "../../images/sumaq/sumaq.jpeg",
+      photos: [
+        {
+          id: 1,
+          src: "../../images/sumaq/sumaqPhoto1.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 2,
+          src: "../../images/sumaq/sumaqPhoto2.jpg",
+          alt: "project-image"
+        },
+        {
+          id: 3,
+          src: "../../images/sumaq/sumaqPhoto3.jpg",
+          alt: "project-image"
+        }
+      ],
+      github: "https://github.com/BrayanCcLindo/estilo-sumaq",
+      web: "https://estilo-sumaq.vercel.app/"
+    },
+    {
       title: "Pun Game",
       slug: "pun-game",
       slogan: t("PunGame.slogan"),

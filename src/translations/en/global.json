@@ -61,6 +61,21 @@
     "Show-details": "Show details",
     "Hide-details": "Hide details"
   },
+  "Sumaq": {
+    "slogan": "Designs that inspire, roots that endure. Explore artisanal beauty with a contemporary touch",
+    "description1": "Sumaq is an e-commerce platform offering a wide range of high-quality artisanal products, designed for those seeking a unique and meaningful shopping experience. The platform focuses on traditional craftsmanship and local culture, providing users the opportunity to discover and appreciate the beauty of handcrafted creations.",
+    "title1": "Database with Supabase",
+    "bullet1": "I used Supabase as the main database to manage products, categories, and users, ensuring secure and efficient storage.",
+    "title2": "Responsive Design",
+    "bullet2": "Sumaq features a responsive design that guarantees an optimal user experience across all devices.",
+    "title3": "Product and Category Management",
+    "bullet3": "The platform allows users to explore and filter products by categories, facilitating navigation and search.",
+    "title4": "Payment Gateway Integration",
+    "bullet4": "Sumaq handles secure transactions through reliable payment gateways, ensuring a smooth and secure purchase process.",
+    "title5": "Persistent Shopping Cart",
+    "bullet5": "Users can add, remove, and update products in their cart, with Local Storage storage to maintain purchase information.",
+    "category": "E-commerce"
+  },
   "iBookShelf": {
     "slogan": "iBookShelf is the ideal place to access your favorite books and those you are about to discover.",
     "description1": "iBookShelf has multiple robust and versatile filtering features that allow you to navigate our extensive book collection efficiently and personally. With our filtering options, you'll easily find your next favorite read.",

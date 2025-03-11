@@ -62,6 +62,25 @@
     "Show-details": "Mostrar más detalles",
     "Hide-details": "Ocultar detalles"
   },
+  "Sumaq": {
+    "slogan": "Diseños que inspiran, raíces que perduran Explora la belleza artesanal con un toque contemporáneo",
+    "description1": "Sumaq es una plataforma de comercio electrónico que ofrece una amplia gama de productos artesanales de alta calidad, diseñados para aquellos que buscan una experiencia de compra única y significativa. La plataforma se centra en la artesanía tradicional y la cultura local, brindando a los usuarios la oportunidad de descubrir y apreciar la belleza de las creaciones artesanales.",
+    "title1": "Base de Datos con Supabase",
+    "bullet1": "Utilicé Supabase como base de datos principal para gestionar productos, categorías y usuarios, garantizando un almacenamiento seguro y eficiente.",
+
+    "title2": "Diseño Responsivo",
+    "bullet2": "Sumaq presenta un diseño responsive que garantiza una experiencia de usuario óptima en todos los dispositivos.",
+
+    "title3": "Gestión de Productos y Categorías",
+    "bullet3": "La plataforma permite a los usuarios explorar y filtrar productos por categorías, facilitando la navegación y la búsqueda.",
+
+    "title4": "Integración de Pasarelas de Pago",
+    "bullet4": "Sumaq maneja transacciones seguras a través de pasarelas de pago confiables, asegurando un proceso de compra fluido y seguro.",
+    "title5": "Carrito de Compras Persistente",
+    "bullet5": "Los usuarios pueden agregar, eliminar y actualizar productos en su carrito, con almacenamiento en Local Storage para mantener la información de la compra.",
+
+    "category": "E-commerce"
+  },
   "iBookShelf": {
     "slogan": "iBookShelf es el lugar ideal para acceder a tus libros favoritos y aquellos que estás a punto de descubrir.",
     "description1": "iBookShelf cuenta con múltiples funciones de filtrado sólidas y versátiles que te permiten navegar por nuestra extensa colección de libros de manera eficiente y personalizada. Con nuestras opciones de filtrado, encontrarás fácilmente tu próxima lectura favorita.",
