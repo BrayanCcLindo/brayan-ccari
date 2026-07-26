@@ -1,0 +1,167 @@
+---
+title: "What You Can Actually Do with Claude (Beyond Chatting)"
+date: "2026-07-17"
+excerpt: "Most people use Claude as a chat assistant. But the real power is in what you can build with the API — from code review agents to document pipelines. Here's a practical overview."
+tags: ["Claude", "AI", "API"]
+---
+
+## More Than a Chat Interface
+
+Claude.ai is the chat interface most people know. But underneath it is a powerful API that lets you build things that go far beyond Q&A.
+
+Here's what you can actually do — with real examples.
+
+## 1. Process Documents at Scale
+
+Claude has a 200,000-token context window. That's roughly 150,000 words — enough to fit an entire book, a large codebase, or hundreds of pages of documentation.
+
+**Practical uses:**
+- Summarize a 50-page contract and extract key dates, parties, and obligations
+- Analyze a full codebase and answer "where is authentication handled?"
+- Compare two long documents and list the differences
+
+```typescript
+import Anthropic from "@anthropic-ai/sdk";
+import fs from "fs";
+
+const client = new Anthropic();
+const document = fs.readFileSync("contract.txt", "utf-8");
+
+const response = await client.messages.create({
+  model: "claude-opus-4-7",
+  max_tokens: 1024,
+  messages: [
+    {
+      role: "user",
+      content: `Extract all deadlines and payment terms from this contract:\n\n${document}`,
+    },
+  ],
+});
+
+console.log(response.content[0].text);
+```
+
+## 2. Build Coding Assistants
+
+Claude excels at code tasks — not just generating code, but understanding it, debugging it, and explaining it.
+
+**What it's good at:**
+- Code review with specific feedback
+- Translating code between languages (e.g., Python → TypeScript)
+- Writing tests for existing functions
+- Explaining what a complex regex or algorithm does
+
+**The key:** give Claude the full context — not just the function you want reviewed, but the interfaces it depends on, the types it uses, the test file that should validate it.
+
+## 3. Structured Data Extraction
+
+You can ask Claude to output structured JSON instead of prose. This is useful for building pipelines where you need reliable, parseable output.
+
+```typescript
+const response = await client.messages.create({
+  model: "claude-sonnet-4-6",
+  max_tokens: 512,
+  messages: [
+    {
+      role: "user",
+      content: `Extract the product information from this text and return it as JSON with fields: name, price, category, inStock.
+      
+      Text: "The Sony WH-1000XM5 headphones are available for $279.99 in the Electronics section. Currently in stock."`,
+    },
+  ],
+});
+// Output: { "name": "Sony WH-1000XM5", "price": 279.99, "category": "Electronics", "inStock": true }
+```
+
+## 4. Multi-Turn Conversations with Memory
+
+Claude's API is stateless — it doesn't remember previous conversations. But you can implement memory yourself by passing conversation history as part of each request.
+
+```typescript
+const messages = [];
+
+async function chat(userMessage: string) {
+  messages.push({ role: "user", content: userMessage });
+
+  const response = await client.messages.create({
+    model: "claude-sonnet-4-6",
+    max_tokens: 1024,
+    messages,
+  });
+
+  const assistantMessage = response.content[0].text;
+  messages.push({ role: "assistant", content: assistantMessage });
+  
+  return assistantMessage;
+}
+
+await chat("My name is Brayan.");
+await chat("What's my name?"); // Claude will answer: "Your name is Brayan."
+```
+
+## 5. Tool Use (Function Calling)
+
+Claude can call tools you define — this is how you connect it to real-world systems. You define a tool with a name, description, and parameters. Claude decides when to call it and what arguments to pass.
+
+```typescript
+const response = await client.messages.create({
+  model: "claude-opus-4-7",
+  max_tokens: 1024,
+  tools: [
+    {
+      name: "get_weather",
+      description: "Get the current weather for a city",
+      input_schema: {
+        type: "object",
+        properties: {
+          city: { type: "string", description: "City name" },
+        },
+        required: ["city"],
+      },
+    },
+  ],
+  messages: [{ role: "user", content: "What's the weather in Lima?" }],
+});
+```
+
+Claude will respond with a tool call, your code fetches the weather, you send the result back, and Claude gives the final answer. This is how you build AI agents.
+
+## 6. Vision — Analyzing Images
+
+Send images along with text. Claude can read screenshots, diagrams, charts, and photos.
+
+```typescript
+const response = await client.messages.create({
+  model: "claude-opus-4-7",
+  max_tokens: 1024,
+  messages: [
+    {
+      role: "user",
+      content: [
+        {
+          type: "image",
+          source: {
+            type: "base64",
+            media_type: "image/png",
+            data: imageBase64,
+          },
+        },
+        { type: "text", text: "What's wrong with this UI design?" },
+      ],
+    },
+  ],
+});
+```
+
+Practical uses: screenshot-to-code, accessibility audits from mockups, reading invoices or receipts.
+
+## Where to Start
+
+If you want to start building with Claude:
+
+1. Get an API key at [console.anthropic.com](https://console.anthropic.com)
+2. Install the SDK: `npm install @anthropic-ai/sdk`
+3. Start with the simplest possible thing — a single message, no tools, no history
+4. Add complexity incrementally
+
+The API is well-documented and the models are reliable. The hard part isn't the API — it's figuring out exactly what problem you're solving.

@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS variables for dark / light theming ── */
+.dark {
+  --main-bg:    8, 10, 18;
+  --white:      18, 23, 38;
+  --black:      230, 232, 240;
+  --button-bg:  63, 90, 243;
+  --icons-bg:   42, 49, 70;
+  --menu:       229, 229, 229;
+  --text:       148, 158, 180;
+  --purple:     129, 140, 248;
+  --button-text:254, 254, 255;
+  --subtitle:   75, 85, 99;
+}
+
+.light {
+  --main-bg:    247, 249, 252;
+  --white:      255, 255, 255;
+  --black:      0, 0, 0;
+  --button-bg:  50, 50, 50;
+  --icons-bg:   230, 231, 235;
+  --menu:       103, 103, 103;
+  --text:       100, 116, 139;
+  --purple:     63, 90, 243;
+  --button-text:254, 254, 255;
+  --subtitle:   212, 212, 212;
+}
+
+:root {
+  --purple: 63, 90, 243;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: rgba(var(--main-bg));
+  color: rgba(var(--black));
+  font-family: var(--font-cairo), sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: rgba(var(--main-bg)); }
+::-webkit-scrollbar-thumb  { background: rgba(var(--purple), 0.4); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(var(--purple), 0.7); }
+
+/* Selection */
+::selection {
+  background: rgba(var(--purple), 0.25);
+  color: rgba(var(--black));
+}

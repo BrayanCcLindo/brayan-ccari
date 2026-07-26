@@ -1,0 +1,127 @@
+---
+title: "Prompts That Actually Work: A Practical Guide for Claude"
+date: "2026-07-22"
+excerpt: "The difference between a mediocre and excellent AI response is usually the prompt. Here are the techniques that consistently produce better results — no fluff, just what works."
+tags: ["Claude", "Prompting", "AI"]
+---
+
+## The Prompt Is the Program
+
+When you're working with Claude, the prompt isn't just a question — it's the specification, the context, and the constraints all in one. A vague prompt produces vague output. A specific prompt produces specific output.
+
+Here's what actually makes a difference.
+
+## 1. Give Claude a Role
+
+Telling Claude who it is changes how it responds. Compare:
+
+**Without role:**
+> "Review this code."
+
+**With role:**
+> "You are a senior TypeScript engineer doing a code review. Focus on type safety, edge cases, and performance. Be direct — don't soften feedback."
+
+The role sets the perspective, the vocabulary, and the standard Claude is trying to meet. This works especially well for technical, legal, or domain-specific tasks.
+
+## 2. Specify the Output Format
+
+Claude will guess a format if you don't specify one. Sometimes it guesses right. Often it doesn't.
+
+Be explicit:
+
+- "Return a JSON object with fields: `title`, `slug`, `tags`."
+- "Write 3 bullet points, each under 20 words."
+- "Respond in a table with columns: Problem, Root Cause, Fix."
+- "Don't use headers or lists — write it as a single paragraph."
+
+The more specific, the more predictable the output.
+
+## 3. Show, Don't Just Tell
+
+Few-shot examples are one of the most reliable techniques. Instead of describing what you want, show it:
+
+```
+Convert these user descriptions into JSON.
+
+Example:
+Input: "John Smith, 34, from Miami, Florida"
+Output: { "name": "John Smith", "age": 34, "city": "Miami", "state": "Florida" }
+
+Now convert: "Maria García, 28, from Bogotá, Colombia"
+```
+
+Claude learns the pattern from your example and applies it consistently. This works for formatting, tone, classification, and transformation tasks.
+
+## 4. Break Complex Tasks into Steps
+
+Long, multi-part prompts often produce incomplete or confused responses. Instead, ask Claude to think step by step, or break it into sequential prompts.
+
+**Instead of:**
+> "Read this codebase, identify all security vulnerabilities, prioritize them by severity, suggest fixes, and write updated code for the top 3."
+
+**Do this:**
+> Prompt 1: "What security vulnerabilities do you see in this code? List them only."  
+> Prompt 2: "Prioritize that list by severity and explain why."  
+> Prompt 3: "Write the fix for the top vulnerability."
+
+Each step builds on the previous output. You get better results and can course-correct at each stage.
+
+## 5. Set Constraints on Length and Scope
+
+Claude tends to be thorough — sometimes too thorough. If you need a concise answer:
+
+- "Answer in 2–3 sentences maximum."
+- "Give me the most important point only."
+- "Skip the introduction — start with the conclusion."
+
+If you need depth:
+
+- "Be exhaustive — I'd rather have too much than miss something."
+- "Include edge cases and exceptions."
+
+## 6. Tell Claude What to Avoid
+
+Negative constraints are often more effective than positive ones:
+
+- "Don't use passive voice."
+- "Don't suggest anything that requires a backend change."
+- "Don't repeat the question before answering."
+- "Don't add disclaimers unless the topic genuinely requires one."
+
+Positive instructions ("be active and direct") tell Claude what to aim for. Negative instructions ("don't use passive voice") remove specific failure modes.
+
+## 7. Use XML Tags for Long Inputs
+
+When your prompt includes large documents, code, or data, wrap them in tags so Claude knows exactly what's input and what's instruction:
+
+```
+Summarize the key points from this article.
+
+<article>
+[paste the full article here]
+</article>
+
+Focus only on the main argument and 3 supporting points. Ignore examples.
+```
+
+The tags help Claude separate "the thing to process" from "what to do with it," especially in long prompts where they might blur together.
+
+## 8. Ask Claude to Verify Its Own Work
+
+For high-stakes tasks, ask Claude to check itself:
+
+> "After answering, re-read your response and check for any factual claims you're not confident about. If you find any, flag them."
+
+Or more specific:
+
+> "After writing the function, trace through it manually with the input `[1, 2, 3]` and verify the output is correct."
+
+This doesn't catch everything, but it catches a surprising amount.
+
+## The Meta-Rule
+
+The best prompt engineering is less about tricks and more about clarity. Ask yourself: "If a smart human received only this prompt — no other context — would they give me what I need?"
+
+If the answer is no, your prompt needs more specificity. If the answer is yes, you're probably good.
+
+Claude is a very capable model. Most of the time when it produces something off, it's because the instruction was ambiguous — not because the model doesn't know the answer.
